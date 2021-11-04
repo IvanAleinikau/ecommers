@@ -1,11 +1,14 @@
+import 'package:ecommers/app/theme/text_style.dart';
 import 'package:flutter/material.dart';
 
 class GestureContainer extends StatelessWidget {
-  final Color color;
+  final String image;
+  final String name;
 
   const GestureContainer({
     Key? key,
-    required this.color,
+    required this.image,
+    required this.name,
   }) : super(key: key);
 
   @override
@@ -14,11 +17,25 @@ class GestureContainer extends StatelessWidget {
       flex: 1,
       child: AspectRatio(
         aspectRatio: 1,
-        child: GestureDetector(
-          onTap: () {},
-          child: Container(
-            color: color,
-            width: double.infinity,
+        child: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            onTap: () {},
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(image),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  name,
+                  style: Style.nameProduct,
+                ),
+              ),
+            ),
           ),
         ),
       ),

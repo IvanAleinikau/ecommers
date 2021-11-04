@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
-  runApp(Ecommers());
+  runApp(const Ecommers());
 }
 
 class Ecommers extends StatelessWidget {
@@ -20,7 +20,7 @@ class Ecommers extends StatelessWidget {
 
           }
           if(snapshot.connectionState==ConnectionState.done){
-            return MainPage();
+            return const MainPage();
           }
           return const CircularProgressIndicator();
         },

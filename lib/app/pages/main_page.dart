@@ -1,6 +1,7 @@
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
+import 'package:ecommers/app/widgets/main_page_widgets/gesture_container.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
 import 'package:flutter/material.dart';
 
@@ -76,42 +77,34 @@ class _MainPageState extends State<MainPage> {
             delegate: SliverChildListDelegate(
               [
                 Row(
-                  children: [
-                    //TODO gesturecontainer
-                    Expanded(
-                      flex: 1,
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: Container(
-                          color: Colors.red,
-                          width: double.infinity,
-                        ),
-                      ),
+                  children: const [
+                    GestureContainer(
+                      image: 'asset/image/vinyl_storage.jpg',
+                      name: 'Виниловые пластинки',
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: GestureDetector(
-                          onTap: (){
-
-                          },
-                          child: Container(
-                            color: Colors.yellow,
-                            width: double.infinity,
-                          ),
-                        ),
-                      ),
+                    GestureContainer(
+                      image: 'asset/image/akystic.jpg',
+                      name: 'Акустика',
                     ),
-                    Expanded(
-                      flex: 1,
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: Container(
-                          color: Colors.blue,
-                          width: double.infinity,
-                        ),
-                      ),
+                    GestureContainer(
+                      image: 'asset/image/yhod.jpg',
+                      name: 'Аксессуары и уход за винилом',
+                    ),
+                  ],
+                ),
+                Row(
+                  children: const [
+                    GestureContainer(
+                      image: 'asset/image/proig.jpg',
+                      name: 'Проигрыватели винила',
+                    ),
+                    GestureContainer(
+                      image: 'asset/image/oboryd.jpg',
+                      name: 'Оборудование',
+                    ),
+                    GestureContainer(
+                      image: 'asset/image/naysh.jpg',
+                      name: 'Наушники',
                     ),
                   ],
                 ),
