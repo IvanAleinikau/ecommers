@@ -12,7 +12,7 @@ class Ecommers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Play Vinyl',
+      title: 'Vinyl Collection',
       home: FutureBuilder(
         future: Firebase.initializeApp(),
         builder: (context,snapshot){

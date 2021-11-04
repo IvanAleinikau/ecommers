@@ -24,7 +24,7 @@ class _MainPageState extends State<MainPage> {
             expandedHeight: 400.0,
             flexibleSpace: FlexibleSpaceBar(
               title: const MenuButton(
-                title: 'Play Vinyl',
+                title: 'Vinyl Collection',
                 padding: EdgeInsets.zero,
                 textStyle: Style.nameApp,
               ),

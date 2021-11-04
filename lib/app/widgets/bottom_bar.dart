@@ -27,11 +27,11 @@ class _AppBottomBarState extends State<AppBottomBar> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
-                    'PLAY VINYL',
+                    'VINYL COLLECTION',
                     style: Style.nameBottomBar,
                   ),
                   TextElement(
-                    text: '\u00a9 Play Vinyl',
+                    text: '\u00a9 Vinyl Collection',
                     value: 10,
                   ),
                   TextElement(
