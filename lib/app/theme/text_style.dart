@@ -19,6 +19,17 @@ class Style {
     fontWeight: FontWeight.bold,
   );
 
+   static const info = TextStyle(
+    fontSize: 30,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+  );
+
+  static const info2 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+  );
+
   static const nameBottomBar = TextStyle(
     color: ColorPalette.bottomNames,
     fontSize: 16,

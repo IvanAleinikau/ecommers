@@ -1,4 +1,3 @@
-import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
@@ -17,13 +16,15 @@ class MenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: padding,
-      child: TextButton(
-        style: TextButton.styleFrom(
-          primary: ColorPalette.mainPageButton,
-          textStyle: textStyle,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          child: Text(
+            title,
+            style: textStyle,
+          ),
+          onTap: () {},
         ),
-        onPressed: () {},
-        child: Text(title),
       ),
     );
   }

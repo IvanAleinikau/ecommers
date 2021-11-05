@@ -13,6 +13,8 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final _padding =  const EdgeInsets.fromLTRB(5, 25, 25, 0);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +26,15 @@ class _MainPageState extends State<MainPage> {
             pinned: true,
             expandedHeight: 400.0,
             flexibleSpace: FlexibleSpaceBar(
-              title: const MenuButton(
-                title: 'Vinyl Collection',
-                padding: EdgeInsets.zero,
-                textStyle: Style.nameApp,
+              title: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  child: const Text(
+                    'Vinyl Collection',
+                    style: Style.nameApp,
+                  ),
+                  onTap: () {},
+                ),
               ),
               background: Container(
                 height: double.infinity,
@@ -40,35 +47,35 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
             ),
-            actions: const [
+            actions: [
               MenuButton(
                 title: 'ВИНИЛ',
-                padding: EdgeInsets.fromLTRB(0, 15, 20, 0),
+                padding: _padding,
                 textStyle: Style.mainButton,
               ),
               MenuButton(
                 title: 'АКУСТИКА',
-                padding: EdgeInsets.fromLTRB(0, 15, 20, 0),
+                padding:_padding,
                 textStyle: Style.mainButton,
               ),
               MenuButton(
                 title: 'АКСЕССУАРЫ',
-                padding: EdgeInsets.fromLTRB(0, 15, 20, 0),
+                padding: _padding,
                 textStyle: Style.mainButton,
               ),
               MenuButton(
                 title: 'НОВОСТИ',
-                padding: EdgeInsets.fromLTRB(0, 15, 20, 0),
+                padding: _padding,
                 textStyle: Style.mainButton,
               ),
               MenuButton(
                 title: 'О НАС',
-                padding: EdgeInsets.fromLTRB(0, 15, 20, 0),
+                padding: _padding,
                 textStyle: Style.mainButton,
               ),
               MenuButton(
                 title: 'КОНТАКТЫ',
-                padding: EdgeInsets.fromLTRB(0, 15, 20, 0),
+                padding: _padding,
                 textStyle: Style.mainButton,
               ),
             ],
@@ -108,8 +115,54 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ],
                 ),
-                Container(
-                  height: 1000,
+                Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        padding: const EdgeInsets.fromLTRB(70, 0, 70, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              'О нас',
+                              style: Style.info,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: const Text(
+                                'Vinyl Collection является официальным представителем бренда Crosley, Audio-Technica, Pro-Ject, Yamaha, Klipsch, Jamo, Dali, Marantz, Denon, Thorens в Беларуси.',
+                                style: Style.info2,
+                              ),
+                            ),
+                            Container(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: const Text(
+                                'Большой выбор проигрывателей винила, пластинок и предметов интерьера.',
+                                style: Style.info2,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: AspectRatio(
+                        aspectRatio: 1,
+                        child: Container(
+                          width: double.infinity,
+                          height: double.infinity,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('asset/image/proig2.jpg'),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const AppBottomBar(),
               ],

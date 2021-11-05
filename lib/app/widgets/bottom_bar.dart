@@ -84,7 +84,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: const EdgeInsets.only(left: 7),
+                    padding: EdgeInsets.zero,
                     child: const Text(
                       'О НАС',
                       style: Style.nameBottomBar,
@@ -97,7 +97,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   const MenuButton(
                     title: 'Контакты',
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
                   ),
                 ],
@@ -112,7 +112,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: const EdgeInsets.only(left: 7),
+                    padding: EdgeInsets.zero,
                     child: const Text(
                       'ИНФОРМАЦИЯ',
                       style: Style.nameBottomBar,
@@ -125,27 +125,27 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   const MenuButton(
                     title: 'Оплата',
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
                   ),
                   const MenuButton(
                     title: 'Возврат, обмен и гарантии',
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
                   ),
                   const MenuButton(
                     title: 'Рассрочка',
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
                   ),
                   const MenuButton(
                     title: 'Договор публичной оферы',
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
                   ),
                   const MenuButton(
                     title: 'Политика конфиденциальности',
-                    padding: EdgeInsets.zero,
+                    padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
                   ),
                 ],
@@ -160,14 +160,14 @@ class _AppBottomBarState extends State<AppBottomBar> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: const EdgeInsets.only(left: 7),
+                    padding: EdgeInsets.zero,
                     child: const Text(
                       'ПОКУПКА И',
                       style: Style.nameBottomBar,
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.only(left: 7),
+                    padding: EdgeInsets.zero,
                     child: const Text(
                       'СПЕЦПРЕДЛОЖЕНИЯ',
                       style: Style.nameBottomBar,
