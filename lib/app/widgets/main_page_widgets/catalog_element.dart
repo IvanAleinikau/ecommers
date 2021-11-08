@@ -6,12 +6,14 @@ class CatalogElement extends StatelessWidget {
   final String image;
   final String title;
   final String subtitle;
+  final Color color;
 
   const CatalogElement({
     Key? key,
     required this.image,
     required this.title,
     required this.subtitle,
+    required this.color,
   }) : super(key: key);
 
   @override
@@ -40,7 +42,7 @@ class CatalogElement extends StatelessWidget {
           child: AspectRatio(
             aspectRatio: 1,
             child: Container(
-              color: Colors.lime.shade50,
+              color: color,
               margin: const EdgeInsets.fromLTRB(35, 30, 100, 70),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
