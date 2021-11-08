@@ -1,4 +1,3 @@
-import 'package:ecommers/app/pages/login_page.dart';
 import 'package:ecommers/app/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -21,7 +20,7 @@ class Ecommers extends StatelessWidget {
 
           }
           if(snapshot.connectionState==ConnectionState.done){
-            return const LoginPage();
+            return const MainPage();
           }
           return const CircularProgressIndicator();
         },

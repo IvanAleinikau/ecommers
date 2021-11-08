@@ -19,7 +19,7 @@ class Style {
     fontWeight: FontWeight.bold,
   );
 
-   static const info = TextStyle(
+  static const info = TextStyle(
     fontSize: 30,
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.bold,
@@ -40,5 +40,28 @@ class Style {
     color: ColorPalette.bottomNames,
     fontSize: 14,
     fontFamily: 'Montserrat',
+  );
+
+  static const catalog = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+  );
+
+  static const catalogName = TextStyle(
+    fontSize: 22,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+  );
+
+  static const catalogInfo = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+  );
+
+  static const catalogButton = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
   );
 }
