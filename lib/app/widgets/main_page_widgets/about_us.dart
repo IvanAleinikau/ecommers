@@ -10,30 +10,35 @@ class AboutUs extends StatelessWidget {
       children: [
         Expanded(
           flex: 1,
-          child: Container(
-            padding: const EdgeInsets.fromLTRB(70, 0, 70, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'О нас',
-                  style: Style.info,
-                ),
-                Container(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: const Text(
-                    'Vinyl Collection является официальным представителем бренда Crosley, Audio-Technica, Pro-Ject, Yamaha, Klipsch, Jamo, Dali, Marantz, Denon, Thorens в Беларуси.',
-                    style: Style.info2,
+          child: AspectRatio(
+            aspectRatio: 1,
+            child: Container(
+              color: Colors.white70,
+              padding: const EdgeInsets.fromLTRB(70, 0, 70, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'О нас',
+                    style: Style.info,
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: const Text(
-                    'Большой выбор проигрывателей винила, пластинок и предметов интерьера.',
-                    style: Style.info2,
+                  Container(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: const Text(
+                      'Vinyl Collection является официальным представителем бренда Crosley, Audio-Technica, Pro-Ject, Yamaha, Klipsch, Jamo, Dali, Marantz, Denon, Thorens в Беларуси.',
+                      style: Style.info2,
+                    ),
                   ),
-                ),
-              ],
+                  Container(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: const Text(
+                      'Большой выбор проигрывателей винила, пластинок и предметов интерьера.',
+                      style: Style.info2,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

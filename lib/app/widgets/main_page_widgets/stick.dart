@@ -9,7 +9,7 @@ class Stick extends StatelessWidget {
       margin: const EdgeInsets.only(left: 100),
       width: 70,
       height: 4,
-      color: Colors.white,
+      color: Colors.grey.shade300,
     );
   }
 }

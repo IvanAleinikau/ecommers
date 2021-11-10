@@ -71,8 +71,9 @@ class CatalogElement extends StatelessWidget {
                         style: Style.catalogButton,
                       ),
                       style: ElevatedButton.styleFrom(
-                          primary: Colors.black,
-                          fixedSize: const Size(200, 50)),
+                        primary: Colors.black,
+                        fixedSize: const Size(200, 50),
+                      ),
                     ),
                   ),
                 ],

@@ -1,10 +1,10 @@
-import 'package:ecommers/app/theme/color_palette.dart';
-import 'package:ecommers/app/theme/text_style.dart';
+import 'package:ecommers/app/widgets/app_bar.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
+import 'package:ecommers/app/widgets/main_page_widgets/brands.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/catalog_element.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/gesture_container.dart';
-import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
+import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -15,73 +15,12 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  final _padding = const EdgeInsets.fromLTRB(5, 25, 25, 0);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
-            backgroundColor: ColorPalette.barColors,
-            collapsedHeight: 70,
-            pinned: true,
-            expandedHeight: 400.0,
-            flexibleSpace: FlexibleSpaceBar(
-              title: MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  child: const Text(
-                    'Vinyl Collection',
-                    style: Style.nameApp,
-                  ),
-                  onTap: () {},
-                ),
-              ),
-              background: Container(
-                height: double.infinity,
-                width: double.infinity,
-                child: const FittedBox(
-                  fit: BoxFit.cover,
-                  child: Image(
-                    image: AssetImage('asset/image/main_screen_image.png'),
-                  ),
-                ),
-              ),
-            ),
-            actions: [
-              MenuButton(
-                title: 'ВИНИЛ',
-                padding: _padding,
-                textStyle: Style.mainButton,
-              ),
-              MenuButton(
-                title: 'АКУСТИКА',
-                padding: _padding,
-                textStyle: Style.mainButton,
-              ),
-              MenuButton(
-                title: 'АКСЕССУАРЫ',
-                padding: _padding,
-                textStyle: Style.mainButton,
-              ),
-              MenuButton(
-                title: 'НОВОСТИ',
-                padding: _padding,
-                textStyle: Style.mainButton,
-              ),
-              MenuButton(
-                title: 'О НАС',
-                padding: _padding,
-                textStyle: Style.mainButton,
-              ),
-              MenuButton(
-                title: 'КОНТАКТЫ',
-                padding: _padding,
-                textStyle: Style.mainButton,
-              ),
-            ],
-          ),
+          const MyAppBar(),
           SliverList(
             delegate: SliverChildListDelegate(
               [
@@ -118,14 +57,8 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
                 const AboutUs(),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(0, 50, 0, 20),
-                  child: const Center(
-                    child: Text(
-                      'Каталог',
-                      style: Style.catalog,
-                    ),
-                  ),
+                const SectionName(
+                  name: 'Каталог',
                 ),
                 CatalogElement(
                   image: 'asset/image/proig3.jpg',
@@ -141,6 +74,33 @@ class _MainPageState extends State<MainPage> {
                       'Новые оригинальные пластинки по приятным ценам. Наша цель - удовольствие клиентов, поэтому мы продаем не просто музыку, а музыкальное удовольствие. С радостью поможем найти вам редкий винил!',
                   color: Colors.amber.shade300,
                 ),
+                CatalogElement(
+                  image: 'asset/image/portav.jpg',
+                  title: 'Портативная акустика',
+                  subtitle:
+                      'Широкий выбор акустики от Vinyl Collection. Выбирайте Bluetooth колонку для своего проигрывателя и получайте в два раза больше виниловой мощности!',
+                  color: Colors.red.shade50,
+                ),
+                const CatalogElement(
+                  image: 'asset/image/yhod2.jpg',
+                  title: 'Аксессуары и уход',
+                  subtitle:
+                      'Виниловый проигрыватель требует не меньше внимания чем любой музыкальный инструмент. В Vinyl Collection вы найдете сменные иглы и новые картриджи для вашего аналогового любимца. А также антистатические щетки и моющие средства для ухода за пластинками.',
+                  color: Colors.white70,
+                ),
+                const SectionName(
+                  name: 'Топ продаж',
+                ),
+                Container(
+                  height: 300,
+                ),
+                const SectionName(
+                  name: 'Интересное',
+                ),
+                Container(
+                  height: 300,
+                ),
+                Brands(),
                 const AppBottomBar(),
               ],
             ),
