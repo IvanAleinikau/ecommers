@@ -1,12 +1,13 @@
-import 'package:ecommers/app/theme/text_style.dart';
 import 'package:flutter/material.dart';
 
 class SectionName extends StatelessWidget {
   final String name;
+  final TextStyle style;
 
-  const SectionName({
+   const SectionName({
     Key? key,
     required this.name,
+    required this.style,
   }) : super(key: key);
 
   @override
@@ -16,7 +17,7 @@ class SectionName extends StatelessWidget {
       child: Center(
         child: Text(
           name,
-          style: Style.catalog,
+          style: style,
         ),
       ),
     );

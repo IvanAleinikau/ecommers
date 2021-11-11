@@ -1,3 +1,4 @@
+import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,7 @@ class Brands extends StatelessWidget {
         children: [
           const SectionName(
             name: 'Официальный представитель брендов:',
+            style: Style.catalog,
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(100, 50, 100, 0),
@@ -39,7 +41,9 @@ class Brands extends StatelessWidget {
                   decoration: BoxDecoration(
                     border: Border(bottom: _border, right: _border),
                   ),
-                  child: Image.asset('asset/brands/pro_ject.jpg',),
+                  child: Image.asset(
+                    'asset/brands/pro_ject.jpg',
+                  ),
                 ),
                 Container(
                   decoration: BoxDecoration(

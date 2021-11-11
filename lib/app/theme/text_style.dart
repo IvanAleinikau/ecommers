@@ -54,6 +54,13 @@ class Style {
     fontWeight: FontWeight.bold,
   );
 
+  static const consultation = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+    color: Colors.white
+  );
+
   static const catalogName = TextStyle(
     fontSize: 22,
     fontFamily: 'Montserrat',
@@ -67,6 +74,25 @@ class Style {
 
   static const catalogButton = TextStyle(
     fontSize: 16,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+  );
+
+  static const consultationButton = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+  );
+
+  static const consultationButton2 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const contacts = TextStyle(
+    fontSize: 24,
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.bold,
   );

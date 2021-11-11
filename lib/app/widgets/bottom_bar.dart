@@ -43,7 +43,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                     height: 20,
                   ),
                   TextElement(
-                    text: 'Брест, ул. Дзержинского 3',
+                    text: 'Брест, ул. Дзержинского 3, ТЦ "Общага", 1 этаж, пав. 107',
                     value: 5,
                   ),
                   TextElement(

@@ -1,8 +1,10 @@
+import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/app_bar.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/brands.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/catalog_element.dart';
+import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/gesture_container.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/core/service/navigation_service.dart';
@@ -62,6 +64,7 @@ class _MainPageState extends State<MainPage> {
                 const AboutUs(),
                 const SectionName(
                   name: 'Каталог',
+                  style: Style.catalog,
                 ),
                 CatalogElement(
                   image: 'asset/image/proig3.jpg',
@@ -93,16 +96,19 @@ class _MainPageState extends State<MainPage> {
                 ),
                 const SectionName(
                   name: 'Топ продаж',
+                  style: Style.catalog,
                 ),
                 Container(
                   height: 300,
                 ),
                 const SectionName(
                   name: 'Интересное',
+                  style: Style.catalog,
                 ),
                 Container(
                   height: 300,
                 ),
+                const Consultation(),
                 Brands(),
                 const AppBottomBar(),
               ],
