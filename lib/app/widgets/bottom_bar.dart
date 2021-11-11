@@ -2,6 +2,7 @@ import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/text_element.dart';
+import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class AppBottomBar extends StatefulWidget {
@@ -94,11 +95,13 @@ class _AppBottomBarState extends State<AppBottomBar> {
                     title: 'О нас',
                     padding: EdgeInsets.only(top: 10),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Контакты',
                     padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                 ],
               ),
@@ -122,31 +125,37 @@ class _AppBottomBarState extends State<AppBottomBar> {
                     title: 'Доставка',
                     padding: EdgeInsets.only(top: 10),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Оплата',
                     padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Возврат, обмен и гарантии',
                     padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
+                   page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Рассрочка',
                     padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Договор публичной оферы',
                     padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Политика конфиденциальности',
                     padding: EdgeInsets.only(top: 7),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                 ],
               ),
@@ -177,6 +186,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                     title: 'Подарочные сертификаты',
                     padding: EdgeInsets.only(top: 10),
                     textStyle: Style.bottomBarElement,
+                    page: Pages.contacts,
                   ),
                 ],
               ),

@@ -5,6 +5,7 @@ import 'package:ecommers/app/widgets/main_page_widgets/brands.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/catalog_element.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/gesture_container.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
+import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -20,7 +21,9 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const MyAppBar(),
+          const MyAppBar(
+            page: Pages.main,
+          ),
           SliverList(
             delegate: SliverChildListDelegate(
               [

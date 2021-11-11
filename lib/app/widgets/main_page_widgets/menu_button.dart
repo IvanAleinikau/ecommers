@@ -1,15 +1,18 @@
+import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
   final String title;
   final EdgeInsetsGeometry padding;
   final TextStyle textStyle;
+  final Enum page;
 
   const MenuButton({
     Key? key,
     required this.title,
     required this.padding,
     required this.textStyle,
+    required this.page,
   }) : super(key: key);
 
   @override
@@ -23,7 +26,9 @@ class MenuButton extends StatelessWidget {
             title,
             style: textStyle,
           ),
-          onTap: () {},
+          onTap: () {
+            NavigationService().navigateTo(page);
+          },
         ),
       ),
     );

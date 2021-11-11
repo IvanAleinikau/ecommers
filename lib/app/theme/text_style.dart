@@ -12,6 +12,12 @@ class Style {
     fontFamily: 'Montserrat',
   );
 
+  static TextStyle mainButtonActive = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+    color: Colors.grey.shade600,
+  );
+
   static const nameProduct = TextStyle(
     fontSize: 22,
     fontFamily: 'Montserrat',
