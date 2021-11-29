@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                         width: double.infinity,
                         height: 300,
                         color: Colors.blue,
-                        child: Center(child: Text('fff'),),
+                        child: const Center(child: Text('fff'),),
                       ),
                     ),
                   ],

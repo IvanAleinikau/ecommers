@@ -13,6 +13,7 @@ class AboutUs extends StatelessWidget {
           child: AspectRatio(
             aspectRatio: 1,
             child: Container(
+              height: 1000,
               color: Colors.white70,
               padding: const EdgeInsets.fromLTRB(70, 0, 70, 0),
               child: Column(
