@@ -1,6 +1,8 @@
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
+import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Consultation extends StatelessWidget {
   const Consultation({Key? key}) : super(key: key);
@@ -51,6 +53,7 @@ class Consultation extends StatelessWidget {
   }
 
   Widget _consultation(context) {
+    final _formKey = GlobalKey<FormState>();
     final TextEditingController _name = TextEditingController();
     final TextEditingController _number = TextEditingController();
     return AlertDialog(
@@ -58,45 +61,60 @@ class Consultation extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       content: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Имя',
-                  labelText: 'Имя',
-                ),
-                controller: _name,
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  hintText: '+375(00)000-00-00',
-                  labelText: 'Мобильный телефон',
-                ),
-                controller: _number,
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  fixedSize: const Size(500, 60),
-                ),
-                onPressed: () {
-                  
-                },
-                child: const Text(
-                  'Заказать бесплатную консультацию',
-                  style: Style.consultationButton2,
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Имя',
+                    labelText: 'Имя',
+                  ),
+                  controller: _name,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Введите своё имя';
+                    }
+                    return null;
+                  },
                 ),
               ),
-            ),
-          ],
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: '+375(00)000-00-00',
+                    labelText: 'Мобильный телефон',
+                  ),
+                  controller: _number,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Введите номер мобильного телефона';
+                    }
+                    return null;
+                  },
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    fixedSize: const Size(500, 60),
+                  ),
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {}
+                  },
+                  child: const Text(
+                    'Заказать бесплатную консультацию',
+                    style: Style.consultationButton2,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

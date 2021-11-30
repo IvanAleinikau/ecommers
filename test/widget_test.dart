@@ -1,4 +1,3 @@
-import 'package:ecommers/app/pages/login_page.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
