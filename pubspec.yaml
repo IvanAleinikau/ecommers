@@ -37,7 +37,7 @@ dependencies:
   firebase_core: ^1.8.0
   get:
   golden_toolkit: ^0.10.0
-  flutter_bloc: ^8.0.0
+  flutter_bloc: ^7.1.0
   freezed: ^1.0.0 
 
 dev_dependencies:

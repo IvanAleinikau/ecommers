@@ -20,6 +20,14 @@ class _$ConsultationStateTearOff {
   ConsultationInitState initState() {
     return ConsultationInitState();
   }
+
+  IsValidNameAndPhone isValid(
+      {bool isNameValid = false, bool isPhoneNumberValid = false}) {
+    return IsValidNameAndPhone(
+      isNameValid: isNameValid,
+      isPhoneNumberValid: isPhoneNumberValid,
+    );
+  }
 }
 
 /// @nodoc
@@ -30,32 +38,39 @@ mixin _$ConsultationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
+    required TResult Function(bool isNameValid, bool isPhoneNumberValid)
+        isValid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
+    TResult Function(bool isNameValid, bool isPhoneNumberValid)? isValid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
+    TResult Function(bool isNameValid, bool isPhoneNumberValid)? isValid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ConsultationInitState value) initState,
+    required TResult Function(IsValidNameAndPhone value) isValid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ConsultationInitState value)? initState,
+    TResult Function(IsValidNameAndPhone value)? isValid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConsultationInitState value)? initState,
+    TResult Function(IsValidNameAndPhone value)? isValid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +135,8 @@ class _$ConsultationInitState implements ConsultationInitState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
+    required TResult Function(bool isNameValid, bool isPhoneNumberValid)
+        isValid,
   }) {
     return initState();
   }
@@ -128,6 +145,7 @@ class _$ConsultationInitState implements ConsultationInitState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
+    TResult Function(bool isNameValid, bool isPhoneNumberValid)? isValid,
   }) {
     return initState?.call();
   }
@@ -136,6 +154,7 @@ class _$ConsultationInitState implements ConsultationInitState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
+    TResult Function(bool isNameValid, bool isPhoneNumberValid)? isValid,
     required TResult orElse(),
   }) {
     if (initState != null) {
@@ -148,6 +167,7 @@ class _$ConsultationInitState implements ConsultationInitState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ConsultationInitState value) initState,
+    required TResult Function(IsValidNameAndPhone value) isValid,
   }) {
     return initState(this);
   }
@@ -156,6 +176,7 @@ class _$ConsultationInitState implements ConsultationInitState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(ConsultationInitState value)? initState,
+    TResult Function(IsValidNameAndPhone value)? isValid,
   }) {
     return initState?.call(this);
   }
@@ -164,6 +185,7 @@ class _$ConsultationInitState implements ConsultationInitState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ConsultationInitState value)? initState,
+    TResult Function(IsValidNameAndPhone value)? isValid,
     required TResult orElse(),
   }) {
     if (initState != null) {
@@ -175,4 +197,153 @@ class _$ConsultationInitState implements ConsultationInitState {
 
 abstract class ConsultationInitState implements ConsultationState {
   factory ConsultationInitState() = _$ConsultationInitState;
+}
+
+/// @nodoc
+abstract class $IsValidNameAndPhoneCopyWith<$Res> {
+  factory $IsValidNameAndPhoneCopyWith(
+          IsValidNameAndPhone value, $Res Function(IsValidNameAndPhone) then) =
+      _$IsValidNameAndPhoneCopyWithImpl<$Res>;
+  $Res call({bool isNameValid, bool isPhoneNumberValid});
+}
+
+/// @nodoc
+class _$IsValidNameAndPhoneCopyWithImpl<$Res>
+    extends _$ConsultationStateCopyWithImpl<$Res>
+    implements $IsValidNameAndPhoneCopyWith<$Res> {
+  _$IsValidNameAndPhoneCopyWithImpl(
+      IsValidNameAndPhone _value, $Res Function(IsValidNameAndPhone) _then)
+      : super(_value, (v) => _then(v as IsValidNameAndPhone));
+
+  @override
+  IsValidNameAndPhone get _value => super._value as IsValidNameAndPhone;
+
+  @override
+  $Res call({
+    Object? isNameValid = freezed,
+    Object? isPhoneNumberValid = freezed,
+  }) {
+    return _then(IsValidNameAndPhone(
+      isNameValid: isNameValid == freezed
+          ? _value.isNameValid
+          : isNameValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPhoneNumberValid: isPhoneNumberValid == freezed
+          ? _value.isPhoneNumberValid
+          : isPhoneNumberValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IsValidNameAndPhone implements IsValidNameAndPhone {
+  _$IsValidNameAndPhone(
+      {this.isNameValid = false, this.isPhoneNumberValid = false});
+
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isNameValid;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isPhoneNumberValid;
+
+  @override
+  String toString() {
+    return 'ConsultationState.isValid(isNameValid: $isNameValid, isPhoneNumberValid: $isPhoneNumberValid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is IsValidNameAndPhone &&
+            (identical(other.isNameValid, isNameValid) ||
+                other.isNameValid == isNameValid) &&
+            (identical(other.isPhoneNumberValid, isPhoneNumberValid) ||
+                other.isPhoneNumberValid == isPhoneNumberValid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isNameValid, isPhoneNumberValid);
+
+  @JsonKey(ignore: true)
+  @override
+  $IsValidNameAndPhoneCopyWith<IsValidNameAndPhone> get copyWith =>
+      _$IsValidNameAndPhoneCopyWithImpl<IsValidNameAndPhone>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initState,
+    required TResult Function(bool isNameValid, bool isPhoneNumberValid)
+        isValid,
+  }) {
+    return isValid(isNameValid, isPhoneNumberValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function(bool isNameValid, bool isPhoneNumberValid)? isValid,
+  }) {
+    return isValid?.call(isNameValid, isPhoneNumberValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function(bool isNameValid, bool isPhoneNumberValid)? isValid,
+    required TResult orElse(),
+  }) {
+    if (isValid != null) {
+      return isValid(isNameValid, isPhoneNumberValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ConsultationInitState value) initState,
+    required TResult Function(IsValidNameAndPhone value) isValid,
+  }) {
+    return isValid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ConsultationInitState value)? initState,
+    TResult Function(IsValidNameAndPhone value)? isValid,
+  }) {
+    return isValid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ConsultationInitState value)? initState,
+    TResult Function(IsValidNameAndPhone value)? isValid,
+    required TResult orElse(),
+  }) {
+    if (isValid != null) {
+      return isValid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsValidNameAndPhone implements ConsultationState {
+  factory IsValidNameAndPhone({bool isNameValid, bool isPhoneNumberValid}) =
+      _$IsValidNameAndPhone;
+
+  bool get isNameValid;
+  bool get isPhoneNumberValid;
+  @JsonKey(ignore: true)
+  $IsValidNameAndPhoneCopyWith<IsValidNameAndPhone> get copyWith =>
+      throw _privateConstructorUsedError;
 }

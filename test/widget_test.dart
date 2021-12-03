@@ -1,4 +1,6 @@
 import 'package:ecommers/app/theme/text_style.dart';
+import 'package:ecommers/app/widgets/contacts_page_widgets/contacts.dart';
+import 'package:ecommers/app/widgets/contacts_page_widgets/separator.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
@@ -19,6 +21,14 @@ void main() {
         final builder = GoldenBuilder.column()..addScenario('About US', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'about_us');
+      });
+
+      testGoldens('Separator', (tester) async {
+        const widget = Separator();
+        final builder = GoldenBuilder.column()
+          ..addScenario('Separator', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'separator');
       });
 
       testGoldens('Consultation', (tester) async {
@@ -89,7 +99,8 @@ void main() {
 
       testGoldens('GestureContainer', (tester) async {
         const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('GestureContainer', widget);
+        final builder = GoldenBuilder.column()
+          ..addScenario('GestureContainer', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'gesture_container');
       });
@@ -103,7 +114,8 @@ void main() {
 
       testGoldens('BottomAppBar', (tester) async {
         const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('BottomAppBar', widget);
+        final builder = GoldenBuilder.column()
+          ..addScenario('BottomAppBar', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'bottom_app_bar');
       });
@@ -117,7 +129,8 @@ void main() {
 
       testGoldens('ContactsPage', (tester) async {
         const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('ContactsPage', widget);
+        final builder = GoldenBuilder.column()
+          ..addScenario('ContactsPage', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'contacts_page');
       });
