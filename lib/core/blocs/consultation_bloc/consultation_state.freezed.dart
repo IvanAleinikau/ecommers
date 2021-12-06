@@ -259,14 +259,17 @@ class _$IsValidNameAndPhone implements IsValidNameAndPhone {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is IsValidNameAndPhone &&
-            (identical(other.isNameValid, isNameValid) ||
-                other.isNameValid == isNameValid) &&
-            (identical(other.isPhoneNumberValid, isPhoneNumberValid) ||
-                other.isPhoneNumberValid == isPhoneNumberValid));
+            const DeepCollectionEquality()
+                .equals(other.isNameValid, isNameValid) &&
+            const DeepCollectionEquality()
+                .equals(other.isPhoneNumberValid, isPhoneNumberValid));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isNameValid, isPhoneNumberValid);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(isNameValid),
+      const DeepCollectionEquality().hash(isPhoneNumberValid));
 
   @JsonKey(ignore: true)
   @override

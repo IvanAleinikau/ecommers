@@ -2,28 +2,27 @@ import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_image.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_input.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_navigator.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_space.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_subtitle.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_title.dart';
-import 'package:ecommers/app/widgets/auth_widgets/button_separator.dart';
-import 'package:ecommers/app/widgets/auth_widgets/auth_navigator.dart';
-import 'package:ecommers/app/widgets/auth_widgets/google_button.dart';
-import 'package:ecommers/app/widgets/auth_widgets/sign_in_button.dart';
+import 'package:ecommers/app/widgets/auth_widgets/sign_up_button.dart';
 import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:ecommers/core/validator.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
+  final TextEditingController _confirmPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                     AuthInput(
                       hintText: 'Введите почту',
                       labelText: 'Почта',
-                      padding: const EdgeInsets.fromLTRB(150, 30, 150, 0),
+                      padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _email,
                       validator: (value) => Validator.zero(),
                       obscureText: false,
@@ -69,23 +68,25 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) => Validator.zero(),
                       obscureText: true,
                     ),
-                    SignInButton(
-                      text: 'Войти',
+                    AuthInput(
+                      hintText: 'Введите пароль',
+                      labelText: 'Подтвердите пароль',
+                      padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
+                      controller: _confirmPassword,
+                      validator: (value) => Validator.zero(),
+                      obscureText: true,
+                    ),
+                    SignUpButton(
+                      text: 'Зарегистрироваться',
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {}
                       },
                       padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
                     ),
-                    const ButtonSeparator(),
-                    GoogleButton(
-                      padding: const EdgeInsets.fromLTRB(30, 15, 0, 15),
-                      onPressed: () => print('тык2'),
-                      text: 'Sing in with Google',
-                    ),
                     AuthNavigator(
-                      text: 'Ещё не зарегистрированы?',
-                      buttonText: 'Создать аккаунт',
-                      onPressed: () => NavigationService().navigateToRegister(),
+                      text: 'Уже зарегистрированы?',
+                      buttonText: 'Войти',
+                      onPressed: () => NavigationService().navigateToLogin(),
                     ),
                   ],
                 ),

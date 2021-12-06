@@ -20,4 +20,8 @@ class Validator {
       }
     }
   }
+
+  static String? zero() {
+    return null;
+  }
 }

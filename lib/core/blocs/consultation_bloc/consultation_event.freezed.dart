@@ -265,11 +265,12 @@ class _$CheckValidName implements CheckValidName {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CheckValidName &&
-            (identical(other.name, name) || other.name == name));
+            const DeepCollectionEquality().equals(other.name, name));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, name);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
 
   @JsonKey(ignore: true)
   @override
@@ -405,12 +406,13 @@ class _$CheckValidPhoneNumber implements CheckValidPhoneNumber {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is CheckValidPhoneNumber &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, phoneNumber);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(phoneNumber));
 
   @JsonKey(ignore: true)
   @override

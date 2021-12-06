@@ -1,13 +1,14 @@
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_image.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_input.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_space.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_subtitle.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_title.dart';
 import 'package:ecommers/app/widgets/auth_widgets/button_separator.dart';
-import 'package:ecommers/app/widgets/auth_widgets/go_to_register_page_button.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_navigator.dart';
 import 'package:ecommers/app/widgets/auth_widgets/google_button.dart';
-import 'package:ecommers/app/widgets/auth_widgets/sing_in_button.dart';
-import 'package:ecommers/app/widgets/contacts_page_widgets/contacts.dart';
+import 'package:ecommers/app/widgets/auth_widgets/sign_in_button.dart';
+import 'package:ecommers/app/widgets/auth_widgets/sign_up_button.dart';
 import 'package:ecommers/app/widgets/contacts_page_widgets/separator.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
@@ -92,7 +93,6 @@ void main() {
         await screenMatchesGolden(tester, 'text_element');
       });
 
-
       testGoldens('AuthImage', (tester) async {
         const widget = AuthImage();
         final builder = GoldenBuilder.column()
@@ -103,7 +103,7 @@ void main() {
 
       testGoldens('AuthInput', (tester) async {
         final TextEditingController _email = TextEditingController();
-        final widget =  AuthInput(
+        final widget = AuthInput(
           hintText: '',
           labelText: '',
           padding: EdgeInsets.zero,
@@ -118,7 +118,7 @@ void main() {
       });
 
       testGoldens('AuthSubtitle', (tester) async {
-        const widget =  AuthSubtitle(
+        const widget = AuthSubtitle(
           subtitle: '',
           padding: EdgeInsets.zero,
           style: Style.authSubtitle,
@@ -130,7 +130,7 @@ void main() {
       });
 
       testGoldens('AuthTitle', (tester) async {
-        const widget =  AuthTitle(
+        const widget = AuthTitle(
           title: '',
           padding: EdgeInsets.zero,
           style: Style.authTitle,
@@ -142,27 +142,39 @@ void main() {
       });
 
       testGoldens('ButtonSeparator', (tester) async {
-        const widget =  ButtonSeparator();
+        const widget = ButtonSeparator();
         final builder = GoldenBuilder.column()
           ..addScenario('ButtonSeparator', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'button_separator');
       });
 
-      testGoldens('GoToRegisterPageButton', (tester) async {
-        const widget =  GoToRegisterPageButton();
+      testGoldens('AuthNavigator', (tester) async {
+        final widget = AuthNavigator(
+          text: 'Ещё не зарегистрированы?',
+          buttonText: 'Создать аккаунт',
+          onPressed: () => NavigationService().navigateTo(Pages.register),
+        );
         final builder = GoldenBuilder.column()
-          ..addScenario('GoToRegisterPageButton', widget);
+          ..addScenario('AuthNavigator', widget);
         await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'go_to_register_page_button');
+        await screenMatchesGolden(tester, 'auth_navigator');
+      });
+
+      testGoldens('AuthSpace', (tester) async {
+        const widget = AuthSpace(widgets: []);
+        final builder = GoldenBuilder.column()
+          ..addScenario('AuthSpace', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'auth_space');
       });
 
       testGoldens('GoogleButton', (tester) async {
-        final widget =  SizedBox(
+        final widget = SizedBox(
           width: 220.0,
           height: 36.0,
           child: GoogleButton(
-            padding:  EdgeInsets.zero,
+            padding: EdgeInsets.zero,
             onPressed: () => print('тык2'),
             text: '',
           ),
@@ -174,7 +186,7 @@ void main() {
       });
 
       testGoldens('SingInButton', (tester) async {
-        final widget =  SingInButton(
+        final widget = SignInButton(
           text: '',
           onPressed: () => print('тык'),
           padding: EdgeInsets.zero,
@@ -183,6 +195,18 @@ void main() {
           ..addScenario('SingInButton', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'sing_in_button');
+      });
+
+      testGoldens('SignUpButton', (tester) async {
+        final widget = SignUpButton(
+          text: '',
+          onPressed: () => print('тык'),
+          padding: EdgeInsets.zero,
+        );
+        final builder = GoldenBuilder.column()
+          ..addScenario('SignUpButton', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'sign_up_button');
       });
     },
   );

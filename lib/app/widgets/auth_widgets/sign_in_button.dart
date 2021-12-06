@@ -1,12 +1,12 @@
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:flutter/material.dart';
 
-class SingInButton extends StatelessWidget {
+class SignInButton extends StatelessWidget {
   final String text;
   final void Function()? onPressed;
   final EdgeInsetsGeometry padding;
 
-  const SingInButton({
+  const SignInButton({
     Key? key,
     required this.text,
     required this.onPressed,
