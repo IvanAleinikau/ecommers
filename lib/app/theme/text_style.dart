@@ -96,4 +96,24 @@ class Style {
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.bold,
   );
+
+  static const line = TextStyle(
+    fontSize: 12,
+    fontFamily: 'Montserrat',
+    decoration: TextDecoration.none,
+  );
+
+  static const authTitle = TextStyle(
+    color: Colors.black,
+    fontSize: 30,
+    fontFamily: 'Montserrat',
+    decoration: TextDecoration.none,
+  );
+
+  static const authSubtitle = TextStyle(
+    color: Colors.grey,
+    fontSize: 18,
+    fontFamily: 'Montserrat',
+    decoration: TextDecoration.none,
+  );
 }

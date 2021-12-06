@@ -38,7 +38,8 @@ dependencies:
   get:
   golden_toolkit: ^0.10.0
   flutter_bloc: ^7.1.0
-  freezed: ^1.0.0 
+  freezed: ^1.0.0
+  flutter_signin_button: ^2.0.0
 
 dev_dependencies:
   flutter_test:

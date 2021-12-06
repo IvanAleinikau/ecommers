@@ -1,4 +1,12 @@
 import 'package:ecommers/app/theme/text_style.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_image.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_input.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_subtitle.dart';
+import 'package:ecommers/app/widgets/auth_widgets/auth_title.dart';
+import 'package:ecommers/app/widgets/auth_widgets/button_separator.dart';
+import 'package:ecommers/app/widgets/auth_widgets/go_to_register_page_button.dart';
+import 'package:ecommers/app/widgets/auth_widgets/google_button.dart';
+import 'package:ecommers/app/widgets/auth_widgets/sing_in_button.dart';
 import 'package:ecommers/app/widgets/contacts_page_widgets/contacts.dart';
 import 'package:ecommers/app/widgets/contacts_page_widgets/separator.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
@@ -8,6 +16,7 @@ import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/stick.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/text_element.dart';
 import 'package:ecommers/core/service/navigation_service.dart';
+import 'package:ecommers/core/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
@@ -83,56 +92,97 @@ void main() {
         await screenMatchesGolden(tester, 'text_element');
       });
 
-      testGoldens('LoginPage', (tester) async {
-        const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('Login', widget);
-        await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'login_page');
-      });
 
-      testGoldens('MainPage', (tester) async {
-        const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('MainPage', widget);
-        await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'main_page');
-      });
-
-      testGoldens('GestureContainer', (tester) async {
-        const widget = Stick();
+      testGoldens('AuthImage', (tester) async {
+        const widget = AuthImage();
         final builder = GoldenBuilder.column()
-          ..addScenario('GestureContainer', widget);
+          ..addScenario('AuthImage', widget);
         await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'gesture_container');
+        await screenMatchesGolden(tester, 'auth_image');
       });
 
-      testGoldens('Brands', (tester) async {
-        const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('Brands', widget);
-        await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'brands');
-      });
-
-      testGoldens('BottomAppBar', (tester) async {
-        const widget = Stick();
+      testGoldens('AuthInput', (tester) async {
+        final TextEditingController _email = TextEditingController();
+        final widget =  AuthInput(
+          hintText: '',
+          labelText: '',
+          padding: EdgeInsets.zero,
+          controller: _email,
+          validator: (value) => Validator.validateName(value!),
+          obscureText: true,
+        );
         final builder = GoldenBuilder.column()
-          ..addScenario('BottomAppBar', widget);
+          ..addScenario('AuthInput', widget);
         await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'bottom_app_bar');
+        await screenMatchesGolden(tester, 'auth_input');
       });
 
-      testGoldens('AppBar', (tester) async {
-        const widget = Stick();
-        final builder = GoldenBuilder.column()..addScenario('app_bar', widget);
-        await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'app_bar');
-      });
-
-      testGoldens('ContactsPage', (tester) async {
-        const widget = Stick();
+      testGoldens('AuthSubtitle', (tester) async {
+        const widget =  AuthSubtitle(
+          subtitle: '',
+          padding: EdgeInsets.zero,
+          style: Style.authSubtitle,
+        );
         final builder = GoldenBuilder.column()
-          ..addScenario('ContactsPage', widget);
+          ..addScenario('AuthSubtitle', widget);
         await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'contacts_page');
+        await screenMatchesGolden(tester, 'auth_subtitle');
+      });
+
+      testGoldens('AuthTitle', (tester) async {
+        const widget =  AuthTitle(
+          title: '',
+          padding: EdgeInsets.zero,
+          style: Style.authTitle,
+        );
+        final builder = GoldenBuilder.column()
+          ..addScenario('AuthTitle', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'auth_title');
+      });
+
+      testGoldens('ButtonSeparator', (tester) async {
+        const widget =  ButtonSeparator();
+        final builder = GoldenBuilder.column()
+          ..addScenario('ButtonSeparator', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'button_separator');
+      });
+
+      testGoldens('GoToRegisterPageButton', (tester) async {
+        const widget =  GoToRegisterPageButton();
+        final builder = GoldenBuilder.column()
+          ..addScenario('GoToRegisterPageButton', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'go_to_register_page_button');
+      });
+
+      testGoldens('GoogleButton', (tester) async {
+        final widget =  SizedBox(
+          width: 220.0,
+          height: 36.0,
+          child: GoogleButton(
+            padding:  EdgeInsets.zero,
+            onPressed: () => print('тык2'),
+            text: '',
+          ),
+        );
+        final builder = GoldenBuilder.column()
+          ..addScenario('GoogleButton', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'google_button');
+      });
+
+      testGoldens('SingInButton', (tester) async {
+        final widget =  SingInButton(
+          text: '',
+          onPressed: () => print('тык'),
+          padding: EdgeInsets.zero,
+        );
+        final builder = GoldenBuilder.column()
+          ..addScenario('SingInButton', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'sing_in_button');
       });
     },
   );

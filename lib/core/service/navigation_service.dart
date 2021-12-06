@@ -1,5 +1,6 @@
 import 'package:ecommers/app/pages/contacts_page.dart';
 import 'package:ecommers/app/pages/main_page.dart';
+import 'package:ecommers/app/pages/login_page.dart';
 import 'package:get/get.dart';
 
 class NavigationService {
@@ -21,6 +22,7 @@ class NavigationService {
     return [
       GetPage(name: '/', page: () => const MainPage()),
       GetPage(name: '/contacts', page: () => const ContactsPage()),
+      GetPage(name: '/login', page: () => const LoginPage()),
     ];
   }
 }
@@ -33,4 +35,5 @@ enum Pages {
   accessories,
   acoustics,
   vinyl,
+  register
 }
