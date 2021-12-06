@@ -86,7 +86,7 @@ class Consultation extends StatelessWidget {
                     padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
                     child: TextFormField(
                       decoration: const InputDecoration(
-                        hintText: '+375(00)000-00-00',
+                        hintText: '297778855',
                         labelText: 'Мобильный телефон',
                       ),
                       controller: _number,

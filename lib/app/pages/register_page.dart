@@ -57,7 +57,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Почта',
                       padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _email,
-                      validator: (value) => Validator.zero(),
+                      validator: (value) => Validator.validateEmail(value!),
                       obscureText: false,
                     ),
                     AuthInput(
@@ -65,7 +65,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Пароль',
                       padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _password,
-                      validator: (value) => Validator.zero(),
+                      validator: (_) =>
+                          Validator.validatePassword(_password.text!),
                       obscureText: true,
                     ),
                     AuthInput(
@@ -73,7 +74,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Подтвердите пароль',
                       padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _confirmPassword,
-                      validator: (value) => Validator.zero(),
+                      validator: (_) => Validator.validateConfirmPassword(
+                        password: _password.text,
+                        confirmPassword: _confirmPassword.text!,
+                      ),
                       obscureText: true,
                     ),
                     SignUpButton(

@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
                       labelText: 'Почта',
                       padding: const EdgeInsets.fromLTRB(150, 30, 150, 0),
                       controller: _email,
-                      validator: (value) => Validator.zero(),
+                      validator: (value) => Validator.validateEmail(value!),
                       obscureText: false,
                     ),
                     AuthInput(
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                       labelText: 'Пароль',
                       padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _password,
-                      validator: (value) => Validator.zero(),
+                      validator: (value) => Validator.validateNotNull(value!),
                       obscureText: true,
                     ),
                     SignInButton(
