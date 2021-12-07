@@ -16,7 +16,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 350,
+      height: 400,
       color: ColorPalette.barColors,
       child: Row(
         children: [
@@ -33,14 +33,14 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   TextElement(
                     text: '\u00a9 Vinyl Collection',
-                    value: 10,
+                    value: 15,
                   ),
                   TextElement(
                     text: '+375(33) 672 90 96',
-                    value: 20,
+                    value: 25,
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 25,
                   ),
                   TextElement(
                     text: 'Брест, ул. Дзержинского 3, ТЦ "Общага", 1 этаж, пав. 107',
@@ -48,7 +48,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   TextElement(
                     text: 'Пн-Вс 11:00 до 19:00',
-                    value: 5,
+                    value: 10,
                   ),
                   SizedBox(
                     height: 40,
@@ -93,13 +93,13 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   const MenuButton(
                     title: 'О нас',
-                    padding: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 15),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Контакты',
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: 12),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
@@ -123,37 +123,37 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   const MenuButton(
                     title: 'Доставка',
-                    padding: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 15),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Оплата',
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: 12),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Возврат, обмен и гарантии',
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: 12),
                     textStyle: Style.bottomBarElement,
                    page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Рассрочка',
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: 12),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Договор публичной оферы',
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: 12),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
                   const MenuButton(
                     title: 'Политика конфиденциальности',
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: 12),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),
@@ -184,7 +184,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                   ),
                   const MenuButton(
                     title: 'Подарочные сертификаты',
-                    padding: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 15),
                     textStyle: Style.bottomBarElement,
                     page: Pages.contacts,
                   ),

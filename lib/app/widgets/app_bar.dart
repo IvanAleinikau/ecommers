@@ -74,8 +74,10 @@ class MyAppBar extends StatelessWidget {
         MenuButton(
           title: 'О НАС',
           padding: _padding,
-          textStyle: Style.mainButton,
-          page: Pages.contacts,
+          textStyle: page == Pages.aboutUs
+              ? Style.mainButtonActive
+              : Style.mainButton,
+          page: Pages.aboutUs,
         ),
         MenuButton(
           title: 'КОНТАКТЫ',

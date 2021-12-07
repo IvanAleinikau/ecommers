@@ -1,3 +1,4 @@
+import 'package:ecommers/app/pages/about_us_page.dart';
 import 'package:ecommers/app/pages/contacts_page.dart';
 import 'package:ecommers/app/pages/main_page.dart';
 import 'package:ecommers/app/pages/login_page.dart';
@@ -15,6 +16,9 @@ class NavigationService {
       switch (page) {
         case Pages.contacts:
           route = '/contacts';
+          break;
+        case Pages.aboutUs:
+          route = '/about_us';
           break;
       }
       Get.toNamed(route);
@@ -37,6 +41,7 @@ class NavigationService {
       GetPage(name: '/contacts', page: () => const ContactsPage()),
       GetPage(name: '/login', page: () => const LoginPage()),
       GetPage(name: '/register', page: () => const RegisterPage()),
+      GetPage(name: '/about_us', page: () => const AboutUsPage()),
     ];
   }
 }
