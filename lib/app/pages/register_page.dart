@@ -7,9 +7,9 @@ import 'package:ecommers/app/widgets/auth_widgets/auth_space.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_subtitle.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_title.dart';
 import 'package:ecommers/app/widgets/auth_widgets/sign_up_button.dart';
-import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:ecommers/core/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -90,7 +90,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     AuthNavigator(
                       text: 'Уже зарегистрированы?',
                       buttonText: 'Войти',
-                      onPressed: () => NavigationService().navigateToLogin(),
+                      onPressed: () => context.router.pushNamed('/login'),
                     ),
                   ],
                 ),

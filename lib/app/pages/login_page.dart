@@ -9,9 +9,9 @@ import 'package:ecommers/app/widgets/auth_widgets/button_separator.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_navigator.dart';
 import 'package:ecommers/app/widgets/auth_widgets/google_button.dart';
 import 'package:ecommers/app/widgets/auth_widgets/sign_in_button.dart';
-import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:ecommers/core/validator.dart';
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                     AuthNavigator(
                       text: 'Ещё не зарегистрированы?',
                       buttonText: 'Создать аккаунт',
-                      onPressed: () => NavigationService().navigateToRegister(),
+                      onPressed: () => context.router.pushNamed('/register'),
                     ),
                   ],
                 ),

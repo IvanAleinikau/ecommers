@@ -1,6 +1,6 @@
+import 'package:ecommers/app/pages/pages.dart';
 import 'package:ecommers/app/widgets/app_bar.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
-import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class AboutUsPage extends StatefulWidget {
@@ -16,7 +16,9 @@ class _AboutUsPageState extends State<AboutUsPage> {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const MyAppBar(page: Pages.aboutUs),
+          const MyAppBar(
+            page: Pages.aboutUs,
+          ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
