@@ -65,8 +65,8 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Пароль',
                       padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _password,
-                      validator: (_) =>
-                          Validator.validatePassword(_password.text!),
+                      validator: (value) =>
+                          Validator.validatePassword(value!),
                       obscureText: true,
                     ),
                     AuthInput(
@@ -74,9 +74,9 @@ class _RegisterPageState extends State<RegisterPage> {
                       labelText: 'Подтвердите пароль',
                       padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
                       controller: _confirmPassword,
-                      validator: (_) => Validator.validateConfirmPassword(
+                      validator: (value) => Validator.validateConfirmPassword(
                         password: _password.text,
-                        confirmPassword: _confirmPassword.text!,
+                        confirmPassword: value!,
                       ),
                       obscureText: true,
                     ),
