@@ -1,3 +1,4 @@
+import 'package:ecommers/app/pages/pages.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/app_bar.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
@@ -7,7 +8,6 @@ import 'package:ecommers/app/widgets/main_page_widgets/catalog_element.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/gesture_container.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
-import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -25,6 +25,7 @@ class _MainPageState extends State<MainPage> {
         slivers: [
           const MyAppBar(
             page: Pages.main,
+
           ),
           SliverList(
             delegate: SliverChildListDelegate(

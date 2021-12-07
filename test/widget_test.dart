@@ -5,18 +5,15 @@ import 'package:ecommers/app/widgets/auth_widgets/auth_space.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_subtitle.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_title.dart';
 import 'package:ecommers/app/widgets/auth_widgets/button_separator.dart';
-import 'package:ecommers/app/widgets/auth_widgets/auth_navigator.dart';
 import 'package:ecommers/app/widgets/auth_widgets/google_button.dart';
 import 'package:ecommers/app/widgets/auth_widgets/sign_in_button.dart';
 import 'package:ecommers/app/widgets/auth_widgets/sign_up_button.dart';
 import 'package:ecommers/app/widgets/contacts_page_widgets/separator.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
-import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/stick.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/text_element.dart';
-import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:ecommers/core/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -47,20 +44,6 @@ void main() {
           ..addScenario('Consultation', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'consultation');
-      });
-
-      testGoldens('MenuButton', (tester) async {
-        const widget = MenuButton(
-          title: 'ВИНИЛ',
-          padding: EdgeInsets.fromLTRB(5, 25, 25, 0),
-          textStyle: Style.mainButton,
-          page: Pages.contacts,
-        );
-
-        final builder = GoldenBuilder.column()
-          ..addScenario('MenuButton', widget);
-        await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'menu_button');
       });
 
       testGoldens('SectionName', (tester) async {
@@ -147,18 +130,6 @@ void main() {
           ..addScenario('ButtonSeparator', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'button_separator');
-      });
-
-      testGoldens('AuthNavigator', (tester) async {
-        final widget = AuthNavigator(
-          text: 'Ещё не зарегистрированы?',
-          buttonText: 'Создать аккаунт',
-          onPressed: () => NavigationService().navigateTo(Pages.register),
-        );
-        final builder = GoldenBuilder.column()
-          ..addScenario('AuthNavigator', widget);
-        await tester.pumpWidgetBuilder(builder.build());
-        await screenMatchesGolden(tester, 'auth_navigator');
       });
 
       testGoldens('AuthSpace', (tester) async {

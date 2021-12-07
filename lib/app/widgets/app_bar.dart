@@ -1,7 +1,8 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:ecommers/app/pages/pages.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
-import 'package:ecommers/core/service/navigation_service.dart';
 import 'package:flutter/material.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -31,7 +32,7 @@ class MyAppBar extends StatelessWidget {
               style: Style.nameApp,
             ),
             onTap: () {
-              NavigationService().navigateTo(Pages.main);
+              context.router.pushNamed('/');
             },
           ),
         ),
@@ -51,33 +52,32 @@ class MyAppBar extends StatelessWidget {
           title: 'ВИНИЛ',
           padding: _padding,
           textStyle: Style.mainButton,
-          page: Pages.contacts,
+          onTap: () => context.router.pushNamed('/contacts'),
         ),
         MenuButton(
           title: 'АКУСТИКА',
           padding: _padding,
           textStyle: Style.mainButton,
-          page: Pages.contacts,
+          onTap: () => context.router.pushNamed('/contacts'),
         ),
         MenuButton(
           title: 'АКСЕССУАРЫ',
           padding: _padding,
           textStyle: Style.mainButton,
-          page: Pages.contacts,
+          onTap: () => context.router.pushNamed('/contacts'),
         ),
         MenuButton(
           title: 'НОВОСТИ',
           padding: _padding,
           textStyle: Style.mainButton,
-          page: Pages.contacts,
+          onTap: () => context.router.pushNamed('/contacts'),
         ),
         MenuButton(
           title: 'О НАС',
           padding: _padding,
-          textStyle: page == Pages.aboutUs
-              ? Style.mainButtonActive
-              : Style.mainButton,
-          page: Pages.aboutUs,
+          textStyle:
+              page == Pages.aboutUs ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.pushNamed('/aboutUs'),
         ),
         MenuButton(
           title: 'КОНТАКТЫ',
@@ -85,7 +85,7 @@ class MyAppBar extends StatelessWidget {
           textStyle: page == Pages.contacts
               ? Style.mainButtonActive
               : Style.mainButton,
-          page: Pages.contacts,
+          onTap: () => context.router.pushNamed('/contacts'),
         ),
       ],
     );
