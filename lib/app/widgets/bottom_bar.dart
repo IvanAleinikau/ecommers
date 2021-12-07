@@ -96,7 +96,7 @@ class _AppBottomBarState extends State<AppBottomBar> {
                     title: 'О нас',
                     padding: const EdgeInsets.only(top: 15),
                     textStyle: Style.bottomBarElement,
-                    onTap: () => context.router.pushNamed('/contacts'),
+                    onTap: () => context.router.pushNamed('/aboutUs'),
                   ),
                   MenuButton(
                     title: 'Контакты',
