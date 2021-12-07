@@ -103,7 +103,7 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 <script>
-  const firebaseConfig = {
+  var firebaseConfig = {
   apiKey: "AIzaSyAKsFXRKLpIILAqgtTS02sE-XzslyZFal0",
   authDomain: "authentication-52bfb.firebaseapp.com",
   projectId: "authentication-52bfb",
@@ -113,8 +113,7 @@
   measurementId: "G-HXF9D9TKVC"
 };
 
-
-
+firebase.initializeApp(firebaseConfig);
 </script>
 </body>
 </html>

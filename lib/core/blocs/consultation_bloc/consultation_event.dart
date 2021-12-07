@@ -4,9 +4,8 @@ part 'consultation_event.freezed.dart';
 
 @freezed
 abstract class ConsultationEvent with _$ConsultationEvent {
-  factory ConsultationEvent.createRequest() = CreateRequest;
-
-  factory ConsultationEvent.checkValidName(String name) = CheckValidName;
-
-  factory ConsultationEvent.checkValidPhoneNumber(String phoneNumber) = CheckValidPhoneNumber;
+  factory ConsultationEvent.createRequest({
+    required String name,
+    required String phoneNumber,
+  }) = CreateRequest;
 }

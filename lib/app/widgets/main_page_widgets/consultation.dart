@@ -1,6 +1,7 @@
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
+import 'package:ecommers/core/blocs/consultation_bloc/consultation_event.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
 import 'package:ecommers/core/validator.dart';
 import 'package:flutter/material.dart';
@@ -60,8 +61,8 @@ class Consultation extends StatelessWidget {
     final TextEditingController _number = TextEditingController();
     return BlocBuilder<ConsultationBloc, ConsultationState>(
       builder: (context, state) {
-        // final ConsultationBloc _bloc =
-        //     BlocProvider.of<ConsultationBloc>(context);
+        final ConsultationBloc _bloc =
+            BlocProvider.of<ConsultationBloc>(context);
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -90,7 +91,8 @@ class Consultation extends StatelessWidget {
                         labelText: 'Мобильный телефон',
                       ),
                       controller: _number,
-                      validator: (phoneNumber) => Validator.validatePhoneNumber(phoneNumber!),
+                      validator: (phoneNumber) =>
+                          Validator.validatePhoneNumber(phoneNumber!),
                     ),
                   ),
                   Container(
@@ -101,7 +103,13 @@ class Consultation extends StatelessWidget {
                         fixedSize: const Size(500, 60),
                       ),
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {}
+                        if (_formKey.currentState!.validate()) {
+                          _bloc.add(CreateRequest(
+                            name: _name.text,
+                            phoneNumber: _number.text,
+                          ));
+                          Navigator.pop(context);
+                        }
                       },
                       child: const Text(
                         'Заказать бесплатную консультацию',

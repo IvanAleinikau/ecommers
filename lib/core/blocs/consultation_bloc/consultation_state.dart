@@ -6,8 +6,4 @@ part 'consultation_state.freezed.dart';
 abstract class ConsultationState with _$ConsultationState {
   factory ConsultationState.initState() = ConsultationInitState;
 
-  factory ConsultationState.isValid({
-    @Default(false) bool isNameValid,
-    @Default(false) bool isPhoneNumberValid,
-  }) = IsValidNameAndPhone;
 }
