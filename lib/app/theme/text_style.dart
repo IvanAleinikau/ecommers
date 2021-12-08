@@ -116,4 +116,8 @@ class Style {
     fontFamily: 'Montserrat',
     decoration: TextDecoration.none,
   );
+
+  static const montserrat = TextStyle(
+    fontFamily: 'Montserrat',
+  );
 }

@@ -39,7 +39,7 @@ class Consultation extends StatelessWidget {
                   showDialog(
                     context: context,
                     builder: (BuildContext ctx) {
-                      return _consultation(context);
+                      return _consultationForm();
                     },
                   );
                 },
@@ -55,7 +55,7 @@ class Consultation extends StatelessWidget {
     );
   }
 
-  Widget _consultation(context) {
+  Widget _consultationForm() {
     final _formKey = GlobalKey<FormState>();
     final TextEditingController _name = TextEditingController();
     final TextEditingController _number = TextEditingController();
@@ -109,6 +109,17 @@ class Consultation extends StatelessWidget {
                             phoneNumber: _number.text,
                           ));
                           Navigator.pop(context);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              content: Text(
+                                'Ваша заявка принята',
+                                style: Style.montserrat,
+                              ),
+                              backgroundColor: Colors.green,
+                              duration: Duration(seconds: 1),
+                            ),
+                          );
                         }
                       },
                       child: const Text(
