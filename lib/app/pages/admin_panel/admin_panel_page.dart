@@ -1,7 +1,13 @@
 import 'package:ecommers/app/pages/admin_panel/admin_panel_dashboard.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_products.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_requests.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_settings.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_statistics.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_users.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_app_bar.dart';
 import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_button.dart';
+import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_dropdown_button.dart';
 import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_logo.dart';
 import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_separator.dart';
 import 'package:ecommers/core/blocs/admin_panel_bloc/admin_panel_bloc.dart';
@@ -26,7 +32,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
       child: BlocBuilder<AdminPanelBloc, AdminPanelState>(
         builder: (context, state) {
           final AdminPanelBloc _bloc = BlocProvider.of<AdminPanelBloc>(context);
-          final double width = MediaQuery.of(context).size.width/5;
+          final double width = MediaQuery.of(context).size.width / 5;
           return Scaffold(
             backgroundColor: ColorPalette.adminPanelBackground,
             body: Row(
@@ -57,39 +63,64 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           icon: CupertinoIcons.square_grid_2x2_fill,
                           width: width,
                         ),
-                        AdminPanelButton(
+                        AdminPanelDropdownButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Product',
-                          onPressed: () => print('тык'),
+                          onPressed: () => _bloc.add(ShowProducts(
+                            widget: Container(),
+                          )),
                           icon: CupertinoIcons.rectangle_stack_fill,
                           width: width,
+                          buttons: [
+                            AdminPanelButton(
+                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+                              buttonName: 'Something',
+                              onPressed: () => print(''),
+                              icon: Icons.access_time_filled,
+                              width: width,
+                            ),
+                            AdminPanelButton(
+                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+                              buttonName: 'Something',
+                              onPressed: () => print(''),
+                              icon: Icons.access_time_filled,
+                              width: width,
+                            ),
+                            AdminPanelButton(
+                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
+                              buttonName: 'Something',
+                              onPressed: () => print(''),
+                              icon: Icons.access_time_filled,
+                              width: width,
+                            ),
+                          ],
                         ),
                         AdminPanelButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Users',
-                          onPressed: () => print('тык'),
+                          onPressed: () => _bloc.add(ShowUsers()),
                           icon: Icons.account_circle,
                           width: width,
                         ),
                         AdminPanelButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Statistics',
-                          onPressed: () => print('тык'),
-                          icon: Icons.signal_cellular_alt_sharp,
+                          onPressed: () => _bloc.add(ShowStatistics()),
+                          icon: CupertinoIcons.chart_bar_alt_fill,
                           width: width,
                         ),
                         AdminPanelButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Requests',
-                          onPressed: () => print('тык'),
+                          onPressed: () => _bloc.add(ShowRequests()),
                           icon: Icons.chat_outlined,
                           width: width,
                         ),
                         const AdminPanelSeparator(),
                         AdminPanelButton(
-                          padding: const EdgeInsets.fromLTRB(15, 7, 10, 0),
+                          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Settings',
-                          onPressed: () => print('тык'),
+                          onPressed: () => _bloc.add(ShowSettings()),
                           icon: Icons.settings,
                           width: width,
                         ),
@@ -116,6 +147,21 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                         },
                         displayingTheDashboard: () {
                           return const AdminPanelDashboard();
+                        },
+                        displayingTheStatistics: () {
+                          return const AdminPanelStatistics();
+                        },
+                        displayingTheRequests: () {
+                          return const AdminPanelRequests();
+                        },
+                        displayingTheSettings: () {
+                          return const AdminPanelSettings();
+                        },
+                        displayingTheUsers: () {
+                          return const AdminPanelUsers();
+                        },
+                        displayingTheProducts: () {
+                          return const AdminPanelProducts();
                         },
                       ),
                     ],

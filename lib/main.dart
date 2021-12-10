@@ -1,7 +1,6 @@
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/get_it.dart';
 import 'core/router.gr.dart';
