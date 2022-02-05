@@ -141,4 +141,9 @@ class Style {
     decoration: TextDecoration.none,
   );
 
+  static const montserratFs16 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+  );
+
 }

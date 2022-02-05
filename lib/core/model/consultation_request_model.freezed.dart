@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'consultation_request_model.dart';
@@ -18,10 +19,12 @@ class _$ConsultationRequestTearOff {
   const _$ConsultationRequestTearOff();
 
   _ConsultationRequest call(
-      {required String name,
+      {String? id,
+      required String name,
       required String phoneNumber,
       required String email}) {
     return _ConsultationRequest(
+      id: id,
       name: name,
       phoneNumber: phoneNumber,
       email: email,
@@ -34,6 +37,7 @@ const $ConsultationRequest = _$ConsultationRequestTearOff();
 
 /// @nodoc
 mixin _$ConsultationRequest {
+  String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -48,7 +52,7 @@ abstract class $ConsultationRequestCopyWith<$Res> {
   factory $ConsultationRequestCopyWith(
           ConsultationRequest value, $Res Function(ConsultationRequest) then) =
       _$ConsultationRequestCopyWithImpl<$Res>;
-  $Res call({String name, String phoneNumber, String email});
+  $Res call({String? id, String name, String phoneNumber, String email});
 }
 
 /// @nodoc
@@ -62,11 +66,16 @@ class _$ConsultationRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -90,7 +99,7 @@ abstract class _$ConsultationRequestCopyWith<$Res>
           $Res Function(_ConsultationRequest) then) =
       __$ConsultationRequestCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String phoneNumber, String email});
+  $Res call({String? id, String name, String phoneNumber, String email});
 }
 
 /// @nodoc
@@ -106,11 +115,16 @@ class __$ConsultationRequestCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
   }) {
     return _then(_ConsultationRequest(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -131,8 +145,13 @@ class __$ConsultationRequestCopyWithImpl<$Res>
 
 class _$_ConsultationRequest implements _ConsultationRequest {
   _$_ConsultationRequest(
-      {required this.name, required this.phoneNumber, required this.email});
+      {this.id,
+      required this.name,
+      required this.phoneNumber,
+      required this.email});
 
+  @override
+  final String? id;
   @override
   final String name;
   @override
@@ -142,7 +161,7 @@ class _$_ConsultationRequest implements _ConsultationRequest {
 
   @override
   String toString() {
-    return 'ConsultationRequest(name: $name, phoneNumber: $phoneNumber, email: $email)';
+    return 'ConsultationRequest(id: $id, name: $name, phoneNumber: $phoneNumber, email: $email)';
   }
 
   @override
@@ -150,6 +169,7 @@ class _$_ConsultationRequest implements _ConsultationRequest {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ConsultationRequest &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
@@ -159,6 +179,7 @@ class _$_ConsultationRequest implements _ConsultationRequest {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(email));
@@ -172,10 +193,13 @@ class _$_ConsultationRequest implements _ConsultationRequest {
 
 abstract class _ConsultationRequest implements ConsultationRequest {
   factory _ConsultationRequest(
-      {required String name,
+      {String? id,
+      required String name,
       required String phoneNumber,
       required String email}) = _$_ConsultationRequest;
 
+  @override
+  String? get id;
   @override
   String get name;
   @override

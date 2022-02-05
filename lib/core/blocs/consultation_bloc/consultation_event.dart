@@ -8,4 +8,6 @@ abstract class ConsultationEvent with _$ConsultationEvent {
     required String name,
     required String phoneNumber,
   }) = CreateRequest;
+
+  factory ConsultationEvent.fetchRequest() = FetchRequest;
 }

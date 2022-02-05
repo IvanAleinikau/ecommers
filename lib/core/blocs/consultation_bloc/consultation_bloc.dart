@@ -8,23 +8,19 @@ import 'package:get_it/get_it.dart';
 class ConsultationBloc extends Bloc<ConsultationEvent, ConsultationState> {
   final service = GetIt.instance<ConsultationRequestService>();
 
-  ConsultationBloc(ConsultationState initialState)
-      : super(ConsultationState.initState());
+  ConsultationBloc() : super(ConsultationState.initState()) {
+    on<CreateRequest>((event, emit) async {
+      await service.create(
+        ConsultationRequest(
+          name: event.name,
+          phoneNumber: event.phoneNumber,
+          email: 'test@mail.ru',
+        ),
+      );
+    });
 
-  @override
-  Stream<ConsultationState> mapEventToState(ConsultationEvent event) async* {
-    yield* event.map(
-      createRequest: _createRequest,
-    );
-  }
-
-  Stream<ConsultationState> _createRequest(CreateRequest event) async* {
-    await service.create(
-      ConsultationRequest(
-        name: event.name,
-        phoneNumber: event.phoneNumber,
-        email: 'test@mail.ru',
-      ),
-    );
+    on<FetchRequest>((event, emit) async {
+      emit(ConsultationState.content(await service.read()));
+    });
   }
 }

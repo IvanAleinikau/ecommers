@@ -8,4 +8,8 @@ class ConsultationRequestService{
   Future<String> create(ConsultationRequest consultationRequest) async {
     return await _repository.create(consultationRequest);
   }
+
+  Future<List<ConsultationRequest>> read() async {
+    return await _repository.read();
+  }
 }

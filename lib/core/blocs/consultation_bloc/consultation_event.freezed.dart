@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'consultation_event.dart';
@@ -24,6 +25,10 @@ class _$ConsultationEventTearOff {
       phoneNumber: phoneNumber,
     );
   }
+
+  FetchRequest fetchRequest() {
+    return FetchRequest();
+  }
 }
 
 /// @nodoc
@@ -31,44 +36,43 @@ const $ConsultationEvent = _$ConsultationEventTearOff();
 
 /// @nodoc
 mixin _$ConsultationEvent {
-  String get name => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String phoneNumber) createRequest,
+    required TResult Function() fetchRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CreateRequest value) createRequest,
+    required TResult Function(FetchRequest value) fetchRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $ConsultationEventCopyWith<ConsultationEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -77,7 +81,6 @@ abstract class $ConsultationEventCopyWith<$Res> {
   factory $ConsultationEventCopyWith(
           ConsultationEvent value, $Res Function(ConsultationEvent) then) =
       _$ConsultationEventCopyWithImpl<$Res>;
-  $Res call({String name, String phoneNumber});
 }
 
 /// @nodoc
@@ -88,32 +91,13 @@ class _$ConsultationEventCopyWithImpl<$Res>
   final ConsultationEvent _value;
   // ignore: unused_field
   final $Res Function(ConsultationEvent) _then;
-
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? phoneNumber = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $CreateRequestCopyWith<$Res>
-    implements $ConsultationEventCopyWith<$Res> {
+abstract class $CreateRequestCopyWith<$Res> {
   factory $CreateRequestCopyWith(
           CreateRequest value, $Res Function(CreateRequest) then) =
       _$CreateRequestCopyWithImpl<$Res>;
-  @override
   $Res call({String name, String phoneNumber});
 }
 
@@ -186,6 +170,7 @@ class _$CreateRequest implements CreateRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String phoneNumber) createRequest,
+    required TResult Function() fetchRequest,
   }) {
     return createRequest(name, phoneNumber);
   }
@@ -194,6 +179,7 @@ class _$CreateRequest implements CreateRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
   }) {
     return createRequest?.call(name, phoneNumber);
   }
@@ -202,6 +188,7 @@ class _$CreateRequest implements CreateRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
     required TResult orElse(),
   }) {
     if (createRequest != null) {
@@ -214,6 +201,7 @@ class _$CreateRequest implements CreateRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CreateRequest value) createRequest,
+    required TResult Function(FetchRequest value) fetchRequest,
   }) {
     return createRequest(this);
   }
@@ -222,6 +210,7 @@ class _$CreateRequest implements CreateRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
   }) {
     return createRequest?.call(this);
   }
@@ -230,6 +219,7 @@ class _$CreateRequest implements CreateRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
     required TResult orElse(),
   }) {
     if (createRequest != null) {
@@ -243,12 +233,114 @@ abstract class CreateRequest implements ConsultationEvent {
   factory CreateRequest({required String name, required String phoneNumber}) =
       _$CreateRequest;
 
-  @override
   String get name;
-  @override
   String get phoneNumber;
-  @override
   @JsonKey(ignore: true)
   $CreateRequestCopyWith<CreateRequest> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FetchRequestCopyWith<$Res> {
+  factory $FetchRequestCopyWith(
+          FetchRequest value, $Res Function(FetchRequest) then) =
+      _$FetchRequestCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$FetchRequestCopyWithImpl<$Res>
+    extends _$ConsultationEventCopyWithImpl<$Res>
+    implements $FetchRequestCopyWith<$Res> {
+  _$FetchRequestCopyWithImpl(
+      FetchRequest _value, $Res Function(FetchRequest) _then)
+      : super(_value, (v) => _then(v as FetchRequest));
+
+  @override
+  FetchRequest get _value => super._value as FetchRequest;
+}
+
+/// @nodoc
+
+class _$FetchRequest implements FetchRequest {
+  _$FetchRequest();
+
+  @override
+  String toString() {
+    return 'ConsultationEvent.fetchRequest()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is FetchRequest);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String phoneNumber) createRequest,
+    required TResult Function() fetchRequest,
+  }) {
+    return fetchRequest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
+  }) {
+    return fetchRequest?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
+    required TResult orElse(),
+  }) {
+    if (fetchRequest != null) {
+      return fetchRequest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateRequest value) createRequest,
+    required TResult Function(FetchRequest value) fetchRequest,
+  }) {
+    return fetchRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
+  }) {
+    return fetchRequest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
+    required TResult orElse(),
+  }) {
+    if (fetchRequest != null) {
+      return fetchRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FetchRequest implements ConsultationEvent {
+  factory FetchRequest() = _$FetchRequest;
 }

@@ -1,5 +1,4 @@
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
-import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/get_it.dart';
@@ -21,8 +20,7 @@ class Ecommers extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ConsultationBloc>(
-          create: (context) =>
-              ConsultationBloc(ConsultationState.initState()),
+          create: (context) => ConsultationBloc(),
         ),
       ],
       child: MaterialApp.router(

@@ -74,7 +74,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           buttons: [
                             AdminPanelButton(
                               padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-                              buttonName: 'Something',
+                              buttonName: 'Vinyl',
                               onPressed: () => print(''),
                               icon: Icons.access_time_filled,
                               width: width,

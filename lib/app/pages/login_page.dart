@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                   widgets: [
                     const AuthTitle(
                       title: 'Vinyl Collection',
-                      padding: EdgeInsets.fromLTRB(0, 40, 0, 20),
+                      padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
                       style: Style.authTitle,
                     ),
                     const AuthSubtitle(
