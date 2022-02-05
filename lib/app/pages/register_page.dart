@@ -44,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   widgets: [
                     const AuthTitle(
                       title: 'Vinyl Collection',
-                      padding: EdgeInsets.fromLTRB(0, 40, 0, 20),
+                      padding: EdgeInsets.fromLTRB(0, 25, 0, 5),
                       style: Style.authTitle,
                     ),
                     const AuthSubtitle(

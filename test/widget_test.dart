@@ -1,4 +1,7 @@
 import 'package:ecommers/app/theme/text_style.dart';
+import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_button.dart';
+import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_logo.dart';
+import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_separator.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_image.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_input.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_space.dart';
@@ -15,6 +18,7 @@ import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/stick.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/text_element.dart';
 import 'package:ecommers/core/validator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
@@ -178,6 +182,36 @@ void main() {
           ..addScenario('SignUpButton', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'sign_up_button');
+      });
+
+      testGoldens('AdminPanelLogo', (tester) async {
+        const widget = AdminPanelLogo();
+        final builder = GoldenBuilder.column()
+          ..addScenario('AdminPanelLogo', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'admin_panel_logo');
+      });
+
+      testGoldens('AdminPanelSeparator', (tester) async {
+        const widget = AdminPanelSeparator();
+        final builder = GoldenBuilder.column()
+          ..addScenario('AdminPanelSeparator', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'admin_panel_separator');
+      });
+
+      testGoldens('AdminPanelButton', (tester) async {
+        final widget = AdminPanelButton(
+          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
+          buttonName: 'Product',
+          onPressed: () => print('тык'),
+          icon: CupertinoIcons.rectangle_stack_fill,
+          width: 200,
+        );
+        final builder = GoldenBuilder.column()
+          ..addScenario('AdminPanelButton', widget);
+        await tester.pumpWidgetBuilder(builder.build());
+        await screenMatchesGolden(tester, 'admin_panel_button');
       });
     },
   );

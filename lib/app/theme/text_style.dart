@@ -120,4 +120,30 @@ class Style {
   static const montserrat = TextStyle(
     fontFamily: 'Montserrat',
   );
+
+  static final adminPanelTitle = TextStyle(
+    fontFamily: 'Montserrat',
+    color: Colors.lightBlue.shade700,
+    fontWeight: FontWeight.bold,
+    fontSize: 20,
+  );
+
+  static final adminPanelSubtitle = TextStyle(
+    fontFamily: 'Montserrat',
+    color: Colors.lightBlue.shade200,
+    fontSize: 10,
+  );
+
+  static const adminPanelButton = TextStyle(
+    color: Colors.black87,
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+    decoration: TextDecoration.none,
+  );
+
+  static const montserratFs16 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+  );
+
 }

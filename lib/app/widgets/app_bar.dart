@@ -24,10 +24,11 @@ class MyAppBar extends StatelessWidget {
       pinned: true,
       expandedHeight: 400.0,
       flexibleSpace: FlexibleSpaceBar(
+        centerTitle: false,
         title: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            child: const Text(
+            child:  const Text(
               'Vinyl Collection',
               style: Style.nameApp,
             ),
