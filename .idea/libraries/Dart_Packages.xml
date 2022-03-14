@@ -373,13 +373,6 @@
             </list>
           </value>
         </entry>
-        <entry key="golden_toolkit">
-          <value>
-            <list>
-              <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/golden_toolkit-0.10.0/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="graphs">
           <value>
             <list>
@@ -713,7 +706,6 @@
       <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/frontend_server_client-2.1.2/lib" />
       <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-7.2.0/lib" />
       <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.0.2/lib" />
-      <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/golden_toolkit-0.10.0/lib" />
       <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/graphs-2.1.0/lib" />
       <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.15.0/lib" />
       <root url="file://$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/http_multi_server-3.0.1/lib" />

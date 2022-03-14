@@ -1,8 +1,5 @@
+import 'package:ecommers/app/common/dictionary.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
-const accountCreated = 'Account created';
-const welcome = 'Welcome';
-const singOUt = 'singOut';
 
 class AuthRepository {
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -17,14 +14,12 @@ class AuthRepository {
       return accountCreated;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        return 'The password provided is too weak.';
+        return weakPassword;
       } else if (e.code == 'email-already-in-use') {
-        return 'The account already exists for that email.';
+        return accountAlreadyExist;
       }
-    } catch (e) {
-      return 'Error occurred';
     }
-    return 'Please enter email and password';
+    return pleaseEnterEmailAndPassword;
   }
 
   Future<String> signIn({required String email, required String password}) async {
@@ -36,20 +31,20 @@ class AuthRepository {
       return welcome;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        return 'No user found for that email.';
+        return noUserFound;
       } else if (e.code == 'wrong-password') {
-        return 'Wrong password provided for that user.';
+        return wrongPassword;
       }
     }
-    return 'Please enter email and password';
+    return pleaseEnterEmailAndPassword;
   }
 
   Future<String> resetPassword(String newPassword) async {
     try {
       await user!.updatePassword(newPassword);
-      return 'Reset was successful';
+      return resetPasswordSuccessful;
     } catch (e) {
-      return 'Error';
+      return error;
     }
   }
 

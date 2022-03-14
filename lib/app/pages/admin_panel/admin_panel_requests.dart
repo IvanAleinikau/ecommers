@@ -108,7 +108,7 @@ class _Container extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: Style.montserratFs16,
+          style: Style.montserrat16w400,
         ),
       ),
     );

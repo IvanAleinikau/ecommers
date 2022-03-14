@@ -58,7 +58,7 @@ class Style {
     fontSize: 24,
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.bold,
-    color: Colors.white
+    color: Colors.white,
   );
 
   static const catalogName = TextStyle(
@@ -141,9 +141,41 @@ class Style {
     decoration: TextDecoration.none,
   );
 
-  static const montserratFs16 = TextStyle(
-    fontSize: 16,
+  //-------------------------------------------------
+
+  static const montserrat18w400 = TextStyle(
+    fontSize: 18,
     fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
   );
 
+  static const montserrat16w400 = TextStyle(
+    fontSize: 16,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat14w400 = TextStyle(
+    fontSize: 14,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat12w400 = TextStyle(
+    fontSize: 12,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat10w400 = TextStyle(
+    fontSize: 10,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat8w400 = TextStyle(
+    fontSize: 8,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
 }

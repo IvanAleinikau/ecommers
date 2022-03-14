@@ -8,5 +8,7 @@ class RegisterState with _$RegisterState {
 
   const factory RegisterState.successfully() = _Successfully;
 
-  const factory RegisterState.error() = _Error;
+  const factory RegisterState.error({required String message}) = _Error;
+
+  const factory RegisterState.loading() = _Loading;
 }

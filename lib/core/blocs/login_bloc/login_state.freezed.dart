@@ -26,14 +26,18 @@ class _$LoginStateTearOff {
     return const _Successfully();
   }
 
+  _SingOut singOut() {
+    return const _SingOut();
+  }
+
+  _Loading loading() {
+    return const _Loading();
+  }
+
   _Error error({required String message}) {
     return _Error(
       message: message,
     );
-  }
-
-  _SingOut singOut() {
-    return const _SingOut();
   }
 }
 
@@ -46,24 +50,27 @@ mixin _$LoginState {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() successfully,
-    required TResult Function(String message) error,
     required TResult Function() singOut,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,24 +78,27 @@ mixin _$LoginState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitState value) initState,
     required TResult Function(_Successfully value) successfully,
-    required TResult Function(_Error value) error,
     required TResult Function(_SingOut value) singOut,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -151,8 +161,9 @@ class _$_InitState implements _InitState {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() successfully,
-    required TResult Function(String message) error,
     required TResult Function() singOut,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
   }) {
     return initState();
   }
@@ -162,8 +173,9 @@ class _$_InitState implements _InitState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
   }) {
     return initState?.call();
   }
@@ -173,8 +185,9 @@ class _$_InitState implements _InitState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (initState != null) {
@@ -188,8 +201,9 @@ class _$_InitState implements _InitState {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitState value) initState,
     required TResult Function(_Successfully value) successfully,
-    required TResult Function(_Error value) error,
     required TResult Function(_SingOut value) singOut,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return initState(this);
   }
@@ -199,8 +213,9 @@ class _$_InitState implements _InitState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
   }) {
     return initState?.call(this);
   }
@@ -210,8 +225,9 @@ class _$_InitState implements _InitState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (initState != null) {
@@ -267,8 +283,9 @@ class _$_Successfully implements _Successfully {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() successfully,
-    required TResult Function(String message) error,
     required TResult Function() singOut,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
   }) {
     return successfully();
   }
@@ -278,8 +295,9 @@ class _$_Successfully implements _Successfully {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
   }) {
     return successfully?.call();
   }
@@ -289,8 +307,9 @@ class _$_Successfully implements _Successfully {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (successfully != null) {
@@ -304,8 +323,9 @@ class _$_Successfully implements _Successfully {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitState value) initState,
     required TResult Function(_Successfully value) successfully,
-    required TResult Function(_Error value) error,
     required TResult Function(_SingOut value) singOut,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return successfully(this);
   }
@@ -315,8 +335,9 @@ class _$_Successfully implements _Successfully {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
   }) {
     return successfully?.call(this);
   }
@@ -326,8 +347,9 @@ class _$_Successfully implements _Successfully {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (successfully != null) {
@@ -339,6 +361,246 @@ class _$_Successfully implements _Successfully {
 
 abstract class _Successfully implements LoginState {
   const factory _Successfully() = _$_Successfully;
+}
+
+/// @nodoc
+abstract class _$SingOutCopyWith<$Res> {
+  factory _$SingOutCopyWith(_SingOut value, $Res Function(_SingOut) then) =
+      __$SingOutCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SingOutCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$SingOutCopyWith<$Res> {
+  __$SingOutCopyWithImpl(_SingOut _value, $Res Function(_SingOut) _then)
+      : super(_value, (v) => _then(v as _SingOut));
+
+  @override
+  _SingOut get _value => super._value as _SingOut;
+}
+
+/// @nodoc
+
+class _$_SingOut implements _SingOut {
+  const _$_SingOut();
+
+  @override
+  String toString() {
+    return 'LoginState.singOut()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SingOut);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initState,
+    required TResult Function() successfully,
+    required TResult Function() singOut,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+  }) {
+    return singOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function()? successfully,
+    TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+  }) {
+    return singOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function()? successfully,
+    TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (singOut != null) {
+      return singOut();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitState value) initState,
+    required TResult Function(_Successfully value) successfully,
+    required TResult Function(_SingOut value) singOut,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+  }) {
+    return singOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitState value)? initState,
+    TResult Function(_Successfully value)? successfully,
+    TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+  }) {
+    return singOut?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitState value)? initState,
+    TResult Function(_Successfully value)? successfully,
+    TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (singOut != null) {
+      return singOut(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SingOut implements LoginState {
+  const factory _SingOut() = _$_SingOut;
+}
+
+/// @nodoc
+abstract class _$LoadingCopyWith<$Res> {
+  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
+      __$LoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadingCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
+    implements _$LoadingCopyWith<$Res> {
+  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
+      : super(_value, (v) => _then(v as _Loading));
+
+  @override
+  _Loading get _value => super._value as _Loading;
+}
+
+/// @nodoc
+
+class _$_Loading implements _Loading {
+  const _$_Loading();
+
+  @override
+  String toString() {
+    return 'LoginState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Loading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initState,
+    required TResult Function() successfully,
+    required TResult Function() singOut,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function()? successfully,
+    TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function()? successfully,
+    TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitState value) initState,
+    required TResult Function(_Successfully value) successfully,
+    required TResult Function(_SingOut value) singOut,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitState value)? initState,
+    TResult Function(_Successfully value)? successfully,
+    TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitState value)? initState,
+    TResult Function(_Successfully value)? successfully,
+    TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Loading implements LoginState {
+  const factory _Loading() = _$_Loading;
 }
 
 /// @nodoc
@@ -405,8 +667,9 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() successfully,
-    required TResult Function(String message) error,
     required TResult Function() singOut,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
   }) {
     return error(message);
   }
@@ -416,8 +679,9 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
   }) {
     return error?.call(message);
   }
@@ -427,8 +691,9 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? successfully,
-    TResult Function(String message)? error,
     TResult Function()? singOut,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -442,8 +707,9 @@ class _$_Error implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_InitState value) initState,
     required TResult Function(_Successfully value) successfully,
-    required TResult Function(_Error value) error,
     required TResult Function(_SingOut value) singOut,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Error value) error,
   }) {
     return error(this);
   }
@@ -453,8 +719,9 @@ class _$_Error implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
   }) {
     return error?.call(this);
   }
@@ -464,8 +731,9 @@ class _$_Error implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitState value)? initState,
     TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
     TResult Function(_SingOut value)? singOut,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -481,118 +749,4 @@ abstract class _Error implements LoginState {
   String get message;
   @JsonKey(ignore: true)
   _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SingOutCopyWith<$Res> {
-  factory _$SingOutCopyWith(_SingOut value, $Res Function(_SingOut) then) =
-      __$SingOutCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SingOutCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
-    implements _$SingOutCopyWith<$Res> {
-  __$SingOutCopyWithImpl(_SingOut _value, $Res Function(_SingOut) _then)
-      : super(_value, (v) => _then(v as _SingOut));
-
-  @override
-  _SingOut get _value => super._value as _SingOut;
-}
-
-/// @nodoc
-
-class _$_SingOut implements _SingOut {
-  const _$_SingOut();
-
-  @override
-  String toString() {
-    return 'LoginState.singOut()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SingOut);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initState,
-    required TResult Function() successfully,
-    required TResult Function(String message) error,
-    required TResult Function() singOut,
-  }) {
-    return singOut();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initState,
-    TResult Function()? successfully,
-    TResult Function(String message)? error,
-    TResult Function()? singOut,
-  }) {
-    return singOut?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initState,
-    TResult Function()? successfully,
-    TResult Function(String message)? error,
-    TResult Function()? singOut,
-    required TResult orElse(),
-  }) {
-    if (singOut != null) {
-      return singOut();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_InitState value) initState,
-    required TResult Function(_Successfully value) successfully,
-    required TResult Function(_Error value) error,
-    required TResult Function(_SingOut value) singOut,
-  }) {
-    return singOut(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitState value)? initState,
-    TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
-    TResult Function(_SingOut value)? singOut,
-  }) {
-    return singOut?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_InitState value)? initState,
-    TResult Function(_Successfully value)? successfully,
-    TResult Function(_Error value)? error,
-    TResult Function(_SingOut value)? singOut,
-    required TResult orElse(),
-  }) {
-    if (singOut != null) {
-      return singOut(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SingOut implements LoginState {
-  const factory _SingOut() = _$_SingOut;
 }

@@ -1,3 +1,5 @@
+import 'package:ecommers/app/common/empty_widget.dart';
+import 'package:ecommers/app/message/message.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_image.dart';
@@ -29,6 +31,8 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
+  final ValueNotifier<bool> _isLoading = ValueNotifier<bool>(false);
+
   final LoginCubit _cubit = LoginCubit();
 
   @override
@@ -43,16 +47,6 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void _message(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        backgroundColor: Colors.red,
-        content: Text(message),
-        duration: const Duration(seconds: 1),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,78 +55,94 @@ class _LoginPageState extends State<LoginPage> {
         listener: (BuildContext context, state) {
           state.maybeWhen(
             successfully: () => context.router.replace(const MainRoute()),
-            error: (String message) => _message(message),
+            loading: () => _isLoading.value = true,
+            error: (String message) {
+              _isLoading.value = false;
+              showErrorAuthMessage(message: message, context: context);
+            },
             orElse: () {},
           );
         },
         builder: (BuildContext context, state) {
-          return Container(
-            decoration: const BoxDecoration(color: ColorPalette.authBackground),
-            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 200),
-            child: Row(
-              children: [
-                const Expanded(
-                  flex: 1,
-                  child: AuthImage(),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Form(
-                    key: _formKey,
-                    child: AuthSpace(
-                      widgets: [
-                        const AuthTitle(
-                          title: 'Vinyl Collection',
-                          padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
-                          style: Style.authTitle,
+          return Column(
+            children: [
+              ValueListenableBuilder(
+                valueListenable: _isLoading,
+                builder: (context, bool isLoading, child) {
+                  return isLoading ? const LinearProgressIndicator() : const EmptyWidget();
+                },
+              ),
+              Expanded(
+                child: Container(
+                  decoration: const BoxDecoration(color: ColorPalette.authBackground),
+                  padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 200),
+                  child: Row(
+                    children: [
+                      const Expanded(
+                        flex: 1,
+                        child: AuthImage(),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Form(
+                          key: _formKey,
+                          child: AuthSpace(
+                            widgets: [
+                              const AuthTitle(
+                                title: 'Vinyl Collection',
+                                padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
+                                style: Style.authTitle,
+                              ),
+                              const AuthSubtitle(
+                                subtitle: 'Добро пожаловать в Vinyl Collection',
+                                padding: EdgeInsets.only(bottom: 7),
+                                style: Style.authSubtitle,
+                              ),
+                              AuthInput(
+                                hintText: 'Введите почту',
+                                labelText: 'Почта',
+                                padding: const EdgeInsets.fromLTRB(150, 30, 150, 0),
+                                controller: _email,
+                                validator: (value) => Validator.validateEmail(value!),
+                                obscureText: false,
+                              ),
+                              AuthInput(
+                                hintText: 'Введите пароль',
+                                labelText: 'Пароль',
+                                padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
+                                controller: _password,
+                                validator: (value) => Validator.validateNotNull(value!),
+                                obscureText: true,
+                              ),
+                              SignInButton(
+                                text: 'Войти',
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    _cubit.onSingIn(email: _email.text, password: _password.text);
+                                  }
+                                },
+                                padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
+                              ),
+                              const ButtonSeparator(),
+                              GoogleButton(
+                                padding: const EdgeInsets.fromLTRB(30, 15, 0, 15),
+                                onPressed: () => print('тык2'),
+                                text: 'Sing in with Google',
+                              ),
+                              AuthNavigator(
+                                text: 'Ещё не зарегистрированы?',
+                                buttonText: 'Создать аккаунт',
+                                onPressed: () => context.router.navigate(const RegisterRoute()),
+                              ),
+                            ],
+                          ),
                         ),
-                        const AuthSubtitle(
-                          subtitle: 'Добро пожаловать в Vinyl Collection',
-                          padding: EdgeInsets.only(bottom: 7),
-                          style: Style.authSubtitle,
-                        ),
-                        AuthInput(
-                          hintText: 'Введите почту',
-                          labelText: 'Почта',
-                          padding: const EdgeInsets.fromLTRB(150, 30, 150, 0),
-                          controller: _email,
-                          validator: (value) => Validator.validateEmail(value!),
-                          obscureText: false,
-                        ),
-                        AuthInput(
-                          hintText: 'Введите пароль',
-                          labelText: 'Пароль',
-                          padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
-                          controller: _password,
-                          validator: (value) => Validator.validateNotNull(value!),
-                          obscureText: true,
-                        ),
-                        SignInButton(
-                          text: 'Войти',
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _cubit.onSingIn(email: _email.text, password: _password.text);
-                            }
-                          },
-                          padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
-                        ),
-                        const ButtonSeparator(),
-                        GoogleButton(
-                          padding: const EdgeInsets.fromLTRB(30, 15, 0, 15),
-                          onPressed: () => print('тык2'),
-                          text: 'Sing in with Google',
-                        ),
-                        AuthNavigator(
-                          text: 'Ещё не зарегистрированы?',
-                          buttonText: 'Создать аккаунт',
-                          onPressed: () => context.router.navigate(const RegisterRoute()),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           );
         },
       ),

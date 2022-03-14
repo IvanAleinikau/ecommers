@@ -1,5 +1,5 @@
+import 'package:ecommers/app/common/dictionary.dart';
 import 'package:ecommers/core/blocs/login_bloc/login_state.dart';
-import 'package:ecommers/data/repository/auth_repository.dart';
 import 'package:ecommers/data/service/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,9 +21,12 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   void onSingIn({required String email, required String password}) async {
+    emit(const LoginState.loading());
     final result = await service.singIn(email: email, password: password);
     if (result == welcome) {
       emit(const LoginState.successfully());
+    } else {
+      emit(LoginState.error(message: result));
     }
   }
 

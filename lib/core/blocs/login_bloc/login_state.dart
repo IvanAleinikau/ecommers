@@ -8,9 +8,9 @@ class LoginState with _$LoginState {
 
   const factory LoginState.successfully() = _Successfully;
 
-  const factory LoginState.error({
-    required String message,
-  }) = _Error;
-
   const factory LoginState.singOut() = _SingOut;
+
+  const factory LoginState.loading() = _Loading;
+
+  const factory LoginState.error({required String message}) = _Error;
 }
