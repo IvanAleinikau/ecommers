@@ -3,17 +3,37 @@ import 'package:ecommers/app/pages/pages.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
+import 'package:ecommers/core/blocs/login_bloc/login_cubit.dart';
+import 'package:ecommers/core/blocs/login_bloc/login_state.dart';
+import 'package:ecommers/core/router/router.gr.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MyAppBar extends StatelessWidget {
-  final _padding = const EdgeInsets.fromLTRB(5, 25, 25, 0);
-
+class MyAppBar extends StatefulWidget {
   final Pages page;
 
   const MyAppBar({
     Key? key,
     required this.page,
   }) : super(key: key);
+
+  @override
+  State<MyAppBar> createState() => _MyAppBarState();
+}
+
+class _MyAppBarState extends State<MyAppBar> {
+  final _padding = const EdgeInsets.fromLTRB(5, 25, 25, 0);
+  late User? _user;
+  late LoginCubit _cubit;
+
+  @override
+  void initState() {
+    _user = FirebaseAuth.instance.currentUser;
+    _cubit = LoginCubit();
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +48,12 @@ class MyAppBar extends StatelessWidget {
         title: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            child:  const Text(
+            child: const Text(
               'Vinyl Collection',
               style: Style.nameApp,
             ),
             onTap: () {
-              context.router.pushNamed('/');
+              context.router.navigate(const MainRoute());
             },
           ),
         ),
@@ -76,19 +96,60 @@ class MyAppBar extends StatelessWidget {
         MenuButton(
           title: 'О НАС',
           padding: _padding,
-          textStyle:
-              page == Pages.aboutUs ? Style.mainButtonActive : Style.mainButton,
-          onTap: () => context.router.pushNamed('/aboutUs'),
+          textStyle: widget.page == Pages.aboutUs ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.navigate(const AboutUsRoute()),
         ),
         MenuButton(
           title: 'КОНТАКТЫ',
           padding: _padding,
-          textStyle: page == Pages.contacts
-              ? Style.mainButtonActive
-              : Style.mainButton,
-          onTap: () => context.router.pushNamed('/contacts'),
+          textStyle: widget.page == Pages.contacts ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.navigate(const ContactsRoute()),
+        ),
+        BlocConsumer<LoginCubit, LoginState>(
+          bloc: _cubit,
+          listener: (BuildContext context, state) {
+            state.maybeWhen(
+              singOut: () {
+                context.router.navigate(const LoginRoute());
+              },
+              orElse: () {},
+            );
+          },
+          builder: (BuildContext context, state) {
+            return Padding(
+              padding: const EdgeInsets.only(top: 15, right: 20),
+              child: InkWell(
+                onTap: () => _accountMenu(context),
+                borderRadius: BorderRadius.circular(20),
+                child: const Icon(
+                  Icons.account_circle_rounded,
+                  size: 40,
+                ),
+              ),
+            );
+          },
         ),
       ],
+    );
+  }
+
+  void _accountMenu(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierColor: Colors.black12,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          elevation: 5,
+          alignment: const Alignment(1, -0.85),
+          children: [
+            Text('${_user?.email}'),
+            TextButton(
+              onPressed: () => _cubit.singOut(),
+              child: Text('Выйти'),
+            ),
+          ],
+        );
+      },
     );
   }
 }

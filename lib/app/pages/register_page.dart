@@ -7,9 +7,13 @@ import 'package:ecommers/app/widgets/auth_widgets/auth_space.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_subtitle.dart';
 import 'package:ecommers/app/widgets/auth_widgets/auth_title.dart';
 import 'package:ecommers/app/widgets/auth_widgets/sign_up_button.dart';
-import 'package:ecommers/core/validator.dart';
+import 'package:ecommers/core/blocs/register_bloc/register_cubit.dart';
+import 'package:ecommers/core/blocs/register_bloc/register_state.dart';
+import 'package:ecommers/core/router/router.gr.dart';
+import 'package:ecommers/core/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -24,80 +28,125 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _password = TextEditingController();
   final TextEditingController _confirmPassword = TextEditingController();
 
+  final RegisterCubit _cubit = RegisterCubit();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    _confirmPassword.dispose();
+    super.dispose();
+  }
+
+  void _message() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        backgroundColor: Colors.green,
+        content: Text('Успешно!'),
+        duration: Duration(seconds: 1),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(color: ColorPalette.authBackground),
-        padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 200),
-        child: Row(
-          children: [
-            const Expanded(
-              flex: 1,
-              child: AuthImage(),
-            ),
-            Expanded(
-              flex: 1,
-              child: Form(
-                key: _formKey,
-                child: AuthSpace(
-                  widgets: [
-                    const AuthTitle(
-                      title: 'Vinyl Collection',
-                      padding: EdgeInsets.fromLTRB(0, 25, 0, 5),
-                      style: Style.authTitle,
-                    ),
-                    const AuthSubtitle(
-                      subtitle: 'Добро пожаловать в Vinyl Collection',
-                      padding: EdgeInsets.only(bottom: 7),
-                      style: Style.authSubtitle,
-                    ),
-                    AuthInput(
-                      hintText: 'Введите почту',
-                      labelText: 'Почта',
-                      padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
-                      controller: _email,
-                      validator: (value) => Validator.validateEmail(value!),
-                      obscureText: false,
-                    ),
-                    AuthInput(
-                      hintText: 'Введите пароль',
-                      labelText: 'Пароль',
-                      padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
-                      controller: _password,
-                      validator: (value) =>
-                          Validator.validatePassword(value!),
-                      obscureText: true,
-                    ),
-                    AuthInput(
-                      hintText: 'Введите пароль',
-                      labelText: 'Подтвердите пароль',
-                      padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
-                      controller: _confirmPassword,
-                      validator: (value) => Validator.validateConfirmPassword(
-                        password: _password.text,
-                        confirmPassword: value!,
-                      ),
-                      obscureText: true,
-                    ),
-                    SignUpButton(
-                      text: 'Зарегистрироваться',
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {}
-                      },
-                      padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
-                    ),
-                    AuthNavigator(
-                      text: 'Уже зарегистрированы?',
-                      buttonText: 'Войти',
-                      onPressed: () => context.router.pushNamed('/login'),
-                    ),
-                  ],
+      body: BlocConsumer<RegisterCubit, RegisterState>(
+        bloc: _cubit,
+        listener: (BuildContext context, state) {
+          state.maybeWhen(
+            successfully: () {
+              _message();
+              Future.delayed(const Duration(milliseconds: 1500), () {
+                context.router.replace(const MainRoute());
+              });
+            },
+            orElse: () {},
+          );
+        },
+        builder: (BuildContext context, state) {
+          return Container(
+            decoration: const BoxDecoration(color: ColorPalette.authBackground),
+            padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 200),
+            child: Row(
+              children: [
+                const Expanded(
+                  flex: 1,
+                  child: AuthImage(),
                 ),
-              ),
+                Expanded(
+                  flex: 1,
+                  child: Form(
+                    key: _formKey,
+                    child: AuthSpace(
+                      widgets: [
+                        const AuthTitle(
+                          title: 'Vinyl Collection',
+                          padding: EdgeInsets.fromLTRB(0, 25, 0, 5),
+                          style: Style.authTitle,
+                        ),
+                        const AuthSubtitle(
+                          subtitle: 'Добро пожаловать в Vinyl Collection',
+                          padding: EdgeInsets.only(bottom: 7),
+                          style: Style.authSubtitle,
+                        ),
+                        AuthInput(
+                          hintText: 'Введите почту',
+                          labelText: 'Почта',
+                          padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
+                          controller: _email,
+                          validator: (value) => Validator.validateEmail(value!),
+                          obscureText: false,
+                        ),
+                        AuthInput(
+                          hintText: 'Введите пароль',
+                          labelText: 'Пароль',
+                          padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
+                          controller: _password,
+                          validator: (value) => Validator.validatePassword(value!),
+                          obscureText: true,
+                        ),
+                        AuthInput(
+                          hintText: 'Введите пароль',
+                          labelText: 'Подтвердите пароль',
+                          padding: const EdgeInsets.fromLTRB(150, 25, 150, 0),
+                          controller: _confirmPassword,
+                          validator: (value) => Validator.validateConfirmPassword(
+                            password: _password.text,
+                            confirmPassword: value!,
+                          ),
+                          obscureText: true,
+                        ),
+                        SignUpButton(
+                          text: 'Зарегистрироваться',
+                          onPressed: () {
+                            if (_formKey.currentState!.validate()) {
+                              _cubit.onRegister(
+                                email: _email.text,
+                                password: _password.text,
+                              );
+                            }
+                          },
+                          padding: const EdgeInsets.fromLTRB(20, 30, 20, 25),
+                        ),
+                        AuthNavigator(
+                          text: 'Уже зарегистрированы?',
+                          buttonText: 'Войти',
+                          onPressed: () => context.router.navigate(const LoginRoute()),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }

@@ -25,7 +25,6 @@ class _MainPageState extends State<MainPage> {
         slivers: [
           const MyAppBar(
             page: Pages.main,
-
           ),
           SliverList(
             delegate: SliverChildListDelegate(

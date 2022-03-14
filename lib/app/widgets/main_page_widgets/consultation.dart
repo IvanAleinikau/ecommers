@@ -3,7 +3,7 @@ import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_event.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
-import 'package:ecommers/core/validator.dart';
+import 'package:ecommers/core/utils/validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -61,8 +61,7 @@ class Consultation extends StatelessWidget {
     final TextEditingController _number = TextEditingController();
     return BlocBuilder<ConsultationBloc, ConsultationState>(
       builder: (context, state) {
-        final ConsultationBloc _bloc =
-            BlocProvider.of<ConsultationBloc>(context);
+        final ConsultationBloc _bloc = BlocProvider.of<ConsultationBloc>(context);
         return AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -91,8 +90,7 @@ class Consultation extends StatelessWidget {
                         labelText: 'Мобильный телефон',
                       ),
                       controller: _number,
-                      validator: (phoneNumber) =>
-                          Validator.validatePhoneNumber(phoneNumber!),
+                      validator: (phoneNumber) => Validator.validatePhoneNumber(phoneNumber!),
                     ),
                   ),
                   Container(

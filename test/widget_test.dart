@@ -17,7 +17,7 @@ import 'package:ecommers/app/widgets/main_page_widgets/consultation.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/section_name.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/stick.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/text_element.dart';
-import 'package:ecommers/core/validator.dart';
+import 'package:ecommers/core/utils/validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -36,16 +36,14 @@ void main() {
 
       testGoldens('Separator', (tester) async {
         const widget = Separator();
-        final builder = GoldenBuilder.column()
-          ..addScenario('Separator', widget);
+        final builder = GoldenBuilder.column()..addScenario('Separator', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'separator');
       });
 
       testGoldens('Consultation', (tester) async {
         const widget = Consultation();
-        final builder = GoldenBuilder.column()
-          ..addScenario('Consultation', widget);
+        final builder = GoldenBuilder.column()..addScenario('Consultation', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'consultation');
       });
@@ -56,8 +54,7 @@ void main() {
           style: Style.catalog,
         );
 
-        final builder = GoldenBuilder.column()
-          ..addScenario('SectionName', widget);
+        final builder = GoldenBuilder.column()..addScenario('SectionName', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'section_name');
       });
@@ -74,16 +71,14 @@ void main() {
           text: 'ИП Алейников Иван Сергеевич',
           value: 5,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('TextElement', widget);
+        final builder = GoldenBuilder.column()..addScenario('TextElement', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'text_element');
       });
 
       testGoldens('AuthImage', (tester) async {
         const widget = AuthImage();
-        final builder = GoldenBuilder.column()
-          ..addScenario('AuthImage', widget);
+        final builder = GoldenBuilder.column()..addScenario('AuthImage', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'auth_image');
       });
@@ -98,8 +93,7 @@ void main() {
           validator: (value) => Validator.validateName(value!),
           obscureText: true,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('AuthInput', widget);
+        final builder = GoldenBuilder.column()..addScenario('AuthInput', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'auth_input');
       });
@@ -110,8 +104,7 @@ void main() {
           padding: EdgeInsets.zero,
           style: Style.authSubtitle,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('AuthSubtitle', widget);
+        final builder = GoldenBuilder.column()..addScenario('AuthSubtitle', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'auth_subtitle');
       });
@@ -122,24 +115,21 @@ void main() {
           padding: EdgeInsets.zero,
           style: Style.authTitle,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('AuthTitle', widget);
+        final builder = GoldenBuilder.column()..addScenario('AuthTitle', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'auth_title');
       });
 
       testGoldens('ButtonSeparator', (tester) async {
         const widget = ButtonSeparator();
-        final builder = GoldenBuilder.column()
-          ..addScenario('ButtonSeparator', widget);
+        final builder = GoldenBuilder.column()..addScenario('ButtonSeparator', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'button_separator');
       });
 
       testGoldens('AuthSpace', (tester) async {
         const widget = AuthSpace(widgets: []);
-        final builder = GoldenBuilder.column()
-          ..addScenario('AuthSpace', widget);
+        final builder = GoldenBuilder.column()..addScenario('AuthSpace', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'auth_space');
       });
@@ -154,8 +144,7 @@ void main() {
             text: '',
           ),
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('GoogleButton', widget);
+        final builder = GoldenBuilder.column()..addScenario('GoogleButton', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'google_button');
       });
@@ -166,8 +155,7 @@ void main() {
           onPressed: () => print('тык'),
           padding: EdgeInsets.zero,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('SingInButton', widget);
+        final builder = GoldenBuilder.column()..addScenario('SingInButton', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'sing_in_button');
       });
@@ -178,24 +166,21 @@ void main() {
           onPressed: () => print('тык'),
           padding: EdgeInsets.zero,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('SignUpButton', widget);
+        final builder = GoldenBuilder.column()..addScenario('SignUpButton', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'sign_up_button');
       });
 
       testGoldens('AdminPanelLogo', (tester) async {
         const widget = AdminPanelLogo();
-        final builder = GoldenBuilder.column()
-          ..addScenario('AdminPanelLogo', widget);
+        final builder = GoldenBuilder.column()..addScenario('AdminPanelLogo', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'admin_panel_logo');
       });
 
       testGoldens('AdminPanelSeparator', (tester) async {
         const widget = AdminPanelSeparator();
-        final builder = GoldenBuilder.column()
-          ..addScenario('AdminPanelSeparator', widget);
+        final builder = GoldenBuilder.column()..addScenario('AdminPanelSeparator', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'admin_panel_separator');
       });
@@ -208,8 +193,7 @@ void main() {
           icon: CupertinoIcons.rectangle_stack_fill,
           width: 200,
         );
-        final builder = GoldenBuilder.column()
-          ..addScenario('AdminPanelButton', widget);
+        final builder = GoldenBuilder.column()..addScenario('AdminPanelButton', widget);
         await tester.pumpWidgetBuilder(builder.build());
         await screenMatchesGolden(tester, 'admin_panel_button');
       });
