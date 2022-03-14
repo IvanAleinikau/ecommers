@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                               const ButtonSeparator(),
                               GoogleButton(
                                 padding: const EdgeInsets.fromLTRB(30, 15, 0, 15),
-                                onPressed: () => print('тык2'),
+                                onPressed: () => _cubit.onSingInWithGoogle(),
                                 text: 'Sing in with Google',
                               ),
                               AuthNavigator(

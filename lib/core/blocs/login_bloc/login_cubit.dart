@@ -30,6 +30,16 @@ class LoginCubit extends Cubit<LoginState> {
     }
   }
 
+  void onSingInWithGoogle() async {
+    emit(const LoginState.loading());
+    final result = await service.singInWithGoogle();
+    if (result == welcome) {
+      emit(const LoginState.successfully());
+    } else {
+      emit(LoginState.error(message: result));
+    }
+  }
+
   void singOut() async {
     final result = await service.singOut();
     if (result == singOUt) {

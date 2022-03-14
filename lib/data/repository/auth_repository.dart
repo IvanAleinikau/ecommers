@@ -1,7 +1,9 @@
 import 'package:ecommers/app/common/dictionary.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in_web/google_sign_in_web.dart';
 
 class AuthRepository {
+  GoogleAuthProvider authProvider = GoogleAuthProvider();
   FirebaseAuth auth = FirebaseAuth.instance;
   User? user = FirebaseAuth.instance.currentUser;
 
@@ -28,6 +30,20 @@ class AuthRepository {
         email: email,
         password: password,
       );
+      return welcome;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return noUserFound;
+      } else if (e.code == 'wrong-password') {
+        return wrongPassword;
+      }
+    }
+    return pleaseEnterEmailAndPassword;
+  }
+
+  Future<String> signInWithGoogle() async {
+    try {
+      await auth.signInWithPopup(authProvider);
       return welcome;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
