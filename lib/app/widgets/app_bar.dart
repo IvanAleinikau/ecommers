@@ -31,7 +31,6 @@ class _MyAppBarState extends State<MyAppBar> {
   void initState() {
     _user = FirebaseAuth.instance.currentUser;
     _cubit = LoginCubit();
-    // TODO: implement initState
     super.initState();
   }
 
@@ -123,7 +122,7 @@ class _MyAppBarState extends State<MyAppBar> {
                 borderRadius: BorderRadius.circular(20),
                 child: const Icon(
                   Icons.account_circle_rounded,
-                  size: 40,
+                  size: 30,
                 ),
               ),
             );
@@ -142,14 +141,106 @@ class _MyAppBarState extends State<MyAppBar> {
           elevation: 5,
           alignment: const Alignment(1, -0.85),
           children: [
-            Text('${_user?.email}'),
-            TextButton(
-              onPressed: () => _cubit.singOut(),
-              child: Text('Выйти'),
+            SizedBox(
+              height: 100,
+              child: Stack(
+                children: [
+                  ClipPath(
+                    clipper: _CircleNeckline(),
+                    child: Container(
+                      height: 70,
+                      color: Colors.grey.shade500,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Align(
+                    alignment: const Alignment(0, 0.9),
+                    child: Icon(
+                      Icons.account_circle_rounded,
+                      size: 58,
+                      color: Colors.grey.shade500,
+                    ),
+                  ),
+                  const Align(
+                    alignment: Alignment(0, -0.7),
+                    child: Text(
+                      'Имя',
+                      style: Style.montserrat16w400,
+                    ),
+                  ),
+                  Align(
+                    alignment: const Alignment(0.95, 0.15),
+                    child: InkWell(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.create_outlined,
+                        size: 18,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Center(
+              child: Text(
+                '${_user?.email}',
+                style: Style.montserrat14w400,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(),
+            const SizedBox(
+              height: 5,
+            ),
+            Center(
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => _cubit.singOut(),
+                  child: const Text(
+                    'Выйти',
+                    style: Style.montserrat14w400,
+                  ),
+                ),
+              ),
             ),
           ],
         );
       },
     );
   }
+}
+
+class _CircleNeckline extends CustomClipper<Path> {
+  final double radius = 30;
+
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+
+    path.lineTo(0, size.height);
+    path.lineTo(size.width / 2 - radius, size.height);
+    path.arcToPoint(
+      Offset(size.width / 2, size.height - radius),
+      radius: Radius.circular(radius),
+    );
+    path.arcToPoint(
+      Offset(size.width / 2 + radius, size.height),
+      radius: Radius.circular(radius),
+    );
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width, 0);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(_CircleNeckline oldClipper) => oldClipper != this;
 }
