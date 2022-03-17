@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:ecommers/app/pages/pages.dart';
+import 'package:ecommers/app/common/enums/pages.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/main_page_widgets/menu_button.dart';
@@ -71,26 +71,26 @@ class _MyAppBarState extends State<MyAppBar> {
         MenuButton(
           title: 'ВИНИЛ',
           padding: _padding,
-          textStyle: Style.mainButton,
-          onTap: () => context.router.pushNamed('/contacts'),
+          textStyle: widget.page == Pages.vinyl ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.navigate(const VinylRoute()),
         ),
         MenuButton(
           title: 'АКУСТИКА',
           padding: _padding,
-          textStyle: Style.mainButton,
-          onTap: () => context.router.pushNamed('/contacts'),
+          textStyle: widget.page == Pages.acoustics ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.navigate(const AcousticsRoute()),
         ),
         MenuButton(
           title: 'АКСЕССУАРЫ',
           padding: _padding,
-          textStyle: Style.mainButton,
-          onTap: () => context.router.pushNamed('/contacts'),
+          textStyle: widget.page == Pages.accessories ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.navigate(const AccessoriesRoute()),
         ),
         MenuButton(
           title: 'НОВОСТИ',
           padding: _padding,
-          textStyle: Style.mainButton,
-          onTap: () => context.router.pushNamed('/contacts'),
+          textStyle: widget.page == Pages.news ? Style.mainButtonActive : Style.mainButton,
+          onTap: () => context.router.navigate(const NewsRoute()),
         ),
         MenuButton(
           title: 'О НАС',

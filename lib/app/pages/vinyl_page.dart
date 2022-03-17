@@ -1,32 +1,30 @@
 import 'package:ecommers/app/common/enums/pages.dart';
 import 'package:ecommers/app/widgets/app_bar.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
-import 'package:ecommers/app/widgets/contacts_page_widgets/separator.dart';
-import 'package:ecommers/app/widgets/main_page_widgets/about_us.dart';
 import 'package:flutter/material.dart';
 
-class AboutUsPage extends StatefulWidget {
-  const AboutUsPage({Key? key}) : super(key: key);
+class VinylPage extends StatefulWidget {
+  const VinylPage({Key? key}) : super(key: key);
 
   @override
-  _AboutUsPageState createState() => _AboutUsPageState();
+  _VinylPageState createState() => _VinylPageState();
 }
 
-class _AboutUsPageState extends State<AboutUsPage> {
+class _VinylPageState extends State<VinylPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           const MyAppBar(
-            page: Pages.aboutUs,
+            page: Pages.vinyl,
           ),
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                const Separator(),
-                const AboutUs(),
-                const Separator(),
+                const SizedBox(
+                  height: 100,
+                ),
                 const AppBottomBar(),
               ],
             ),

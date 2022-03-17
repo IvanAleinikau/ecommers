@@ -1,4 +1,4 @@
-import 'package:ecommers/app/pages/pages.dart';
+import 'package:ecommers/app/common/enums/pages.dart';
 import 'package:ecommers/app/widgets/app_bar.dart';
 import 'package:ecommers/app/widgets/bottom_bar.dart';
 import 'package:ecommers/app/widgets/contacts_page_widgets/contacts.dart';
