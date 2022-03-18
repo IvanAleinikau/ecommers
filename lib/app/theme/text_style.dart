@@ -143,6 +143,30 @@ class Style {
 
   //-------------------------------------------------
 
+  static const montserrat30w400 = TextStyle(
+    fontSize: 30,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat24w400 = TextStyle(
+    fontSize: 24,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat22w400 = TextStyle(
+    fontSize: 22,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const montserrat20w400 = TextStyle(
+    fontSize: 20,
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w400,
+  );
+
   static const montserrat18w400 = TextStyle(
     fontSize: 18,
     fontFamily: 'Montserrat',

@@ -27,5 +27,9 @@ class AdminPanelBloc extends Bloc<AdminPanelEvent, AdminPanelState> {
     on<ShowProducts>((event, emit) {
       emit(AdminPanelState.displayingTheProducts());
     });
+
+    on<ShowNews>((event, emit) {
+      emit(AdminPanelState.displayingTheNews());
+    });
   }
 }

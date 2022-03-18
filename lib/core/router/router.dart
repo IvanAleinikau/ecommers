@@ -6,7 +6,7 @@ import 'package:ecommers/app/pages/admin_panel/admin_panel_page.dart';
 import 'package:ecommers/app/pages/contacts_page.dart';
 import 'package:ecommers/app/pages/login_page.dart';
 import 'package:ecommers/app/pages/main_page.dart';
-import 'package:ecommers/app/pages/news_page.dart';
+import 'package:ecommers/app/pages/news/news_page.dart';
 import 'package:ecommers/app/pages/register_page.dart';
 import 'package:ecommers/app/pages/vinyl_page.dart';
 

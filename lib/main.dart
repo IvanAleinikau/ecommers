@@ -1,6 +1,7 @@
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'core/blocs/news_bloc/news_cubit.dart';
 import 'core/di/get_it.dart';
 import 'core/router/router.gr.dart';
 
@@ -21,6 +22,9 @@ class Ecommers extends StatelessWidget {
       providers: [
         BlocProvider<ConsultationBloc>(
           create: (context) => ConsultationBloc(),
+        ),
+        BlocProvider<NewsCubit>(
+          create: (context) => NewsCubit(),
         ),
       ],
       child: MaterialApp.router(

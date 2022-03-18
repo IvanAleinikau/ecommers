@@ -20,7 +20,7 @@ import '../../app/pages/admin_panel/admin_panel_page.dart' as _i5;
 import '../../app/pages/contacts_page.dart' as _i2;
 import '../../app/pages/login_page.dart' as _i1;
 import '../../app/pages/main_page.dart' as _i6;
-import '../../app/pages/news_page.dart' as _i10;
+import '../../app/pages/news/news_page.dart' as _i10;
 import '../../app/pages/register_page.dart' as _i4;
 import '../../app/pages/vinyl_page.dart' as _i7;
 

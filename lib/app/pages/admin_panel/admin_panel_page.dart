@@ -1,4 +1,5 @@
 import 'package:ecommers/app/pages/admin_panel/admin_panel_dashboard.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_news.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_products.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_requests.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_settings.dart';
@@ -61,6 +62,13 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           buttonName: 'Dashboard',
                           onPressed: () => _bloc.add(ShowDashboard()),
                           icon: CupertinoIcons.square_grid_2x2_fill,
+                          width: width,
+                        ),
+                        AdminPanelButton(
+                          padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                          buttonName: 'News',
+                          onPressed: () => _bloc.add(ShowNews()),
+                          icon: CupertinoIcons.news_solid,
                           width: width,
                         ),
                         AdminPanelDropdownButton(
@@ -133,37 +141,31 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                   child: Column(
                     children: [
                       const AdminPanelAppBar(),
-                      state.when(
-                        initState: () {
-                          _bloc.add(ShowDashboard());
-                          return Container(
-                            height: MediaQuery.of(context).size.height - 56.2,
-                            child: Center(
-                              child: CircularProgressIndicator(
-                                color: Colors.lightBlue.shade700,
-                              ),
+                      state.when(initState: () {
+                        _bloc.add(ShowDashboard());
+                        return Container(
+                          height: MediaQuery.of(context).size.height - 56.2,
+                          child: Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.lightBlue.shade700,
                             ),
-                          );
-                        },
-                        displayingTheDashboard: () {
-                          return const AdminPanelDashboard();
-                        },
-                        displayingTheStatistics: () {
-                          return const AdminPanelStatistics();
-                        },
-                        displayingTheRequests: () {
-                          return const AdminPanelRequests();
-                        },
-                        displayingTheSettings: () {
-                          return const AdminPanelSettings();
-                        },
-                        displayingTheUsers: () {
-                          return const AdminPanelUsers();
-                        },
-                        displayingTheProducts: () {
-                          return const AdminPanelProducts();
-                        },
-                      ),
+                          ),
+                        );
+                      }, displayingTheDashboard: () {
+                        return const AdminPanelDashboard();
+                      }, displayingTheStatistics: () {
+                        return const AdminPanelStatistics();
+                      }, displayingTheRequests: () {
+                        return const AdminPanelRequests();
+                      }, displayingTheSettings: () {
+                        return const AdminPanelSettings();
+                      }, displayingTheUsers: () {
+                        return const AdminPanelUsers();
+                      }, displayingTheProducts: () {
+                        return const AdminPanelProducts();
+                      }, displayingTheNews: () {
+                        return const AdminPanelNews();
+                      }),
                     ],
                   ),
                 ),

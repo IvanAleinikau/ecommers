@@ -45,6 +45,10 @@ class _$AdminPanelStateTearOff {
   DisplayingTheProducts displayingTheProducts() {
     return DisplayingTheProducts();
   }
+
+  DisplayingTheNews displayingTheNews() {
+    return DisplayingTheNews();
+  }
 }
 
 /// @nodoc
@@ -61,6 +65,7 @@ mixin _$AdminPanelState {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +77,7 @@ mixin _$AdminPanelState {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +89,7 @@ mixin _$AdminPanelState {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -100,6 +107,7 @@ mixin _$AdminPanelState {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -111,6 +119,7 @@ mixin _$AdminPanelState {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,6 +131,7 @@ mixin _$AdminPanelState {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -192,6 +202,7 @@ class _$AdminPanelInitState implements AdminPanelInitState {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return initState();
   }
@@ -206,6 +217,7 @@ class _$AdminPanelInitState implements AdminPanelInitState {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return initState?.call();
   }
@@ -220,6 +232,7 @@ class _$AdminPanelInitState implements AdminPanelInitState {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (initState != null) {
@@ -243,6 +256,7 @@ class _$AdminPanelInitState implements AdminPanelInitState {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return initState(this);
   }
@@ -257,6 +271,7 @@ class _$AdminPanelInitState implements AdminPanelInitState {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return initState?.call(this);
   }
@@ -271,6 +286,7 @@ class _$AdminPanelInitState implements AdminPanelInitState {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (initState != null) {
@@ -332,6 +348,7 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return displayingTheDashboard();
   }
@@ -346,6 +363,7 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return displayingTheDashboard?.call();
   }
@@ -360,6 +378,7 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheDashboard != null) {
@@ -383,6 +402,7 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return displayingTheDashboard(this);
   }
@@ -397,6 +417,7 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return displayingTheDashboard?.call(this);
   }
@@ -411,6 +432,7 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheDashboard != null) {
@@ -472,6 +494,7 @@ class _$DisplayingTheUsers implements DisplayingTheUsers {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return displayingTheUsers();
   }
@@ -486,6 +509,7 @@ class _$DisplayingTheUsers implements DisplayingTheUsers {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return displayingTheUsers?.call();
   }
@@ -500,6 +524,7 @@ class _$DisplayingTheUsers implements DisplayingTheUsers {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheUsers != null) {
@@ -523,6 +548,7 @@ class _$DisplayingTheUsers implements DisplayingTheUsers {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return displayingTheUsers(this);
   }
@@ -537,6 +563,7 @@ class _$DisplayingTheUsers implements DisplayingTheUsers {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return displayingTheUsers?.call(this);
   }
@@ -551,6 +578,7 @@ class _$DisplayingTheUsers implements DisplayingTheUsers {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheUsers != null) {
@@ -612,6 +640,7 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return displayingTheStatistics();
   }
@@ -626,6 +655,7 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return displayingTheStatistics?.call();
   }
@@ -640,6 +670,7 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheStatistics != null) {
@@ -663,6 +694,7 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return displayingTheStatistics(this);
   }
@@ -677,6 +709,7 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return displayingTheStatistics?.call(this);
   }
@@ -691,6 +724,7 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheStatistics != null) {
@@ -752,6 +786,7 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return displayingTheRequests();
   }
@@ -766,6 +801,7 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return displayingTheRequests?.call();
   }
@@ -780,6 +816,7 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheRequests != null) {
@@ -803,6 +840,7 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return displayingTheRequests(this);
   }
@@ -817,6 +855,7 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return displayingTheRequests?.call(this);
   }
@@ -831,6 +870,7 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheRequests != null) {
@@ -892,6 +932,7 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return displayingTheSettings();
   }
@@ -906,6 +947,7 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return displayingTheSettings?.call();
   }
@@ -920,6 +962,7 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheSettings != null) {
@@ -943,6 +986,7 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return displayingTheSettings(this);
   }
@@ -957,6 +1001,7 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return displayingTheSettings?.call(this);
   }
@@ -971,6 +1016,7 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheSettings != null) {
@@ -1032,6 +1078,7 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
     required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
   }) {
     return displayingTheProducts();
   }
@@ -1046,6 +1093,7 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
   }) {
     return displayingTheProducts?.call();
   }
@@ -1060,6 +1108,7 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
     TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheProducts != null) {
@@ -1083,6 +1132,7 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
         displayingTheSettings,
     required TResult Function(DisplayingTheProducts value)
         displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
   }) {
     return displayingTheProducts(this);
   }
@@ -1097,6 +1147,7 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
   }) {
     return displayingTheProducts?.call(this);
   }
@@ -1111,6 +1162,7 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
     TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
     required TResult orElse(),
   }) {
     if (displayingTheProducts != null) {
@@ -1122,4 +1174,150 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
 
 abstract class DisplayingTheProducts implements AdminPanelState {
   factory DisplayingTheProducts() = _$DisplayingTheProducts;
+}
+
+/// @nodoc
+abstract class $DisplayingTheNewsCopyWith<$Res> {
+  factory $DisplayingTheNewsCopyWith(
+          DisplayingTheNews value, $Res Function(DisplayingTheNews) then) =
+      _$DisplayingTheNewsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$DisplayingTheNewsCopyWithImpl<$Res>
+    extends _$AdminPanelStateCopyWithImpl<$Res>
+    implements $DisplayingTheNewsCopyWith<$Res> {
+  _$DisplayingTheNewsCopyWithImpl(
+      DisplayingTheNews _value, $Res Function(DisplayingTheNews) _then)
+      : super(_value, (v) => _then(v as DisplayingTheNews));
+
+  @override
+  DisplayingTheNews get _value => super._value as DisplayingTheNews;
+}
+
+/// @nodoc
+
+class _$DisplayingTheNews implements DisplayingTheNews {
+  _$DisplayingTheNews();
+
+  @override
+  String toString() {
+    return 'AdminPanelState.displayingTheNews()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DisplayingTheNews);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initState,
+    required TResult Function() displayingTheDashboard,
+    required TResult Function() displayingTheUsers,
+    required TResult Function() displayingTheStatistics,
+    required TResult Function() displayingTheRequests,
+    required TResult Function() displayingTheSettings,
+    required TResult Function() displayingTheProducts,
+    required TResult Function() displayingTheNews,
+  }) {
+    return displayingTheNews();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function()? displayingTheDashboard,
+    TResult Function()? displayingTheUsers,
+    TResult Function()? displayingTheStatistics,
+    TResult Function()? displayingTheRequests,
+    TResult Function()? displayingTheSettings,
+    TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
+  }) {
+    return displayingTheNews?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initState,
+    TResult Function()? displayingTheDashboard,
+    TResult Function()? displayingTheUsers,
+    TResult Function()? displayingTheStatistics,
+    TResult Function()? displayingTheRequests,
+    TResult Function()? displayingTheSettings,
+    TResult Function()? displayingTheProducts,
+    TResult Function()? displayingTheNews,
+    required TResult orElse(),
+  }) {
+    if (displayingTheNews != null) {
+      return displayingTheNews();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AdminPanelInitState value) initState,
+    required TResult Function(DisplayingTheDashboard value)
+        displayingTheDashboard,
+    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
+    required TResult Function(DisplayingTheStatistics value)
+        displayingTheStatistics,
+    required TResult Function(DisplayingTheRequests value)
+        displayingTheRequests,
+    required TResult Function(DisplayingTheSettings value)
+        displayingTheSettings,
+    required TResult Function(DisplayingTheProducts value)
+        displayingTheProducts,
+    required TResult Function(DisplayingTheNews value) displayingTheNews,
+  }) {
+    return displayingTheNews(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AdminPanelInitState value)? initState,
+    TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
+    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
+    TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
+    TResult Function(DisplayingTheRequests value)? displayingTheRequests,
+    TResult Function(DisplayingTheSettings value)? displayingTheSettings,
+    TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
+  }) {
+    return displayingTheNews?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AdminPanelInitState value)? initState,
+    TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
+    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
+    TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
+    TResult Function(DisplayingTheRequests value)? displayingTheRequests,
+    TResult Function(DisplayingTheSettings value)? displayingTheSettings,
+    TResult Function(DisplayingTheProducts value)? displayingTheProducts,
+    TResult Function(DisplayingTheNews value)? displayingTheNews,
+    required TResult orElse(),
+  }) {
+    if (displayingTheNews != null) {
+      return displayingTheNews(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DisplayingTheNews implements AdminPanelState {
+  factory DisplayingTheNews() = _$DisplayingTheNews;
 }

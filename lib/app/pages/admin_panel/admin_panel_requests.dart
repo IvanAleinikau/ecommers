@@ -1,4 +1,5 @@
-import 'package:ecommers/app/theme/text_style.dart';
+import 'package:ecommers/app/common/app_constants.dart';
+import 'package:ecommers/app/pages/admin_panel/widgets/table_element.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_event.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
@@ -36,14 +37,11 @@ class _AdminPanelRequestsState extends State<AdminPanelRequests> {
                     color: Colors.grey.shade300,
                     child: Row(
                       children: [
-                        const _Container(width: 50, text: '№'),
-                        _Container(width: width2 / 4, text: 'Имя'),
-                        _Container(width: width2 / 4, text: 'Мобильный телефон'),
-                        _Container(width: width2 / 4, text: 'Почта'),
-                        _Container(
-                          width: width2 / 4,
-                          text: '',
-                        ),
+                        const TableElement(width: 50, text: '№'),
+                        TableElement(width: width2 / 4, text: 'Имя'),
+                        TableElement(width: width2 / 4, text: 'Мобильный телефон'),
+                        TableElement(width: width2 / 4, text: 'Почта'),
+                        TableElement(width: width2 / 4, text: emptyString),
                       ],
                     ),
                   ),
@@ -69,11 +67,9 @@ class _AdminPanelRequestsState extends State<AdminPanelRequests> {
                       return ListView.builder(
                         itemCount: list.length,
                         itemBuilder: (context, index) {
-                          return _Row(
+                          return _RequestRow(
                             index: index,
-                            name: list[index].name,
-                            phoneNumber: list[index].phoneNumber,
-                            email: list[index].email,
+                            request: list[index],
                             width: width2,
                           );
                         },
@@ -90,44 +86,15 @@ class _AdminPanelRequestsState extends State<AdminPanelRequests> {
   }
 }
 
-class _Container extends StatelessWidget {
-  final double width;
-  final String text;
-
-  const _Container({
-    Key? key,
-    required this.width,
-    required this.text,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: width,
-      child: Center(
-        child: Text(
-          text,
-          style: Style.montserrat16w400,
-        ),
-      ),
-    );
-  }
-}
-
-class _Row extends StatelessWidget {
+class _RequestRow extends StatelessWidget {
   final int index;
-  final String name;
-  final String phoneNumber;
-  final String email;
+  final ConsultationRequest request;
   final double width;
 
-  _Row({
+  _RequestRow({
     Key? key,
     required this.index,
-    required this.name,
-    required this.phoneNumber,
-    required this.email,
+    required this.request,
     required this.width,
   }) : super(key: key);
 
@@ -139,25 +106,25 @@ class _Row extends StatelessWidget {
       color: index % 2 == 0 ? Colors.white : Colors.grey.shade300,
       child: Row(
         children: [
-          _Container(
+          TableElement(
             width: 50,
             text: '${index + 1}.',
           ),
-          _Container(
+          TableElement(
             width: width / 4,
-            text: name,
+            text: request.name,
           ),
-          _Container(
+          TableElement(
             width: width / 4,
-            text: phoneNumber,
+            text: request.phoneNumber,
           ),
-          _Container(
+          TableElement(
             width: width / 4,
-            text: email,
+            text: request.email,
           ),
-          _Container(
+          TableElement(
             width: width / 4,
-            text: '',
+            text: emptyString,
           ),
         ],
       ),
