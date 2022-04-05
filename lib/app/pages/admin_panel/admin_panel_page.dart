@@ -4,7 +4,6 @@ import 'package:ecommers/app/pages/admin_panel/admin_panel_products.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_requests.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_settings.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_statistics.dart';
-import 'package:ecommers/app/pages/admin_panel/admin_panel_users.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_app_bar.dart';
 import 'package:ecommers/app/widgets/admin_panel_page_widgets/admin_panel_button.dart';
@@ -65,7 +64,7 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           width: width,
                         ),
                         AdminPanelButton(
-                          padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
+                          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'News',
                           onPressed: () => _bloc.add(ShowNews()),
                           icon: CupertinoIcons.news_solid,
@@ -105,13 +104,6 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                         ),
                         AdminPanelButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
-                          buttonName: 'Users',
-                          onPressed: () => _bloc.add(ShowUsers()),
-                          icon: Icons.account_circle,
-                          width: width,
-                        ),
-                        AdminPanelButton(
-                          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Statistics',
                           onPressed: () => _bloc.add(ShowStatistics()),
                           icon: CupertinoIcons.chart_bar_alt_fill,
@@ -125,13 +117,13 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           width: width,
                         ),
                         const AdminPanelSeparator(),
-                        AdminPanelButton(
-                          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
-                          buttonName: 'Settings',
-                          onPressed: () => _bloc.add(ShowSettings()),
-                          icon: Icons.settings,
-                          width: width,
-                        ),
+                        // AdminPanelButton(
+                        //   padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
+                        //   buttonName: 'Settings',
+                        //   onPressed: () => _bloc.add(ShowSettings()),
+                        //   icon: Icons.settings,
+                        //   width: width,
+                        // ),
                       ],
                     ),
                   ),
@@ -159,8 +151,6 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                         return const AdminPanelRequests();
                       }, displayingTheSettings: () {
                         return const AdminPanelSettings();
-                      }, displayingTheUsers: () {
-                        return const AdminPanelUsers();
                       }, displayingTheProducts: () {
                         return const AdminPanelProducts();
                       }, displayingTheNews: () {

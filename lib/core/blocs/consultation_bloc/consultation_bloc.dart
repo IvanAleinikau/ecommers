@@ -1,7 +1,9 @@
+import 'package:ecommers/app/common/app_constants.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_event.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
 import 'package:ecommers/core/model/consultation_request_model.dart';
 import 'package:ecommers/data/service/consultation_request_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -14,7 +16,7 @@ class ConsultationBloc extends Bloc<ConsultationEvent, ConsultationState> {
         ConsultationRequest(
           name: event.name,
           phoneNumber: event.phoneNumber,
-          email: 'test@mail.ru',
+          email: FirebaseAuth.instance.currentUser?.email ?? emptyString,
         ),
       );
     });

@@ -26,10 +26,6 @@ class _$AdminPanelStateTearOff {
     return DisplayingTheDashboard();
   }
 
-  DisplayingTheUsers displayingTheUsers() {
-    return DisplayingTheUsers();
-  }
-
   DisplayingTheStatistics displayingTheStatistics() {
     return DisplayingTheStatistics();
   }
@@ -60,7 +56,6 @@ mixin _$AdminPanelState {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -72,7 +67,6 @@ mixin _$AdminPanelState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -84,7 +78,6 @@ mixin _$AdminPanelState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -98,7 +91,6 @@ mixin _$AdminPanelState {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -114,7 +106,6 @@ mixin _$AdminPanelState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -126,7 +117,6 @@ mixin _$AdminPanelState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -197,7 +187,6 @@ class _$AdminPanelInitState implements AdminPanelInitState {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -212,7 +201,6 @@ class _$AdminPanelInitState implements AdminPanelInitState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -227,7 +215,6 @@ class _$AdminPanelInitState implements AdminPanelInitState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -247,7 +234,6 @@ class _$AdminPanelInitState implements AdminPanelInitState {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -266,7 +252,6 @@ class _$AdminPanelInitState implements AdminPanelInitState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -281,7 +266,6 @@ class _$AdminPanelInitState implements AdminPanelInitState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -343,7 +327,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -358,7 +341,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -373,7 +355,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -393,7 +374,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -412,7 +392,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -427,7 +406,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -444,152 +422,6 @@ class _$DisplayingTheDashboard implements DisplayingTheDashboard {
 
 abstract class DisplayingTheDashboard implements AdminPanelState {
   factory DisplayingTheDashboard() = _$DisplayingTheDashboard;
-}
-
-/// @nodoc
-abstract class $DisplayingTheUsersCopyWith<$Res> {
-  factory $DisplayingTheUsersCopyWith(
-          DisplayingTheUsers value, $Res Function(DisplayingTheUsers) then) =
-      _$DisplayingTheUsersCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$DisplayingTheUsersCopyWithImpl<$Res>
-    extends _$AdminPanelStateCopyWithImpl<$Res>
-    implements $DisplayingTheUsersCopyWith<$Res> {
-  _$DisplayingTheUsersCopyWithImpl(
-      DisplayingTheUsers _value, $Res Function(DisplayingTheUsers) _then)
-      : super(_value, (v) => _then(v as DisplayingTheUsers));
-
-  @override
-  DisplayingTheUsers get _value => super._value as DisplayingTheUsers;
-}
-
-/// @nodoc
-
-class _$DisplayingTheUsers implements DisplayingTheUsers {
-  _$DisplayingTheUsers();
-
-  @override
-  String toString() {
-    return 'AdminPanelState.displayingTheUsers()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DisplayingTheUsers);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initState,
-    required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
-    required TResult Function() displayingTheStatistics,
-    required TResult Function() displayingTheRequests,
-    required TResult Function() displayingTheSettings,
-    required TResult Function() displayingTheProducts,
-    required TResult Function() displayingTheNews,
-  }) {
-    return displayingTheUsers();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initState,
-    TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
-    TResult Function()? displayingTheStatistics,
-    TResult Function()? displayingTheRequests,
-    TResult Function()? displayingTheSettings,
-    TResult Function()? displayingTheProducts,
-    TResult Function()? displayingTheNews,
-  }) {
-    return displayingTheUsers?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initState,
-    TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
-    TResult Function()? displayingTheStatistics,
-    TResult Function()? displayingTheRequests,
-    TResult Function()? displayingTheSettings,
-    TResult Function()? displayingTheProducts,
-    TResult Function()? displayingTheNews,
-    required TResult orElse(),
-  }) {
-    if (displayingTheUsers != null) {
-      return displayingTheUsers();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AdminPanelInitState value) initState,
-    required TResult Function(DisplayingTheDashboard value)
-        displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
-    required TResult Function(DisplayingTheStatistics value)
-        displayingTheStatistics,
-    required TResult Function(DisplayingTheRequests value)
-        displayingTheRequests,
-    required TResult Function(DisplayingTheSettings value)
-        displayingTheSettings,
-    required TResult Function(DisplayingTheProducts value)
-        displayingTheProducts,
-    required TResult Function(DisplayingTheNews value) displayingTheNews,
-  }) {
-    return displayingTheUsers(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AdminPanelInitState value)? initState,
-    TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
-    TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
-    TResult Function(DisplayingTheRequests value)? displayingTheRequests,
-    TResult Function(DisplayingTheSettings value)? displayingTheSettings,
-    TResult Function(DisplayingTheProducts value)? displayingTheProducts,
-    TResult Function(DisplayingTheNews value)? displayingTheNews,
-  }) {
-    return displayingTheUsers?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AdminPanelInitState value)? initState,
-    TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
-    TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
-    TResult Function(DisplayingTheRequests value)? displayingTheRequests,
-    TResult Function(DisplayingTheSettings value)? displayingTheSettings,
-    TResult Function(DisplayingTheProducts value)? displayingTheProducts,
-    TResult Function(DisplayingTheNews value)? displayingTheNews,
-    required TResult orElse(),
-  }) {
-    if (displayingTheUsers != null) {
-      return displayingTheUsers(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class DisplayingTheUsers implements AdminPanelState {
-  factory DisplayingTheUsers() = _$DisplayingTheUsers;
 }
 
 /// @nodoc
@@ -635,7 +467,6 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -650,7 +481,6 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -665,7 +495,6 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -685,7 +514,6 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -704,7 +532,6 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -719,7 +546,6 @@ class _$DisplayingTheStatistics implements DisplayingTheStatistics {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -781,7 +607,6 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -796,7 +621,6 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -811,7 +635,6 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -831,7 +654,6 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -850,7 +672,6 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -865,7 +686,6 @@ class _$DisplayingTheRequests implements DisplayingTheRequests {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -927,7 +747,6 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -942,7 +761,6 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -957,7 +775,6 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -977,7 +794,6 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -996,7 +812,6 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -1011,7 +826,6 @@ class _$DisplayingTheSettings implements DisplayingTheSettings {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -1073,7 +887,6 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -1088,7 +901,6 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -1103,7 +915,6 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -1123,7 +934,6 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -1142,7 +952,6 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -1157,7 +966,6 @@ class _$DisplayingTheProducts implements DisplayingTheProducts {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -1219,7 +1027,6 @@ class _$DisplayingTheNews implements DisplayingTheNews {
   TResult when<TResult extends Object?>({
     required TResult Function() initState,
     required TResult Function() displayingTheDashboard,
-    required TResult Function() displayingTheUsers,
     required TResult Function() displayingTheStatistics,
     required TResult Function() displayingTheRequests,
     required TResult Function() displayingTheSettings,
@@ -1234,7 +1041,6 @@ class _$DisplayingTheNews implements DisplayingTheNews {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -1249,7 +1055,6 @@ class _$DisplayingTheNews implements DisplayingTheNews {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initState,
     TResult Function()? displayingTheDashboard,
-    TResult Function()? displayingTheUsers,
     TResult Function()? displayingTheStatistics,
     TResult Function()? displayingTheRequests,
     TResult Function()? displayingTheSettings,
@@ -1269,7 +1074,6 @@ class _$DisplayingTheNews implements DisplayingTheNews {
     required TResult Function(AdminPanelInitState value) initState,
     required TResult Function(DisplayingTheDashboard value)
         displayingTheDashboard,
-    required TResult Function(DisplayingTheUsers value) displayingTheUsers,
     required TResult Function(DisplayingTheStatistics value)
         displayingTheStatistics,
     required TResult Function(DisplayingTheRequests value)
@@ -1288,7 +1092,6 @@ class _$DisplayingTheNews implements DisplayingTheNews {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,
@@ -1303,7 +1106,6 @@ class _$DisplayingTheNews implements DisplayingTheNews {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AdminPanelInitState value)? initState,
     TResult Function(DisplayingTheDashboard value)? displayingTheDashboard,
-    TResult Function(DisplayingTheUsers value)? displayingTheUsers,
     TResult Function(DisplayingTheStatistics value)? displayingTheStatistics,
     TResult Function(DisplayingTheRequests value)? displayingTheRequests,
     TResult Function(DisplayingTheSettings value)? displayingTheSettings,

@@ -8,10 +8,6 @@ class AdminPanelBloc extends Bloc<AdminPanelEvent, AdminPanelState> {
       emit(AdminPanelState.displayingTheDashboard());
     });
 
-    on<ShowUsers>((event, emit) {
-      emit(AdminPanelState.displayingTheUsers());
-    });
-
     on<ShowStatistics>((event, emit) {
       emit(AdminPanelState.displayingTheStatistics());
     });

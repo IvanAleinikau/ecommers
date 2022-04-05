@@ -8,8 +8,6 @@ abstract class AdminPanelState with _$AdminPanelState {
 
   factory AdminPanelState.displayingTheDashboard() = DisplayingTheDashboard;
 
-  factory AdminPanelState.displayingTheUsers() = DisplayingTheUsers;
-
   factory AdminPanelState.displayingTheStatistics() = DisplayingTheStatistics;
 
   factory AdminPanelState.displayingTheRequests() = DisplayingTheRequests;

@@ -35,29 +35,21 @@ class NewsSection extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                ElevatedButton(
-                  onPressed: onTap,
-                  child: const Text(
-                    'К новостям',
-                    style: Style.catalogButton,
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.black87,
-                    fixedSize: const Size(200, 50),
-                  ),
-                ),
               ],
             ),
           ),
         ),
         Expanded(
           flex: 3,
-          child: AspectRatio(
-            aspectRatio: 1,
-            child: FittedBox(
-              fit: BoxFit.cover,
-              child: Image.asset(
-                MyImage.newsImage,
+          child: Padding(
+            padding: const EdgeInsets.only(right: 50, top: 50),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: FittedBox(
+                fit: BoxFit.cover,
+                child: Image.asset(
+                  MyImage.newsImage,
+                ),
               ),
             ),
           ),

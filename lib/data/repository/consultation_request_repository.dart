@@ -15,7 +15,7 @@ class ConsultationRequestRepository {
     );
     return 'ConsultationRequest Made';
   }
-
+  
   Future<List<ConsultationRequest>> read() async {
     list = [];
     final collection = await _collection.get();

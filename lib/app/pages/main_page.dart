@@ -94,20 +94,6 @@ class _MainPageState extends State<MainPage> {
                       'Виниловый проигрыватель требует не меньше внимания чем любой музыкальный инструмент. В Vinyl Collection вы найдете сменные иглы и новые картриджи для вашего аналогового любимца. А также антистатические щетки и моющие средства для ухода за пластинками.',
                   color: Colors.white70,
                 ),
-                const SectionName(
-                  name: 'Топ продаж',
-                  style: Style.catalog,
-                ),
-                Container(
-                  height: 300,
-                ),
-                const SectionName(
-                  name: 'Интересное',
-                  style: Style.catalog,
-                ),
-                Container(
-                  height: 300,
-                ),
                 const Consultation(),
                 Brands(),
                 const AppBottomBar(),
