@@ -7,6 +7,7 @@ class CatalogElement extends StatelessWidget {
   final String title;
   final String subtitle;
   final Color color;
+  final VoidCallback onTap;
 
   const CatalogElement({
     Key? key,
@@ -14,6 +15,7 @@ class CatalogElement extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.color,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -65,7 +67,7 @@ class CatalogElement extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.fromLTRB(100, 30, 0, 0),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: onTap,
                       child: const Text(
                         'В магазин',
                         style: Style.catalogButton,

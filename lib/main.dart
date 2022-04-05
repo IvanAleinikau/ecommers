@@ -1,4 +1,6 @@
+import 'package:ecommers/core/blocs/acoustics_bloc/acoustics_cubit.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
+import 'package:ecommers/core/blocs/vinyl/vinyl_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/blocs/news_bloc/news_cubit.dart';
@@ -25,6 +27,12 @@ class Ecommers extends StatelessWidget {
         ),
         BlocProvider<NewsCubit>(
           create: (context) => NewsCubit(),
+        ),
+        BlocProvider<VinylCubit>(
+          create: (context) => VinylCubit(),
+        ),
+        BlocProvider<AcousticsCubit>(
+          create: (context) => AcousticsCubit(),
         ),
       ],
       child: MaterialApp.router(

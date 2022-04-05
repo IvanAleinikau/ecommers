@@ -17,6 +17,10 @@ abstract class AdminPanelEvent with _$AdminPanelEvent {
 
   factory AdminPanelEvent.showNews() = ShowNews;
 
+  factory AdminPanelEvent.showAccessories() = ShowAccessories;
+
+  factory AdminPanelEvent.showAcoustics() = ShowAcoustics;
+
   factory AdminPanelEvent.showProducts({
     required Widget widget,
   }) = ShowProducts;

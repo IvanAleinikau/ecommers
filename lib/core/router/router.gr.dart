@@ -15,14 +15,14 @@ import 'package:flutter/material.dart' as _i12;
 
 import '../../app/pages/about_us_page.dart' as _i3;
 import '../../app/pages/accessories_page.dart' as _i9;
-import '../../app/pages/acoustics_page.dart' as _i8;
+import '../../app/pages/acoustics/acoustics_page.dart' as _i8;
 import '../../app/pages/admin_panel/admin_panel_page.dart' as _i5;
 import '../../app/pages/contacts_page.dart' as _i2;
 import '../../app/pages/login_page.dart' as _i1;
 import '../../app/pages/main_page.dart' as _i6;
 import '../../app/pages/news/news_page.dart' as _i10;
 import '../../app/pages/register_page.dart' as _i4;
-import '../../app/pages/vinyl_page.dart' as _i7;
+import '../../app/pages/vinyl/vinyl_page.dart' as _i7;
 
 class AppRouter extends _i11.RootStackRouter {
   AppRouter([_i12.GlobalKey<_i12.NavigatorState>? navigatorKey])

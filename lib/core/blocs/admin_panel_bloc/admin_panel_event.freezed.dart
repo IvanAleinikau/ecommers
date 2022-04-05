@@ -42,6 +42,14 @@ class _$AdminPanelEventTearOff {
     return ShowNews();
   }
 
+  ShowAccessories showAccessories() {
+    return ShowAccessories();
+  }
+
+  ShowAcoustics showAcoustics() {
+    return ShowAcoustics();
+  }
+
   ShowProducts showProducts({required Widget widget}) {
     return ShowProducts(
       widget: widget,
@@ -62,6 +70,8 @@ mixin _$AdminPanelEvent {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) =>
       throw _privateConstructorUsedError;
@@ -73,6 +83,8 @@ mixin _$AdminPanelEvent {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) =>
       throw _privateConstructorUsedError;
@@ -84,6 +96,8 @@ mixin _$AdminPanelEvent {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) =>
@@ -96,6 +110,8 @@ mixin _$AdminPanelEvent {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) =>
       throw _privateConstructorUsedError;
@@ -107,6 +123,8 @@ mixin _$AdminPanelEvent {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) =>
       throw _privateConstructorUsedError;
@@ -118,6 +136,8 @@ mixin _$AdminPanelEvent {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) =>
@@ -188,6 +208,8 @@ class _$ShowDashboard implements ShowDashboard {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showDashboard();
@@ -202,6 +224,8 @@ class _$ShowDashboard implements ShowDashboard {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showDashboard?.call();
@@ -216,6 +240,8 @@ class _$ShowDashboard implements ShowDashboard {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -234,6 +260,8 @@ class _$ShowDashboard implements ShowDashboard {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showDashboard(this);
@@ -248,6 +276,8 @@ class _$ShowDashboard implements ShowDashboard {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showDashboard?.call(this);
@@ -262,6 +292,8 @@ class _$ShowDashboard implements ShowDashboard {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {
@@ -320,6 +352,8 @@ class _$ShowUsers implements ShowUsers {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showUsers();
@@ -334,6 +368,8 @@ class _$ShowUsers implements ShowUsers {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showUsers?.call();
@@ -348,6 +384,8 @@ class _$ShowUsers implements ShowUsers {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -366,6 +404,8 @@ class _$ShowUsers implements ShowUsers {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showUsers(this);
@@ -380,6 +420,8 @@ class _$ShowUsers implements ShowUsers {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showUsers?.call(this);
@@ -394,6 +436,8 @@ class _$ShowUsers implements ShowUsers {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {
@@ -455,6 +499,8 @@ class _$ShowStatistics implements ShowStatistics {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showStatistics();
@@ -469,6 +515,8 @@ class _$ShowStatistics implements ShowStatistics {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showStatistics?.call();
@@ -483,6 +531,8 @@ class _$ShowStatistics implements ShowStatistics {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -501,6 +551,8 @@ class _$ShowStatistics implements ShowStatistics {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showStatistics(this);
@@ -515,6 +567,8 @@ class _$ShowStatistics implements ShowStatistics {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showStatistics?.call(this);
@@ -529,6 +583,8 @@ class _$ShowStatistics implements ShowStatistics {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {
@@ -590,6 +646,8 @@ class _$ShowRequests implements ShowRequests {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showRequests();
@@ -604,6 +662,8 @@ class _$ShowRequests implements ShowRequests {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showRequests?.call();
@@ -618,6 +678,8 @@ class _$ShowRequests implements ShowRequests {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -636,6 +698,8 @@ class _$ShowRequests implements ShowRequests {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showRequests(this);
@@ -650,6 +714,8 @@ class _$ShowRequests implements ShowRequests {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showRequests?.call(this);
@@ -664,6 +730,8 @@ class _$ShowRequests implements ShowRequests {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {
@@ -725,6 +793,8 @@ class _$ShowSettings implements ShowSettings {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showSettings();
@@ -739,6 +809,8 @@ class _$ShowSettings implements ShowSettings {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showSettings?.call();
@@ -753,6 +825,8 @@ class _$ShowSettings implements ShowSettings {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -771,6 +845,8 @@ class _$ShowSettings implements ShowSettings {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showSettings(this);
@@ -785,6 +861,8 @@ class _$ShowSettings implements ShowSettings {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showSettings?.call(this);
@@ -799,6 +877,8 @@ class _$ShowSettings implements ShowSettings {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {
@@ -857,6 +937,8 @@ class _$ShowNews implements ShowNews {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showNews();
@@ -871,6 +953,8 @@ class _$ShowNews implements ShowNews {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showNews?.call();
@@ -885,6 +969,8 @@ class _$ShowNews implements ShowNews {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -903,6 +989,8 @@ class _$ShowNews implements ShowNews {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showNews(this);
@@ -917,6 +1005,8 @@ class _$ShowNews implements ShowNews {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showNews?.call(this);
@@ -931,6 +1021,8 @@ class _$ShowNews implements ShowNews {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {
@@ -943,6 +1035,300 @@ class _$ShowNews implements ShowNews {
 
 abstract class ShowNews implements AdminPanelEvent {
   factory ShowNews() = _$ShowNews;
+}
+
+/// @nodoc
+abstract class $ShowAccessoriesCopyWith<$Res> {
+  factory $ShowAccessoriesCopyWith(
+          ShowAccessories value, $Res Function(ShowAccessories) then) =
+      _$ShowAccessoriesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ShowAccessoriesCopyWithImpl<$Res>
+    extends _$AdminPanelEventCopyWithImpl<$Res>
+    implements $ShowAccessoriesCopyWith<$Res> {
+  _$ShowAccessoriesCopyWithImpl(
+      ShowAccessories _value, $Res Function(ShowAccessories) _then)
+      : super(_value, (v) => _then(v as ShowAccessories));
+
+  @override
+  ShowAccessories get _value => super._value as ShowAccessories;
+}
+
+/// @nodoc
+
+class _$ShowAccessories implements ShowAccessories {
+  _$ShowAccessories();
+
+  @override
+  String toString() {
+    return 'AdminPanelEvent.showAccessories()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ShowAccessories);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() showDashboard,
+    required TResult Function() showUsers,
+    required TResult Function() showStatistics,
+    required TResult Function() showRequests,
+    required TResult Function() showSettings,
+    required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
+    required TResult Function(Widget widget) showProducts,
+  }) {
+    return showAccessories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? showDashboard,
+    TResult Function()? showUsers,
+    TResult Function()? showStatistics,
+    TResult Function()? showRequests,
+    TResult Function()? showSettings,
+    TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
+    TResult Function(Widget widget)? showProducts,
+  }) {
+    return showAccessories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? showDashboard,
+    TResult Function()? showUsers,
+    TResult Function()? showStatistics,
+    TResult Function()? showRequests,
+    TResult Function()? showSettings,
+    TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
+    TResult Function(Widget widget)? showProducts,
+    required TResult orElse(),
+  }) {
+    if (showAccessories != null) {
+      return showAccessories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ShowDashboard value) showDashboard,
+    required TResult Function(ShowUsers value) showUsers,
+    required TResult Function(ShowStatistics value) showStatistics,
+    required TResult Function(ShowRequests value) showRequests,
+    required TResult Function(ShowSettings value) showSettings,
+    required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
+    required TResult Function(ShowProducts value) showProducts,
+  }) {
+    return showAccessories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ShowDashboard value)? showDashboard,
+    TResult Function(ShowUsers value)? showUsers,
+    TResult Function(ShowStatistics value)? showStatistics,
+    TResult Function(ShowRequests value)? showRequests,
+    TResult Function(ShowSettings value)? showSettings,
+    TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
+    TResult Function(ShowProducts value)? showProducts,
+  }) {
+    return showAccessories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowDashboard value)? showDashboard,
+    TResult Function(ShowUsers value)? showUsers,
+    TResult Function(ShowStatistics value)? showStatistics,
+    TResult Function(ShowRequests value)? showRequests,
+    TResult Function(ShowSettings value)? showSettings,
+    TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
+    TResult Function(ShowProducts value)? showProducts,
+    required TResult orElse(),
+  }) {
+    if (showAccessories != null) {
+      return showAccessories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowAccessories implements AdminPanelEvent {
+  factory ShowAccessories() = _$ShowAccessories;
+}
+
+/// @nodoc
+abstract class $ShowAcousticsCopyWith<$Res> {
+  factory $ShowAcousticsCopyWith(
+          ShowAcoustics value, $Res Function(ShowAcoustics) then) =
+      _$ShowAcousticsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ShowAcousticsCopyWithImpl<$Res>
+    extends _$AdminPanelEventCopyWithImpl<$Res>
+    implements $ShowAcousticsCopyWith<$Res> {
+  _$ShowAcousticsCopyWithImpl(
+      ShowAcoustics _value, $Res Function(ShowAcoustics) _then)
+      : super(_value, (v) => _then(v as ShowAcoustics));
+
+  @override
+  ShowAcoustics get _value => super._value as ShowAcoustics;
+}
+
+/// @nodoc
+
+class _$ShowAcoustics implements ShowAcoustics {
+  _$ShowAcoustics();
+
+  @override
+  String toString() {
+    return 'AdminPanelEvent.showAcoustics()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ShowAcoustics);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() showDashboard,
+    required TResult Function() showUsers,
+    required TResult Function() showStatistics,
+    required TResult Function() showRequests,
+    required TResult Function() showSettings,
+    required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
+    required TResult Function(Widget widget) showProducts,
+  }) {
+    return showAcoustics();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? showDashboard,
+    TResult Function()? showUsers,
+    TResult Function()? showStatistics,
+    TResult Function()? showRequests,
+    TResult Function()? showSettings,
+    TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
+    TResult Function(Widget widget)? showProducts,
+  }) {
+    return showAcoustics?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? showDashboard,
+    TResult Function()? showUsers,
+    TResult Function()? showStatistics,
+    TResult Function()? showRequests,
+    TResult Function()? showSettings,
+    TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
+    TResult Function(Widget widget)? showProducts,
+    required TResult orElse(),
+  }) {
+    if (showAcoustics != null) {
+      return showAcoustics();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ShowDashboard value) showDashboard,
+    required TResult Function(ShowUsers value) showUsers,
+    required TResult Function(ShowStatistics value) showStatistics,
+    required TResult Function(ShowRequests value) showRequests,
+    required TResult Function(ShowSettings value) showSettings,
+    required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
+    required TResult Function(ShowProducts value) showProducts,
+  }) {
+    return showAcoustics(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ShowDashboard value)? showDashboard,
+    TResult Function(ShowUsers value)? showUsers,
+    TResult Function(ShowStatistics value)? showStatistics,
+    TResult Function(ShowRequests value)? showRequests,
+    TResult Function(ShowSettings value)? showSettings,
+    TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
+    TResult Function(ShowProducts value)? showProducts,
+  }) {
+    return showAcoustics?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ShowDashboard value)? showDashboard,
+    TResult Function(ShowUsers value)? showUsers,
+    TResult Function(ShowStatistics value)? showStatistics,
+    TResult Function(ShowRequests value)? showRequests,
+    TResult Function(ShowSettings value)? showSettings,
+    TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
+    TResult Function(ShowProducts value)? showProducts,
+    required TResult orElse(),
+  }) {
+    if (showAcoustics != null) {
+      return showAcoustics(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShowAcoustics implements AdminPanelEvent {
+  factory ShowAcoustics() = _$ShowAcoustics;
 }
 
 /// @nodoc
@@ -1016,6 +1402,8 @@ class _$ShowProducts implements ShowProducts {
     required TResult Function() showRequests,
     required TResult Function() showSettings,
     required TResult Function() showNews,
+    required TResult Function() showAccessories,
+    required TResult Function() showAcoustics,
     required TResult Function(Widget widget) showProducts,
   }) {
     return showProducts(widget);
@@ -1030,6 +1418,8 @@ class _$ShowProducts implements ShowProducts {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
   }) {
     return showProducts?.call(widget);
@@ -1044,6 +1434,8 @@ class _$ShowProducts implements ShowProducts {
     TResult Function()? showRequests,
     TResult Function()? showSettings,
     TResult Function()? showNews,
+    TResult Function()? showAccessories,
+    TResult Function()? showAcoustics,
     TResult Function(Widget widget)? showProducts,
     required TResult orElse(),
   }) {
@@ -1062,6 +1454,8 @@ class _$ShowProducts implements ShowProducts {
     required TResult Function(ShowRequests value) showRequests,
     required TResult Function(ShowSettings value) showSettings,
     required TResult Function(ShowNews value) showNews,
+    required TResult Function(ShowAccessories value) showAccessories,
+    required TResult Function(ShowAcoustics value) showAcoustics,
     required TResult Function(ShowProducts value) showProducts,
   }) {
     return showProducts(this);
@@ -1076,6 +1470,8 @@ class _$ShowProducts implements ShowProducts {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
   }) {
     return showProducts?.call(this);
@@ -1090,6 +1486,8 @@ class _$ShowProducts implements ShowProducts {
     TResult Function(ShowRequests value)? showRequests,
     TResult Function(ShowSettings value)? showSettings,
     TResult Function(ShowNews value)? showNews,
+    TResult Function(ShowAccessories value)? showAccessories,
+    TResult Function(ShowAcoustics value)? showAcoustics,
     TResult Function(ShowProducts value)? showProducts,
     required TResult orElse(),
   }) {

@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:ecommers/app/pages/about_us_page.dart';
 import 'package:ecommers/app/pages/accessories_page.dart';
-import 'package:ecommers/app/pages/acoustics_page.dart';
+import 'package:ecommers/app/pages/acoustics/acoustics_page.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_page.dart';
 import 'package:ecommers/app/pages/contacts_page.dart';
 import 'package:ecommers/app/pages/login_page.dart';
 import 'package:ecommers/app/pages/main_page.dart';
 import 'package:ecommers/app/pages/news/news_page.dart';
 import 'package:ecommers/app/pages/register_page.dart';
-import 'package:ecommers/app/pages/vinyl_page.dart';
+import 'package:ecommers/app/pages/vinyl/vinyl_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',

@@ -1,3 +1,4 @@
+import 'package:ecommers/app/pages/admin_panel/admin_panel_vinyl.dart';
 import 'package:flutter/material.dart';
 
 class AdminPanelProducts extends StatefulWidget {
@@ -10,12 +11,6 @@ class AdminPanelProducts extends StatefulWidget {
 class _AdminPanelProductsState extends State<AdminPanelProducts> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: MediaQuery.of(context).size.height-56.2,
-      padding: EdgeInsets.zero,
-      child: const Center(
-        child: Text('Products'),
-      ),
-    );
+    return const AdminPanelVinyl();
   }
 }

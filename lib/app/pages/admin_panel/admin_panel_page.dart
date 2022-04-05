@@ -1,3 +1,5 @@
+import 'package:ecommers/app/pages/admin_panel/admin_panel_accessories.dart';
+import 'package:ecommers/app/pages/admin_panel/admin_panel_acoustics.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_dashboard.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_news.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_products.dart';
@@ -70,37 +72,37 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           icon: CupertinoIcons.news_solid,
                           width: width,
                         ),
-                        AdminPanelDropdownButton(
-                          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
+                        AdminPanelButton(
+                          padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
                           buttonName: 'Product',
                           onPressed: () => _bloc.add(ShowProducts(
                             widget: Container(),
                           )),
                           icon: CupertinoIcons.rectangle_stack_fill,
                           width: width,
-                          buttons: [
-                            AdminPanelButton(
-                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-                              buttonName: 'Vinyl',
-                              onPressed: () => print(''),
-                              icon: Icons.access_time_filled,
-                              width: width,
-                            ),
-                            AdminPanelButton(
-                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-                              buttonName: 'Something',
-                              onPressed: () => print(''),
-                              icon: Icons.access_time_filled,
-                              width: width,
-                            ),
-                            AdminPanelButton(
-                              padding: const EdgeInsets.fromLTRB(10, 5, 10, 0),
-                              buttonName: 'Something',
-                              onPressed: () => print(''),
-                              icon: Icons.access_time_filled,
-                              width: width,
-                            ),
-                          ],
+                        ),
+                        AdminPanelButton(
+                          padding: const EdgeInsets.fromLTRB(30, 5, 10, 0),
+                          buttonName: 'Vinyl',
+                          onPressed: () => _bloc.add(ShowProducts(
+                            widget: Container(),
+                          )),
+                          icon: Icons.circle,
+                          width: width,
+                        ),
+                        AdminPanelButton(
+                          padding: const EdgeInsets.fromLTRB(30, 5, 10, 0),
+                          buttonName: 'Acoustics',
+                          onPressed: () => _bloc.add(ShowAcoustics()),
+                          icon: Icons.circle,
+                          width: width,
+                        ),
+                        AdminPanelButton(
+                          padding: const EdgeInsets.fromLTRB(30, 5, 10, 0),
+                          buttonName: 'Accessories',
+                          onPressed: () => _bloc.add(ShowAccessories()),
+                          icon: Icons.circle,
+                          width: width,
                         ),
                         AdminPanelButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
@@ -133,29 +135,27 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                   child: Column(
                     children: [
                       const AdminPanelAppBar(),
-                      state.when(initState: () {
-                        _bloc.add(ShowDashboard());
-                        return Container(
-                          height: MediaQuery.of(context).size.height - 56.2,
-                          child: Center(
-                            child: CircularProgressIndicator(
-                              color: Colors.lightBlue.shade700,
+                      state.when(
+                        initState: () {
+                          _bloc.add(ShowDashboard());
+                          return Container(
+                            height: MediaQuery.of(context).size.height - 56.2,
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                color: Colors.lightBlue.shade700,
+                              ),
                             ),
-                          ),
-                        );
-                      }, displayingTheDashboard: () {
-                        return const AdminPanelDashboard();
-                      }, displayingTheStatistics: () {
-                        return const AdminPanelStatistics();
-                      }, displayingTheRequests: () {
-                        return const AdminPanelRequests();
-                      }, displayingTheSettings: () {
-                        return const AdminPanelSettings();
-                      }, displayingTheProducts: () {
-                        return const AdminPanelProducts();
-                      }, displayingTheNews: () {
-                        return const AdminPanelNews();
-                      }),
+                          );
+                        },
+                        displayingTheDashboard: () => const AdminPanelDashboard(),
+                        displayingTheStatistics: () => const AdminPanelStatistics(),
+                        displayingTheRequests: () => const AdminPanelRequests(),
+                        displayingTheSettings: () => const AdminPanelSettings(),
+                        displayingTheProducts: () => const AdminPanelProducts(),
+                        displayingTheNews: () => const AdminPanelNews(),
+                        displayingTheAcoustics: () => const AdminPanelAcoustics(),
+                        displayingTheAccessories: () => const AdminPanelAccessories(),
+                      ),
                     ],
                   ),
                 ),

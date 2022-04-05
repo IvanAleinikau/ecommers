@@ -17,4 +17,8 @@ abstract class AdminPanelState with _$AdminPanelState {
   factory AdminPanelState.displayingTheProducts() = DisplayingTheProducts;
 
   factory AdminPanelState.displayingTheNews() = DisplayingTheNews;
+
+  factory AdminPanelState.displayingTheAccessories() = DisplayingTheAccessories;
+
+  factory AdminPanelState.displayingTheAcoustics() = DisplayingTheAcoustics;
 }

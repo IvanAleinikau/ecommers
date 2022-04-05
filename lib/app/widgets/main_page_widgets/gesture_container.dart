@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class GestureContainer extends StatelessWidget {
   final String image;
   final String name;
+  final VoidCallback onTap;
 
   const GestureContainer({
     Key? key,
     required this.image,
     required this.name,
+    required this.onTap,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,7 @@ class GestureContainer extends StatelessWidget {
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
           child: GestureDetector(
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
