@@ -36,7 +36,16 @@ class VinylRepository {
     return _list;
   }
 
-  Future<void> update() async {}
+  Future<void> update(Vinyl vinyl) async {
+    await _collection.doc(vinyl.id).update({
+      'title': vinyl.title,
+      'year': vinyl.year,
+      'cost': vinyl.cost,
+      'imageUrl': vinyl.imageUrl,
+    });
+  }
 
-  Future<void> delete() async {}
+  Future<void> delete(String id) async {
+    await _collection.doc(id).delete();
+  }
 }

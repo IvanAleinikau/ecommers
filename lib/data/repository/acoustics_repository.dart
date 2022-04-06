@@ -36,7 +36,16 @@ class AcousticsRepository {
     return _list;
   }
 
-  Future<void> update() async {}
+  Future<void> update(Acoustics acoustics) async {
+    await _collection.doc(acoustics.id).update({
+      'title': acoustics.title,
+      'subtitle': acoustics.subtitle,
+      'cost': acoustics.cost,
+      'imageUrl': acoustics.imageUrl,
+    });
+  }
 
-  Future<void> delete() async {}
+  Future<void> delete(String id) async {
+    await _collection.doc(id).delete();
+  }
 }

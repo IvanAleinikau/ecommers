@@ -36,7 +36,16 @@ class AccessoriesRepository {
     return _list;
   }
 
-  Future<void> update() async {}
+  Future<void> update(Accessories accessories) async {
+    await _collection.doc(accessories.id).update({
+      'title': accessories.title,
+      'subtitle': accessories.subtitle,
+      'cost': accessories.cost,
+      'imageUrl': accessories.imageUrl,
+    });
+  }
 
-  Future<void> delete() async {}
+  Future<void> delete(String id) async {
+    await _collection.doc(id).delete();
+  }
 }

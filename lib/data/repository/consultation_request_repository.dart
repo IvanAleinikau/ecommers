@@ -15,7 +15,7 @@ class ConsultationRequestRepository {
     );
     return 'ConsultationRequest Made';
   }
-  
+
   Future<List<ConsultationRequest>> read() async {
     list = [];
     final collection = await _collection.get();
@@ -29,5 +29,17 @@ class ConsultationRequestRepository {
       list.add(item);
     }
     return list;
+  }
+
+  Future<void> update(ConsultationRequest consultationRequest) async {
+    await _collection.doc(consultationRequest.id).update({
+      'name': consultationRequest.name,
+      'email': consultationRequest.email,
+      'phone_number': consultationRequest.phoneNumber,
+    });
+  }
+
+  Future<void> delete(String id) async {
+    await _collection.doc(id).delete();
   }
 }

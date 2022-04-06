@@ -37,7 +37,15 @@ class NewsRepository {
     return _list;
   }
 
-  Future<void> update() async {}
+  Future<void> update(News news) async {
+    await _collection.doc(news.id).update({
+      'title': news.title,
+      'subtitle': news.subtitle,
+      'imageUrl': news.imageUrl,
+    });
+  }
 
-  Future<void> delete() async {}
+  Future<void> delete(String id) async {
+    await _collection.doc(id).delete();
+  }
 }
