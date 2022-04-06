@@ -29,6 +29,18 @@ class _$ConsultationEventTearOff {
   FetchRequest fetchRequest() {
     return FetchRequest();
   }
+
+  UpdateRequest update({required ConsultationRequest request}) {
+    return UpdateRequest(
+      request: request,
+    );
+  }
+
+  DeleteRequest delete({required ConsultationRequest request}) {
+    return DeleteRequest(
+      request: request,
+    );
+  }
 }
 
 /// @nodoc
@@ -40,18 +52,24 @@ mixin _$ConsultationEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String phoneNumber) createRequest,
     required TResult Function() fetchRequest,
+    required TResult Function(ConsultationRequest request) update,
+    required TResult Function(ConsultationRequest request) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
     TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
     TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,18 +77,24 @@ mixin _$ConsultationEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(CreateRequest value) createRequest,
     required TResult Function(FetchRequest value) fetchRequest,
+    required TResult Function(UpdateRequest value) update,
+    required TResult Function(DeleteRequest value) delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
     TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
     TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +195,8 @@ class _$CreateRequest implements CreateRequest {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String phoneNumber) createRequest,
     required TResult Function() fetchRequest,
+    required TResult Function(ConsultationRequest request) update,
+    required TResult Function(ConsultationRequest request) delete,
   }) {
     return createRequest(name, phoneNumber);
   }
@@ -180,6 +206,8 @@ class _$CreateRequest implements CreateRequest {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
     TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
   }) {
     return createRequest?.call(name, phoneNumber);
   }
@@ -189,6 +217,8 @@ class _$CreateRequest implements CreateRequest {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
     TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
     required TResult orElse(),
   }) {
     if (createRequest != null) {
@@ -202,6 +232,8 @@ class _$CreateRequest implements CreateRequest {
   TResult map<TResult extends Object?>({
     required TResult Function(CreateRequest value) createRequest,
     required TResult Function(FetchRequest value) fetchRequest,
+    required TResult Function(UpdateRequest value) update,
+    required TResult Function(DeleteRequest value) delete,
   }) {
     return createRequest(this);
   }
@@ -211,6 +243,8 @@ class _$CreateRequest implements CreateRequest {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
     TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
   }) {
     return createRequest?.call(this);
   }
@@ -220,6 +254,8 @@ class _$CreateRequest implements CreateRequest {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
     TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
     required TResult orElse(),
   }) {
     if (createRequest != null) {
@@ -283,6 +319,8 @@ class _$FetchRequest implements FetchRequest {
   TResult when<TResult extends Object?>({
     required TResult Function(String name, String phoneNumber) createRequest,
     required TResult Function() fetchRequest,
+    required TResult Function(ConsultationRequest request) update,
+    required TResult Function(ConsultationRequest request) delete,
   }) {
     return fetchRequest();
   }
@@ -292,6 +330,8 @@ class _$FetchRequest implements FetchRequest {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
     TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
   }) {
     return fetchRequest?.call();
   }
@@ -301,6 +341,8 @@ class _$FetchRequest implements FetchRequest {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name, String phoneNumber)? createRequest,
     TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
     required TResult orElse(),
   }) {
     if (fetchRequest != null) {
@@ -314,6 +356,8 @@ class _$FetchRequest implements FetchRequest {
   TResult map<TResult extends Object?>({
     required TResult Function(CreateRequest value) createRequest,
     required TResult Function(FetchRequest value) fetchRequest,
+    required TResult Function(UpdateRequest value) update,
+    required TResult Function(DeleteRequest value) delete,
   }) {
     return fetchRequest(this);
   }
@@ -323,6 +367,8 @@ class _$FetchRequest implements FetchRequest {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
     TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
   }) {
     return fetchRequest?.call(this);
   }
@@ -332,6 +378,8 @@ class _$FetchRequest implements FetchRequest {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CreateRequest value)? createRequest,
     TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
     required TResult orElse(),
   }) {
     if (fetchRequest != null) {
@@ -343,4 +391,316 @@ class _$FetchRequest implements FetchRequest {
 
 abstract class FetchRequest implements ConsultationEvent {
   factory FetchRequest() = _$FetchRequest;
+}
+
+/// @nodoc
+abstract class $UpdateRequestCopyWith<$Res> {
+  factory $UpdateRequestCopyWith(
+          UpdateRequest value, $Res Function(UpdateRequest) then) =
+      _$UpdateRequestCopyWithImpl<$Res>;
+  $Res call({ConsultationRequest request});
+
+  $ConsultationRequestCopyWith<$Res> get request;
+}
+
+/// @nodoc
+class _$UpdateRequestCopyWithImpl<$Res>
+    extends _$ConsultationEventCopyWithImpl<$Res>
+    implements $UpdateRequestCopyWith<$Res> {
+  _$UpdateRequestCopyWithImpl(
+      UpdateRequest _value, $Res Function(UpdateRequest) _then)
+      : super(_value, (v) => _then(v as UpdateRequest));
+
+  @override
+  UpdateRequest get _value => super._value as UpdateRequest;
+
+  @override
+  $Res call({
+    Object? request = freezed,
+  }) {
+    return _then(UpdateRequest(
+      request: request == freezed
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as ConsultationRequest,
+    ));
+  }
+
+  @override
+  $ConsultationRequestCopyWith<$Res> get request {
+    return $ConsultationRequestCopyWith<$Res>(_value.request, (value) {
+      return _then(_value.copyWith(request: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateRequest implements UpdateRequest {
+  _$UpdateRequest({required this.request});
+
+  @override
+  final ConsultationRequest request;
+
+  @override
+  String toString() {
+    return 'ConsultationEvent.update(request: $request)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UpdateRequest &&
+            const DeepCollectionEquality().equals(other.request, request));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(request));
+
+  @JsonKey(ignore: true)
+  @override
+  $UpdateRequestCopyWith<UpdateRequest> get copyWith =>
+      _$UpdateRequestCopyWithImpl<UpdateRequest>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String phoneNumber) createRequest,
+    required TResult Function() fetchRequest,
+    required TResult Function(ConsultationRequest request) update,
+    required TResult Function(ConsultationRequest request) delete,
+  }) {
+    return update(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
+  }) {
+    return update?.call(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
+    required TResult orElse(),
+  }) {
+    if (update != null) {
+      return update(request);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateRequest value) createRequest,
+    required TResult Function(FetchRequest value) fetchRequest,
+    required TResult Function(UpdateRequest value) update,
+    required TResult Function(DeleteRequest value) delete,
+  }) {
+    return update(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
+  }) {
+    return update?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
+    required TResult orElse(),
+  }) {
+    if (update != null) {
+      return update(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateRequest implements ConsultationEvent {
+  factory UpdateRequest({required ConsultationRequest request}) =
+      _$UpdateRequest;
+
+  ConsultationRequest get request;
+  @JsonKey(ignore: true)
+  $UpdateRequestCopyWith<UpdateRequest> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeleteRequestCopyWith<$Res> {
+  factory $DeleteRequestCopyWith(
+          DeleteRequest value, $Res Function(DeleteRequest) then) =
+      _$DeleteRequestCopyWithImpl<$Res>;
+  $Res call({ConsultationRequest request});
+
+  $ConsultationRequestCopyWith<$Res> get request;
+}
+
+/// @nodoc
+class _$DeleteRequestCopyWithImpl<$Res>
+    extends _$ConsultationEventCopyWithImpl<$Res>
+    implements $DeleteRequestCopyWith<$Res> {
+  _$DeleteRequestCopyWithImpl(
+      DeleteRequest _value, $Res Function(DeleteRequest) _then)
+      : super(_value, (v) => _then(v as DeleteRequest));
+
+  @override
+  DeleteRequest get _value => super._value as DeleteRequest;
+
+  @override
+  $Res call({
+    Object? request = freezed,
+  }) {
+    return _then(DeleteRequest(
+      request: request == freezed
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as ConsultationRequest,
+    ));
+  }
+
+  @override
+  $ConsultationRequestCopyWith<$Res> get request {
+    return $ConsultationRequestCopyWith<$Res>(_value.request, (value) {
+      return _then(_value.copyWith(request: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DeleteRequest implements DeleteRequest {
+  _$DeleteRequest({required this.request});
+
+  @override
+  final ConsultationRequest request;
+
+  @override
+  String toString() {
+    return 'ConsultationEvent.delete(request: $request)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DeleteRequest &&
+            const DeepCollectionEquality().equals(other.request, request));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(request));
+
+  @JsonKey(ignore: true)
+  @override
+  $DeleteRequestCopyWith<DeleteRequest> get copyWith =>
+      _$DeleteRequestCopyWithImpl<DeleteRequest>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name, String phoneNumber) createRequest,
+    required TResult Function() fetchRequest,
+    required TResult Function(ConsultationRequest request) update,
+    required TResult Function(ConsultationRequest request) delete,
+  }) {
+    return delete(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
+  }) {
+    return delete?.call(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name, String phoneNumber)? createRequest,
+    TResult Function()? fetchRequest,
+    TResult Function(ConsultationRequest request)? update,
+    TResult Function(ConsultationRequest request)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(request);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CreateRequest value) createRequest,
+    required TResult Function(FetchRequest value) fetchRequest,
+    required TResult Function(UpdateRequest value) update,
+    required TResult Function(DeleteRequest value) delete,
+  }) {
+    return delete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
+  }) {
+    return delete?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CreateRequest value)? createRequest,
+    TResult Function(FetchRequest value)? fetchRequest,
+    TResult Function(UpdateRequest value)? update,
+    TResult Function(DeleteRequest value)? delete,
+    required TResult orElse(),
+  }) {
+    if (delete != null) {
+      return delete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteRequest implements ConsultationEvent {
+  factory DeleteRequest({required ConsultationRequest request}) =
+      _$DeleteRequest;
+
+  ConsultationRequest get request;
+  @JsonKey(ignore: true)
+  $DeleteRequestCopyWith<DeleteRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,4 +1,3 @@
-import 'package:ecommers/app/common/app_constants.dart';
 import 'package:ecommers/app/common/button/my_button.dart';
 import 'package:ecommers/app/common/empty_widget.dart';
 import 'package:ecommers/app/pages/admin_panel/widgets/admin_panel_input.dart';
@@ -26,6 +25,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
   final TextEditingController _title = TextEditingController();
   final TextEditingController _cost = TextEditingController();
   final TextEditingController _subtitle = TextEditingController();
+  final TextEditingController _id = TextEditingController();
 
   late AccessoriesCubit _cubit;
 
@@ -37,6 +37,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
 
   @override
   void dispose() {
+    _id.dispose();
     _imageUrl.dispose();
     _title.dispose();
     _cost.dispose();
@@ -54,6 +55,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
           _title.clear();
           _cost.clear();
           _subtitle.clear();
+          _id.clear();
           _showAddPart.value = false;
         }
       },
@@ -133,6 +135,16 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
                       index: index,
                       acoustics: state.accessoriesList[index],
                       width: width2,
+                      update: (Accessories accessories) {
+                        _id.text = accessories.id!;
+                        _imageUrl.text = accessories.imageUrl;
+                        _title.text = accessories.title;
+                        _subtitle.text = accessories.subtitle;
+                        _cost.text = accessories.cost;
+                        _showAddPart.value = true;
+                      },
+                      delete: (Accessories accessories) =>
+                          _cubit.onDeleteAccessories(accessories: accessories),
                     );
                   },
                 ),
@@ -189,10 +201,25 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
               const SizedBox(
                 width: 20,
               ),
-              MyButton(
-                title: 'Добавить',
-                onTap: () => _createAccessories(context),
-              ),
+              if (_id.text.isNotEmpty) ...{
+                MyButton(
+                  title: 'Обновить',
+                  onTap: () => _cubit.onUpdateAccessories(
+                    accessories: Accessories(
+                      id: _id.text,
+                      imageUrl: _imageUrl.text,
+                      title: _title.text,
+                      subtitle: _subtitle.text,
+                      cost: _cost.text,
+                    ),
+                  ),
+                ),
+              } else ...{
+                MyButton(
+                  title: 'Добавить',
+                  onTap: () => _createAccessories(context),
+                ),
+              },
             ],
           ),
         ],
@@ -216,12 +243,16 @@ class _AccessoriesRow extends StatelessWidget {
   final int index;
   final Accessories acoustics;
   final double width;
+  final Function(Accessories) update;
+  final Function(Accessories) delete;
 
   _AccessoriesRow({
     Key? key,
     required this.index,
     required this.acoustics,
     required this.width,
+    required this.update,
+    required this.delete,
   }) : super(key: key);
 
   final Border border = Border.all(color: Colors.grey);
@@ -245,9 +276,24 @@ class _AccessoriesRow extends StatelessWidget {
             text: '${acoustics.cost} руб.',
           ),
           const Expanded(child: EmptyWidget()),
-          const TableElement(
-            width: 50,
-            text: emptyString,
+          SizedBox(
+            width: 80,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () => update(acoustics),
+                  icon: const Icon(CupertinoIcons.pencil),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+                IconButton(
+                  onPressed: () => delete(acoustics),
+                  icon: const Icon(CupertinoIcons.clear),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
           ),
         ],
       ),

@@ -8,5 +8,4 @@ abstract class ConsultationState with _$ConsultationState {
   factory ConsultationState.initState() = ConsultationInitState;
 
   factory ConsultationState.content(List<ConsultationRequest> list) = Content;
-
 }

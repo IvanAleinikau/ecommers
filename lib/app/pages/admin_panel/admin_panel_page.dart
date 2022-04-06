@@ -103,13 +103,13 @@ class _AdminPanelPageState extends State<AdminPanelPage> {
                           icon: Icons.circle,
                           width: width,
                         ),
-                        AdminPanelButton(
-                          padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
-                          buttonName: 'Statistics',
-                          onPressed: () => _bloc.add(ShowStatistics()),
-                          icon: CupertinoIcons.chart_bar_alt_fill,
-                          width: width,
-                        ),
+                        // AdminPanelButton(
+                        //   padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
+                        //   buttonName: 'Statistics',
+                        //   onPressed: () => _bloc.add(ShowStatistics()),
+                        //   icon: CupertinoIcons.chart_bar_alt_fill,
+                        //   width: width,
+                        // ),
                         AdminPanelButton(
                           padding: const EdgeInsets.fromLTRB(10, 7, 10, 0),
                           buttonName: 'Requests',

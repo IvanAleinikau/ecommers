@@ -1,4 +1,3 @@
-import 'package:ecommers/app/common/app_constants.dart';
 import 'package:ecommers/app/common/button/my_button.dart';
 import 'package:ecommers/app/common/empty_widget.dart';
 import 'package:ecommers/app/pages/admin_panel/widgets/admin_panel_input.dart';
@@ -26,6 +25,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
   final TextEditingController _imageUrl = TextEditingController();
   final TextEditingController _title = TextEditingController();
   final TextEditingController _subtitle = TextEditingController();
+  final TextEditingController _id = TextEditingController();
 
   late NewsCubit _cubit;
 
@@ -37,6 +37,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
 
   @override
   void dispose() {
+    _id.dispose();
     _imageUrl.dispose();
     _title.dispose();
     _subtitle.dispose();
@@ -52,6 +53,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
           _imageUrl.clear();
           _title.clear();
           _subtitle.clear();
+          _id.clear();
           _showAddPart.value = false;
         }
       },
@@ -131,6 +133,14 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
                       index: index,
                       news: state.newsList[index],
                       width: width2,
+                      delete: (News news) => _cubit.onDeleteNews(news: news),
+                      update: (News news) {
+                        _id.text = news.id!;
+                        _imageUrl.text = news.imageUrl;
+                        _title.text = news.title;
+                        _subtitle.text = news.subtitle;
+                        _showAddPart.value = true;
+                      },
                     );
                   },
                 ),
@@ -180,10 +190,25 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
               const SizedBox(
                 width: 20,
               ),
-              MyButton(
-                title: 'Добавить',
-                onTap: () => _createNews(context),
-              ),
+              if (_id.text.isNotEmpty) ...{
+                MyButton(
+                  title: 'Обновить',
+                  onTap: () => _cubit.onUpdateNews(
+                    news: News(
+                      id: _id.text,
+                      title: _title.text,
+                      subtitle: _subtitle.text,
+                      imageUrl: _imageUrl.text,
+                      date: DateTime.now(),
+                    ),
+                  ),
+                ),
+              } else ...{
+                MyButton(
+                  title: 'Добавить',
+                  onTap: () => _createNews(context),
+                ),
+              },
             ],
           ),
         ],
@@ -207,12 +232,16 @@ class _NewsRow extends StatelessWidget {
   final int index;
   final News news;
   final double width;
+  final Function(News) update;
+  final Function(News) delete;
 
   _NewsRow({
     Key? key,
     required this.index,
     required this.news,
     required this.width,
+    required this.update,
+    required this.delete,
   }) : super(key: key);
 
   final Border border = Border.all(color: Colors.grey);
@@ -236,9 +265,24 @@ class _NewsRow extends StatelessWidget {
             text: DateFormat('dd.MM.yyyy').format(news.date),
           ),
           const Expanded(child: EmptyWidget()),
-          const TableElement(
-            width: 50,
-            text: emptyString,
+          SizedBox(
+            width: 80,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () => update(news),
+                  icon: const Icon(CupertinoIcons.pencil),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+                IconButton(
+                  onPressed: () => delete(news),
+                  icon: const Icon(CupertinoIcons.clear),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
           ),
         ],
       ),

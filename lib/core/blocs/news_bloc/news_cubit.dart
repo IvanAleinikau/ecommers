@@ -25,6 +25,20 @@ class NewsCubit extends Cubit<NewsState> {
     }
   }
 
+  void onUpdateNews({required News news}) async {
+    emit(state.copyWith(isLoading: true, newsCreated: false));
+    await _repository.update(news);
+    _fetchNews();
+    emit(state.copyWith(isLoading: false, newsCreated: true));
+  }
+
+  void onDeleteNews({required News news}) async {
+    emit(state.copyWith(isLoading: true, newsCreated: false));
+    await _repository.delete(news.id ?? '');
+    _fetchNews();
+    emit(state.copyWith(isLoading: false, newsCreated: true));
+  }
+
   void _fetchNews() async {
     emit(state.copyWith(isLoading: true));
     final result = await _repository.read();

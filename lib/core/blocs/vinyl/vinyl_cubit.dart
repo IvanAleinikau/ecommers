@@ -25,6 +25,20 @@ class VinylCubit extends Cubit<VinylState> {
     }
   }
 
+  void onUpdateVinyl({required Vinyl vinyl}) async {
+    emit(state.copyWith(isLoading: true, vinylCreated: false));
+    await _repository.update(vinyl);
+    _fetchVinyl();
+    emit(state.copyWith(isLoading: false, vinylCreated: true));
+  }
+
+  void onDeleteVinyl({required Vinyl vinyl}) async {
+    emit(state.copyWith(isLoading: true, vinylCreated: false));
+    await _repository.delete(vinyl.id ?? '');
+    _fetchVinyl();
+    emit(state.copyWith(isLoading: false, vinylCreated: true));
+  }
+
   void _fetchVinyl() async {
     emit(state.copyWith(isLoading: true));
     final result = await _repository.read();

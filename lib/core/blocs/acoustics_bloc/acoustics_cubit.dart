@@ -25,6 +25,20 @@ class AcousticsCubit extends Cubit<AcousticsState> {
     }
   }
 
+  void onUpdateAcoustics({required Acoustics acoustics}) async {
+    emit(state.copyWith(isLoading: true, acousticsCreated: false));
+    await _repository.update(acoustics);
+    _fetchAcoustics();
+    emit(state.copyWith(isLoading: false, acousticsCreated: true));
+  }
+
+  void onDeleteAcoustics({required Acoustics acoustics}) async {
+    emit(state.copyWith(isLoading: true, acousticsCreated: false));
+    await _repository.delete(acoustics.id ?? '');
+    _fetchAcoustics();
+    emit(state.copyWith(isLoading: false, acousticsCreated: true));
+  }
+
   void _fetchAcoustics() async {
     emit(state.copyWith(isLoading: true));
     final result = await _repository.read();

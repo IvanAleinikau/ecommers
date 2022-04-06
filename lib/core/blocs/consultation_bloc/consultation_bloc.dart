@@ -24,5 +24,14 @@ class ConsultationBloc extends Bloc<ConsultationEvent, ConsultationState> {
     on<FetchRequest>((event, emit) async {
       emit(ConsultationState.content(await _repository.read()));
     });
+
+    on<UpdateRequest>((event, emit) async {
+      await _repository.update(event.request);
+    });
+
+    on<DeleteRequest>((event, emit) async {
+      await _repository.delete(event.request.id!);
+      emit(ConsultationState.content(await _repository.read()));
+    });
   }
 }

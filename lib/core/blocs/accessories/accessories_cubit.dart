@@ -25,6 +25,20 @@ class AccessoriesCubit extends Cubit<AccessoriesState> {
     }
   }
 
+  void onUpdateAccessories({required Accessories accessories}) async {
+    emit(state.copyWith(isLoading: true, accessoriesCreated: false));
+    await _repository.update(accessories);
+    _fetchAccessories();
+    emit(state.copyWith(isLoading: false, accessoriesCreated: true));
+  }
+
+  void onDeleteAccessories({required Accessories accessories}) async {
+    emit(state.copyWith(isLoading: true, accessoriesCreated: false));
+    await _repository.delete(accessories.id ?? '');
+    _fetchAccessories();
+    emit(state.copyWith(isLoading: false, accessoriesCreated: true));
+  }
+
   void _fetchAccessories() async {
     emit(state.copyWith(isLoading: true));
     final result = await _repository.read();

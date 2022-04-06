@@ -1,9 +1,11 @@
 import 'package:ecommers/app/common/app_constants.dart';
+import 'package:ecommers/app/common/empty_widget.dart';
 import 'package:ecommers/app/pages/admin_panel/widgets/table_element.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_event.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
 import 'package:ecommers/core/model/consultation_request_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,6 +24,7 @@ class _AdminPanelRequestsState extends State<AdminPanelRequests> {
     final _bloc = BlocProvider.of<ConsultationBloc>(context);
     final width2 = width - 50;
     return BlocBuilder<ConsultationBloc, ConsultationState>(
+      bloc: _bloc,
       builder: (context, state) {
         return Container(
           height: height,
@@ -71,6 +74,8 @@ class _AdminPanelRequestsState extends State<AdminPanelRequests> {
                             index: index,
                             request: list[index],
                             width: width2,
+                            delete: (ConsultationRequest req) =>
+                                _bloc.add(DeleteRequest(request: req)),
                           );
                         },
                       );
@@ -90,12 +95,14 @@ class _RequestRow extends StatelessWidget {
   final int index;
   final ConsultationRequest request;
   final double width;
+  final Function(ConsultationRequest) delete;
 
   _RequestRow({
     Key? key,
     required this.index,
     required this.request,
     required this.width,
+    required this.delete,
   }) : super(key: key);
 
   final Border border = Border.all(color: Colors.grey);
@@ -122,9 +129,19 @@ class _RequestRow extends StatelessWidget {
             width: width / 4,
             text: request.email,
           ),
-          TableElement(
-            width: width / 4,
-            text: emptyString,
+          const Expanded(child: EmptyWidget()),
+          SizedBox(
+            width: 40,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () => delete(request),
+                  icon: const Icon(CupertinoIcons.clear),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
           ),
         ],
       ),

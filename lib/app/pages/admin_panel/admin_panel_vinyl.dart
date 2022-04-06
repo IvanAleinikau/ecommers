@@ -1,4 +1,3 @@
-import 'package:ecommers/app/common/app_constants.dart';
 import 'package:ecommers/app/common/button/my_button.dart';
 import 'package:ecommers/app/common/empty_widget.dart';
 import 'package:ecommers/app/pages/admin_panel/widgets/admin_panel_input.dart';
@@ -26,6 +25,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
   final TextEditingController _title = TextEditingController();
   final TextEditingController _cost = TextEditingController();
   final TextEditingController _year = TextEditingController();
+  final TextEditingController _id = TextEditingController();
 
   late VinylCubit _cubit;
 
@@ -37,6 +37,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
 
   @override
   void dispose() {
+    _id.dispose();
     _imageUrl.dispose();
     _title.dispose();
     _cost.dispose();
@@ -54,6 +55,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
           _title.clear();
           _cost.clear();
           _year.clear();
+          _id.clear();
           _showAddPart.value = false;
         }
       },
@@ -137,6 +139,15 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
                       index: index,
                       vinyl: state.vinylList[index],
                       width: width2,
+                      update: (Vinyl vinyl) {
+                        _id.text = vinyl.id!;
+                        _imageUrl.text = vinyl.imageUrl;
+                        _title.text = vinyl.title;
+                        _cost.text = vinyl.cost;
+                        _year.text = vinyl.year;
+                        _showAddPart.value = true;
+                      },
+                      delete: (Vinyl vinyl) => _cubit.onDeleteVinyl(vinyl: vinyl),
                     );
                   },
                 ),
@@ -193,10 +204,25 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
               const SizedBox(
                 width: 20,
               ),
-              MyButton(
-                title: 'Добавить',
-                onTap: () => _createVinyl(context),
-              ),
+              if (_id.text.isNotEmpty) ...{
+                MyButton(
+                  title: 'Обновить',
+                  onTap: () => _cubit.onUpdateVinyl(
+                    vinyl: Vinyl(
+                      id: _id.text,
+                      imageUrl: _imageUrl.text,
+                      title: _title.text,
+                      year: _year.text,
+                      cost: _cost.text,
+                    ),
+                  ),
+                ),
+              } else ...{
+                MyButton(
+                  title: 'Добавить',
+                  onTap: () => _createVinyl(context),
+                ),
+              },
             ],
           ),
         ],
@@ -220,12 +246,16 @@ class _VinylRow extends StatelessWidget {
   final int index;
   final Vinyl vinyl;
   final double width;
+  final Function(Vinyl) update;
+  final Function(Vinyl) delete;
 
   _VinylRow({
     Key? key,
     required this.index,
     required this.vinyl,
     required this.width,
+    required this.update,
+    required this.delete,
   }) : super(key: key);
 
   final Border border = Border.all(color: Colors.grey);
@@ -253,9 +283,24 @@ class _VinylRow extends StatelessWidget {
             text: '${vinyl.cost} руб.',
           ),
           const Expanded(child: EmptyWidget()),
-          const TableElement(
-            width: 50,
-            text: emptyString,
+          SizedBox(
+            width: 80,
+            child: Row(
+              children: [
+                IconButton(
+                  onPressed: () => update(vinyl),
+                  icon: const Icon(CupertinoIcons.pencil),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+                IconButton(
+                  onPressed: () => delete(vinyl),
+                  icon: const Icon(CupertinoIcons.clear),
+                  iconSize: 20,
+                  color: Colors.grey,
+                ),
+              ],
+            ),
           ),
         ],
       ),
