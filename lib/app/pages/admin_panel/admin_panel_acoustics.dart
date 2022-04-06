@@ -148,7 +148,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Добавить винил'.toUpperCase(),
+            'Добавить акустику'.toUpperCase(),
             style: Style.montserrat14w400.copyWith(fontWeight: FontWeight.bold),
           ),
           const Divider(),

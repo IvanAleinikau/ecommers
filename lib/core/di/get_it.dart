@@ -1,3 +1,4 @@
+import 'package:ecommers/data/repository/accessories_repository.dart';
 import 'package:ecommers/data/repository/acoustics_repository.dart';
 import 'package:ecommers/data/repository/auth_repository.dart';
 import 'package:ecommers/data/repository/consultation_request_repository.dart';
@@ -18,5 +19,6 @@ class SetupGetIt {
     GetIt.instance.registerSingleton(NewsService());
     GetIt.instance.registerSingleton(VinylRepository());
     GetIt.instance.registerSingleton(AcousticsRepository());
+    GetIt.instance.registerSingleton(AccessoriesRepository());
   }
 }

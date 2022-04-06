@@ -14,7 +14,7 @@ import 'package:auto_route/auto_route.dart' as _i11;
 import 'package:flutter/material.dart' as _i12;
 
 import '../../app/pages/about_us_page.dart' as _i3;
-import '../../app/pages/accessories_page.dart' as _i9;
+import '../../app/pages/accessories/accessories_page.dart' as _i9;
 import '../../app/pages/acoustics/acoustics_page.dart' as _i8;
 import '../../app/pages/admin_panel/admin_panel_page.dart' as _i5;
 import '../../app/pages/contacts_page.dart' as _i2;
