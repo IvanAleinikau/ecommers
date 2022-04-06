@@ -2,17 +2,17 @@ import 'package:ecommers/app/common/app_constants.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_event.dart';
 import 'package:ecommers/core/blocs/consultation_bloc/consultation_state.dart';
 import 'package:ecommers/core/model/consultation_request_model.dart';
-import 'package:ecommers/data/service/consultation_request_service.dart';
+import 'package:ecommers/data/repository/consultation_request_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 class ConsultationBloc extends Bloc<ConsultationEvent, ConsultationState> {
-  final service = GetIt.instance<ConsultationRequestService>();
+  final _repository = GetIt.instance<ConsultationRequestRepository>();
 
   ConsultationBloc() : super(ConsultationState.initState()) {
     on<CreateRequest>((event, emit) async {
-      await service.create(
+      await _repository.create(
         ConsultationRequest(
           name: event.name,
           phoneNumber: event.phoneNumber,
@@ -22,7 +22,7 @@ class ConsultationBloc extends Bloc<ConsultationEvent, ConsultationState> {
     });
 
     on<FetchRequest>((event, emit) async {
-      emit(ConsultationState.content(await service.read()));
+      emit(ConsultationState.content(await _repository.read()));
     });
   }
 }

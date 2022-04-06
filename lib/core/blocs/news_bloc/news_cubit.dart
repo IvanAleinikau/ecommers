@@ -1,7 +1,7 @@
 import 'package:ecommers/app/common/enums/label.dart';
 import 'package:ecommers/core/blocs/news_bloc/news_state.dart';
 import 'package:ecommers/core/model/news_model.dart';
-import 'package:ecommers/data/service/news_service.dart';
+import 'package:ecommers/data/repository/news_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,7 +10,7 @@ class NewsCubit extends Cubit<NewsState> {
     onInit();
   }
 
-  final _service = GetIt.instance<NewsService>();
+  final _repository = GetIt.instance<NewsRepository>();
 
   void onInit() {
     _fetchNews();
@@ -18,7 +18,7 @@ class NewsCubit extends Cubit<NewsState> {
 
   void onCreateNews({required News news}) async {
     emit(state.copyWith(isLoading: true, newsCreated: false));
-    final result = await _service.create(news: news);
+    final result = await _repository.create(news: news);
     if (result == Label.successfully) {
       _fetchNews();
       emit(state.copyWith(isLoading: false, newsCreated: true));
@@ -27,7 +27,7 @@ class NewsCubit extends Cubit<NewsState> {
 
   void _fetchNews() async {
     emit(state.copyWith(isLoading: true));
-    final result = await _service.read();
+    final result = await _repository.read();
     if (result.isNotEmpty) {
       emit(state.copyWith(isLoading: false, newsList: result));
     } else {

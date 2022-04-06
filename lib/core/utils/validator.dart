@@ -3,10 +3,9 @@ class Validator {
     if (name.isEmpty) {
       return 'Введите имя';
     } else {
-      if (!RegExp(r'^([a-zA-Z]).{1,}$')
-          .hasMatch(name)) {
+      if (!RegExp(r'^([a-zA-Z]).{1,}$').hasMatch(name)) {
         return 'Введите корректное имя';
-      }else{
+      } else {
         return null;
       }
     }
@@ -24,10 +23,9 @@ class Validator {
     if (phoneNumber.isEmpty) {
       return 'Введите номер мобильного телефона';
     } else {
-      if (!RegExp(r'^(?:[+0]9)?[0-9]{9}$')
-          .hasMatch(phoneNumber)) {
+      if (!RegExp(r'^(?:[+0]9)?[0-9]{9}$').hasMatch(phoneNumber)) {
         return 'Введите корректный номер';
-      }else{
+      } else {
         return null;
       }
     }
@@ -41,14 +39,14 @@ class Validator {
         return 'Введите корректную почту';
       }
     }
+    return null;
   }
 
   static String? validatePassword(String password) {
     if (password.isEmpty) {
       return 'Введите пароль';
     } else {
-      if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
-          .hasMatch(password)) {
+      if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$').hasMatch(password)) {
         return 'Введите корректный пароль';
       } else {
         return null;
@@ -61,8 +59,7 @@ class Validator {
     if (password.isEmpty) {
       return 'Введите пароль';
     } else {
-      if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
-          .hasMatch(password)) {
+      if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$').hasMatch(password)) {
         return 'Введите корректный пароль';
       } else {
         if (password == confirmPassword) {
