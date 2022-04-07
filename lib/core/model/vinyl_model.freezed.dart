@@ -23,13 +23,15 @@ class _$VinylTearOff {
       required String imageUrl,
       required String title,
       required String year,
-      required String cost}) {
+      required String cost,
+      required String description}) {
     return _Vinyl(
       id: id,
       imageUrl: imageUrl,
       title: title,
       year: year,
       cost: cost,
+      description: description,
     );
   }
 }
@@ -44,6 +46,7 @@ mixin _$Vinyl {
   String get title => throw _privateConstructorUsedError;
   String get year => throw _privateConstructorUsedError;
   String get cost => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $VinylCopyWith<Vinyl> get copyWith => throw _privateConstructorUsedError;
@@ -54,7 +57,12 @@ abstract class $VinylCopyWith<$Res> {
   factory $VinylCopyWith(Vinyl value, $Res Function(Vinyl) then) =
       _$VinylCopyWithImpl<$Res>;
   $Res call(
-      {String? id, String imageUrl, String title, String year, String cost});
+      {String? id,
+      String imageUrl,
+      String title,
+      String year,
+      String cost,
+      String description});
 }
 
 /// @nodoc
@@ -72,6 +80,7 @@ class _$VinylCopyWithImpl<$Res> implements $VinylCopyWith<$Res> {
     Object? title = freezed,
     Object? year = freezed,
     Object? cost = freezed,
+    Object? description = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -94,6 +103,10 @@ class _$VinylCopyWithImpl<$Res> implements $VinylCopyWith<$Res> {
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
               as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -104,7 +117,12 @@ abstract class _$VinylCopyWith<$Res> implements $VinylCopyWith<$Res> {
       __$VinylCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id, String imageUrl, String title, String year, String cost});
+      {String? id,
+      String imageUrl,
+      String title,
+      String year,
+      String cost,
+      String description});
 }
 
 /// @nodoc
@@ -123,6 +141,7 @@ class __$VinylCopyWithImpl<$Res> extends _$VinylCopyWithImpl<$Res>
     Object? title = freezed,
     Object? year = freezed,
     Object? cost = freezed,
+    Object? description = freezed,
   }) {
     return _then(_Vinyl(
       id: id == freezed
@@ -145,6 +164,10 @@ class __$VinylCopyWithImpl<$Res> extends _$VinylCopyWithImpl<$Res>
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
               as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -157,7 +180,8 @@ class _$_Vinyl implements _Vinyl {
       required this.imageUrl,
       required this.title,
       required this.year,
-      required this.cost});
+      required this.cost,
+      required this.description});
 
   @override
   final String? id;
@@ -169,10 +193,12 @@ class _$_Vinyl implements _Vinyl {
   final String year;
   @override
   final String cost;
+  @override
+  final String description;
 
   @override
   String toString() {
-    return 'Vinyl(id: $id, imageUrl: $imageUrl, title: $title, year: $year, cost: $cost)';
+    return 'Vinyl(id: $id, imageUrl: $imageUrl, title: $title, year: $year, cost: $cost, description: $description)';
   }
 
   @override
@@ -184,7 +210,9 @@ class _$_Vinyl implements _Vinyl {
             const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.year, year) &&
-            const DeepCollectionEquality().equals(other.cost, cost));
+            const DeepCollectionEquality().equals(other.cost, cost) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description));
   }
 
   @override
@@ -194,7 +222,8 @@ class _$_Vinyl implements _Vinyl {
       const DeepCollectionEquality().hash(imageUrl),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(year),
-      const DeepCollectionEquality().hash(cost));
+      const DeepCollectionEquality().hash(cost),
+      const DeepCollectionEquality().hash(description));
 
   @JsonKey(ignore: true)
   @override
@@ -208,7 +237,8 @@ abstract class _Vinyl implements Vinyl {
       required String imageUrl,
       required String title,
       required String year,
-      required String cost}) = _$_Vinyl;
+      required String cost,
+      required String description}) = _$_Vinyl;
 
   @override
   String? get id;
@@ -220,6 +250,8 @@ abstract class _Vinyl implements Vinyl {
   String get year;
   @override
   String get cost;
+  @override
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$VinylCopyWith<_Vinyl> get copyWith => throw _privateConstructorUsedError;

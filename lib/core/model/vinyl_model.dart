@@ -10,5 +10,6 @@ class Vinyl with _$Vinyl {
     required String title,
     required String year,
     required String cost,
+    required String description,
   }) = _Vinyl;
 }

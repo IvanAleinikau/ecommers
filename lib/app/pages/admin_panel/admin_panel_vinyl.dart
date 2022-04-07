@@ -26,6 +26,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
   final TextEditingController _cost = TextEditingController();
   final TextEditingController _year = TextEditingController();
   final TextEditingController _id = TextEditingController();
+  final TextEditingController _description = TextEditingController();
 
   late VinylCubit _cubit;
 
@@ -37,6 +38,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
 
   @override
   void dispose() {
+    _description.dispose();
     _id.dispose();
     _imageUrl.dispose();
     _title.dispose();
@@ -56,6 +58,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
           _cost.clear();
           _year.clear();
           _id.clear();
+          _description.clear();
           _showAddPart.value = false;
         }
       },
@@ -145,6 +148,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
                         _title.text = vinyl.title;
                         _cost.text = vinyl.cost;
                         _year.text = vinyl.year;
+                        _description.text = vinyl.description;
                         _showAddPart.value = true;
                       },
                       delete: (Vinyl vinyl) => _cubit.onDeleteVinyl(vinyl: vinyl),
@@ -182,6 +186,13 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
             height: 10,
           ),
           AdminPanelInput(
+            hintText: 'Заголовок',
+            controller: _description,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          AdminPanelInput(
             hintText: 'Цена',
             controller: _cost,
           ),
@@ -214,6 +225,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
                       title: _title.text,
                       year: _year.text,
                       cost: _cost.text,
+                      description: _description.text,
                     ),
                   ),
                 ),
@@ -237,6 +249,7 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
         title: _title.text,
         year: _year.text,
         cost: _cost.text,
+        description: '',
       ),
     );
   }

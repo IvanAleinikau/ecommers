@@ -1,6 +1,9 @@
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/core/model/vinyl_model.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommers/core/router/router.gr.dart';
+
+import 'package:auto_route/auto_route.dart';
 
 class VinylWidget extends StatefulWidget {
   final Vinyl vinyl;
@@ -20,7 +23,7 @@ class _VinylWidgetState extends State<VinylWidget> {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () => context.router.navigate(VinylDetailedRoute(vinyl: widget.vinyl)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

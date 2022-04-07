@@ -13,6 +13,7 @@ class VinylRepository {
         'cost': vinyl.cost,
         'imageUrl': vinyl.imageUrl,
         'year': vinyl.year,
+        'description': vinyl.description,
       });
       return Label.successfully;
     } catch (_) {
@@ -30,6 +31,7 @@ class VinylRepository {
         cost: doc['cost'],
         year: doc['year'],
         imageUrl: doc['imageUrl'],
+        description: doc['description'],
       );
       _list.add(item);
     }
@@ -42,6 +44,7 @@ class VinylRepository {
       'year': vinyl.year,
       'cost': vinyl.cost,
       'imageUrl': vinyl.imageUrl,
+      'description': vinyl.description,
     });
   }
 

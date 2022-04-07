@@ -9,6 +9,7 @@ import 'package:ecommers/app/pages/main_page.dart';
 import 'package:ecommers/app/pages/news/news_page.dart';
 import 'package:ecommers/app/pages/register_page.dart';
 import 'package:ecommers/app/pages/vinyl/vinyl_page.dart';
+import 'package:ecommers/app/pages/vinyl/widgets/vinyl_detailed.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -63,6 +64,11 @@ import 'package:ecommers/app/pages/vinyl/vinyl_page.dart';
       path: '/news',
       page: NewsPage,
       name: 'NewsRoute',
+    ),
+    AutoRoute(
+      path: '/vinyl_details',
+      page: VinylDetailed,
+      name: 'VinylDetailedRoute',
     ),
   ],
 )
