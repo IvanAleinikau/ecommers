@@ -26,6 +26,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
   final TextEditingController _cost = TextEditingController();
   final TextEditingController _subtitle = TextEditingController();
   final TextEditingController _id = TextEditingController();
+  final TextEditingController _description = TextEditingController();
 
   late AccessoriesCubit _cubit;
 
@@ -42,6 +43,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
     _title.dispose();
     _cost.dispose();
     _subtitle.dispose();
+    _description.dispose();
     super.dispose();
   }
 
@@ -56,6 +58,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
           _cost.clear();
           _subtitle.clear();
           _id.clear();
+          _description.clear();
           _showAddPart.value = false;
         }
       },
@@ -141,6 +144,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
                         _title.text = accessories.title;
                         _subtitle.text = accessories.subtitle;
                         _cost.text = accessories.cost;
+                        _description.text = accessories.description;
                         _showAddPart.value = true;
                       },
                       delete: (Accessories accessories) =>
@@ -186,6 +190,13 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
             height: 10,
           ),
           AdminPanelInput(
+            hintText: 'Описание',
+            controller: _description,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          AdminPanelInput(
             hintText: 'Цена',
             controller: _cost,
           ),
@@ -202,6 +213,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
                   _cost.clear();
                   _subtitle.clear();
                   _id.clear();
+                  _description.clear();
                   _showAddPart.value = false;
                 },
               ),
@@ -218,6 +230,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
                       title: _title.text,
                       subtitle: _subtitle.text,
                       cost: _cost.text,
+                      description: _description.text,
                     ),
                   ),
                 ),
@@ -241,6 +254,7 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
         title: _title.text,
         subtitle: _subtitle.text,
         cost: _cost.text,
+        description: _description.text,
       ),
     );
   }

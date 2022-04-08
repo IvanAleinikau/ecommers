@@ -9,6 +9,7 @@ class Accessories with _$Accessories {
     required String imageUrl,
     required String title,
     required String subtitle,
+    required String description,
     required String cost,
   }) = _Accessories;
 }

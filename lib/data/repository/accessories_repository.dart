@@ -13,6 +13,7 @@ class AccessoriesRepository {
         'cost': accessories.cost,
         'imageUrl': accessories.imageUrl,
         'subtitle': accessories.subtitle,
+        'description': accessories.description,
       });
       return Label.successfully;
     } catch (_) {
@@ -30,6 +31,7 @@ class AccessoriesRepository {
         cost: doc['cost'],
         subtitle: doc['subtitle'],
         imageUrl: doc['imageUrl'],
+        description: doc['description'],
       );
       _list.add(item);
     }
@@ -42,6 +44,7 @@ class AccessoriesRepository {
       'subtitle': accessories.subtitle,
       'cost': accessories.cost,
       'imageUrl': accessories.imageUrl,
+      'description': accessories.description,
     });
   }
 

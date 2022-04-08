@@ -23,12 +23,14 @@ class _$AccessoriesTearOff {
       required String imageUrl,
       required String title,
       required String subtitle,
+      required String description,
       required String cost}) {
     return _Accessories(
       id: id,
       imageUrl: imageUrl,
       title: title,
       subtitle: subtitle,
+      description: description,
       cost: cost,
     );
   }
@@ -43,6 +45,7 @@ mixin _$Accessories {
   String get imageUrl => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get subtitle => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get cost => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -60,6 +63,7 @@ abstract class $AccessoriesCopyWith<$Res> {
       String imageUrl,
       String title,
       String subtitle,
+      String description,
       String cost});
 }
 
@@ -77,6 +81,7 @@ class _$AccessoriesCopyWithImpl<$Res> implements $AccessoriesCopyWith<$Res> {
     Object? imageUrl = freezed,
     Object? title = freezed,
     Object? subtitle = freezed,
+    Object? description = freezed,
     Object? cost = freezed,
   }) {
     return _then(_value.copyWith(
@@ -95,6 +100,10 @@ class _$AccessoriesCopyWithImpl<$Res> implements $AccessoriesCopyWith<$Res> {
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       cost: cost == freezed
           ? _value.cost
@@ -116,6 +125,7 @@ abstract class _$AccessoriesCopyWith<$Res>
       String imageUrl,
       String title,
       String subtitle,
+      String description,
       String cost});
 }
 
@@ -135,6 +145,7 @@ class __$AccessoriesCopyWithImpl<$Res> extends _$AccessoriesCopyWithImpl<$Res>
     Object? imageUrl = freezed,
     Object? title = freezed,
     Object? subtitle = freezed,
+    Object? description = freezed,
     Object? cost = freezed,
   }) {
     return _then(_Accessories(
@@ -154,6 +165,10 @@ class __$AccessoriesCopyWithImpl<$Res> extends _$AccessoriesCopyWithImpl<$Res>
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
               as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       cost: cost == freezed
           ? _value.cost
           : cost // ignore: cast_nullable_to_non_nullable
@@ -170,6 +185,7 @@ class _$_Accessories implements _Accessories {
       required this.imageUrl,
       required this.title,
       required this.subtitle,
+      required this.description,
       required this.cost});
 
   @override
@@ -181,11 +197,13 @@ class _$_Accessories implements _Accessories {
   @override
   final String subtitle;
   @override
+  final String description;
+  @override
   final String cost;
 
   @override
   String toString() {
-    return 'Accessories(id: $id, imageUrl: $imageUrl, title: $title, subtitle: $subtitle, cost: $cost)';
+    return 'Accessories(id: $id, imageUrl: $imageUrl, title: $title, subtitle: $subtitle, description: $description, cost: $cost)';
   }
 
   @override
@@ -197,6 +215,8 @@ class _$_Accessories implements _Accessories {
             const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.cost, cost));
   }
 
@@ -207,6 +227,7 @@ class _$_Accessories implements _Accessories {
       const DeepCollectionEquality().hash(imageUrl),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subtitle),
+      const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(cost));
 
   @JsonKey(ignore: true)
@@ -221,6 +242,7 @@ abstract class _Accessories implements Accessories {
       required String imageUrl,
       required String title,
       required String subtitle,
+      required String description,
       required String cost}) = _$_Accessories;
 
   @override
@@ -231,6 +253,8 @@ abstract class _Accessories implements Accessories {
   String get title;
   @override
   String get subtitle;
+  @override
+  String get description;
   @override
   String get cost;
   @override

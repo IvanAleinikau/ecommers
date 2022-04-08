@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/core/model/accessories_model.dart';
+import 'package:ecommers/core/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
 class AccessoriesWidget extends StatefulWidget {
@@ -20,7 +22,8 @@ class _AccessoriesWidgetState extends State<AccessoriesWidget> {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () =>
+            context.router.navigate(AccessoriesDetailedRoute(accessories: widget.accessories)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
