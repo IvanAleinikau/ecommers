@@ -14,6 +14,7 @@ class NewsRepository {
         'subtitle': news.subtitle,
         'imageUrl': news.imageUrl,
         'date': DateFormat('yyyy-MM-dd HH:mm:ss').format(news.date),
+        'description': news.description,
       });
       return Label.successfully;
     } catch (_) {
@@ -31,6 +32,7 @@ class NewsRepository {
         subtitle: doc['subtitle'],
         date: DateFormat("yyyy-MM-dd HH:mm:ss").parse(doc['date']),
         imageUrl: doc['imageUrl'],
+        description: doc['description'],
       );
       _list.add(item);
     }
@@ -42,6 +44,7 @@ class NewsRepository {
       'title': news.title,
       'subtitle': news.subtitle,
       'imageUrl': news.imageUrl,
+      'description': news.description,
     });
   }
 

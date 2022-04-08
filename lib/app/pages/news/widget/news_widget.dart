@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/core/model/news_model.dart';
+import 'package:ecommers/core/router/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -22,7 +24,7 @@ class _NewsWidgetState extends State<NewsWidget> {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () => context.router.navigate(NewsDetailedRoute(news: widget.news)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,

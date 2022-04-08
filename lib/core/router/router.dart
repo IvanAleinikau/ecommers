@@ -9,6 +9,7 @@ import 'package:ecommers/app/pages/contacts_page.dart';
 import 'package:ecommers/app/pages/login_page.dart';
 import 'package:ecommers/app/pages/main_page.dart';
 import 'package:ecommers/app/pages/news/news_page.dart';
+import 'package:ecommers/app/pages/news/widget/news_detailed.dart';
 import 'package:ecommers/app/pages/register_page.dart';
 import 'package:ecommers/app/pages/vinyl/vinyl_page.dart';
 import 'package:ecommers/app/pages/vinyl/widgets/vinyl_detailed.dart';
@@ -81,6 +82,11 @@ import 'package:ecommers/app/pages/vinyl/widgets/vinyl_detailed.dart';
       path: '/accessories_details',
       page: AccessoriesDetailed,
       name: 'AccessoriesDetailedRoute',
+    ),
+    AutoRoute(
+      path: '/news_details',
+      page: NewsDetailed,
+      name: 'NewsDetailedRoute',
     ),
   ],
 )

@@ -8,6 +8,7 @@ class News with _$News {
     String? id,
     required String title,
     required String subtitle,
+    required String description,
     required String imageUrl,
     required DateTime date,
   }) = _News;

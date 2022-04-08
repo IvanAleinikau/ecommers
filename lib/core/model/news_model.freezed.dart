@@ -22,12 +22,14 @@ class _$NewsTearOff {
       {String? id,
       required String title,
       required String subtitle,
+      required String description,
       required String imageUrl,
       required DateTime date}) {
     return _News(
       id: id,
       title: title,
       subtitle: subtitle,
+      description: description,
       imageUrl: imageUrl,
       date: date,
     );
@@ -42,6 +44,7 @@ mixin _$News {
   String? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get subtitle => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
 
@@ -57,6 +60,7 @@ abstract class $NewsCopyWith<$Res> {
       {String? id,
       String title,
       String subtitle,
+      String description,
       String imageUrl,
       DateTime date});
 }
@@ -74,6 +78,7 @@ class _$NewsCopyWithImpl<$Res> implements $NewsCopyWith<$Res> {
     Object? id = freezed,
     Object? title = freezed,
     Object? subtitle = freezed,
+    Object? description = freezed,
     Object? imageUrl = freezed,
     Object? date = freezed,
   }) {
@@ -89,6 +94,10 @@ class _$NewsCopyWithImpl<$Res> implements $NewsCopyWith<$Res> {
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       imageUrl: imageUrl == freezed
           ? _value.imageUrl
@@ -111,6 +120,7 @@ abstract class _$NewsCopyWith<$Res> implements $NewsCopyWith<$Res> {
       {String? id,
       String title,
       String subtitle,
+      String description,
       String imageUrl,
       DateTime date});
 }
@@ -129,6 +139,7 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
     Object? id = freezed,
     Object? title = freezed,
     Object? subtitle = freezed,
+    Object? description = freezed,
     Object? imageUrl = freezed,
     Object? date = freezed,
   }) {
@@ -144,6 +155,10 @@ class __$NewsCopyWithImpl<$Res> extends _$NewsCopyWithImpl<$Res>
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String,
       imageUrl: imageUrl == freezed
           ? _value.imageUrl
@@ -164,6 +179,7 @@ class _$_News implements _News {
       {this.id,
       required this.title,
       required this.subtitle,
+      required this.description,
       required this.imageUrl,
       required this.date});
 
@@ -174,13 +190,15 @@ class _$_News implements _News {
   @override
   final String subtitle;
   @override
+  final String description;
+  @override
   final String imageUrl;
   @override
   final DateTime date;
 
   @override
   String toString() {
-    return 'News(id: $id, title: $title, subtitle: $subtitle, imageUrl: $imageUrl, date: $date)';
+    return 'News(id: $id, title: $title, subtitle: $subtitle, description: $description, imageUrl: $imageUrl, date: $date)';
   }
 
   @override
@@ -191,6 +209,8 @@ class _$_News implements _News {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
             const DeepCollectionEquality().equals(other.imageUrl, imageUrl) &&
             const DeepCollectionEquality().equals(other.date, date));
   }
@@ -201,6 +221,7 @@ class _$_News implements _News {
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(title),
       const DeepCollectionEquality().hash(subtitle),
+      const DeepCollectionEquality().hash(description),
       const DeepCollectionEquality().hash(imageUrl),
       const DeepCollectionEquality().hash(date));
 
@@ -215,6 +236,7 @@ abstract class _News implements News {
       {String? id,
       required String title,
       required String subtitle,
+      required String description,
       required String imageUrl,
       required DateTime date}) = _$_News;
 
@@ -224,6 +246,8 @@ abstract class _News implements News {
   String get title;
   @override
   String get subtitle;
+  @override
+  String get description;
   @override
   String get imageUrl;
   @override

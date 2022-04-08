@@ -26,6 +26,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
   final TextEditingController _title = TextEditingController();
   final TextEditingController _subtitle = TextEditingController();
   final TextEditingController _id = TextEditingController();
+  final TextEditingController _description = TextEditingController();
 
   late NewsCubit _cubit;
 
@@ -38,6 +39,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
   @override
   void dispose() {
     _id.dispose();
+    _description.dispose();
     _imageUrl.dispose();
     _title.dispose();
     _subtitle.dispose();
@@ -54,6 +56,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
           _title.clear();
           _subtitle.clear();
           _id.clear();
+          _description.clear();
           _showAddPart.value = false;
         }
       },
@@ -139,6 +142,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
                         _imageUrl.text = news.imageUrl;
                         _title.text = news.title;
                         _subtitle.text = news.subtitle;
+                        _description.text = news.description;
                         _showAddPart.value = true;
                       },
                     );
@@ -190,6 +194,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
                   _title.clear();
                   _subtitle.clear();
                   _id.clear();
+                  _description.clear();
                   _showAddPart.value = false;
                 },
               ),
@@ -206,6 +211,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
                       subtitle: _subtitle.text,
                       imageUrl: _imageUrl.text,
                       date: DateTime.now(),
+                      description: _description.text,
                     ),
                   ),
                 ),
@@ -229,6 +235,7 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
         subtitle: _subtitle.value.text,
         imageUrl: _imageUrl.value.text,
         date: DateTime.now(),
+        description: _description.text,
       ),
     );
   }
