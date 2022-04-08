@@ -13,6 +13,7 @@ class AcousticsRepository {
         'subtitle': acoustics.subtitle,
         'imageUrl': acoustics.imageUrl,
         'cost': acoustics.cost,
+        'description': acoustics.description,
       });
       return Label.successfully;
     } catch (_) {
@@ -30,6 +31,7 @@ class AcousticsRepository {
         cost: doc['cost'],
         subtitle: doc['subtitle'],
         imageUrl: doc['imageUrl'],
+        description: doc['description'],
       );
       _list.add(item);
     }
@@ -42,6 +44,7 @@ class AcousticsRepository {
       'subtitle': acoustics.subtitle,
       'cost': acoustics.cost,
       'imageUrl': acoustics.imageUrl,
+      'description': acoustics.description,
     });
   }
 

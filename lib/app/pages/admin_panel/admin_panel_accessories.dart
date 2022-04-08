@@ -196,7 +196,14 @@ class _AdminPanelAccessoriesState extends State<AdminPanelAccessories> {
             children: [
               MyButton(
                 title: 'Отмена',
-                onTap: () => _showAddPart.value = false,
+                onTap: () {
+                  _imageUrl.clear();
+                  _title.clear();
+                  _cost.clear();
+                  _subtitle.clear();
+                  _id.clear();
+                  _showAddPart.value = false;
+                },
               ),
               const SizedBox(
                 width: 20,

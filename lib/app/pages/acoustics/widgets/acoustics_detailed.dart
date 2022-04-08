@@ -3,23 +3,23 @@ import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/back_button.dart';
 import 'package:ecommers/app/widgets/order_button.dart';
-import 'package:ecommers/core/model/vinyl_model.dart';
+import 'package:ecommers/core/model/acoustics_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class VinylDetailed extends StatefulWidget {
-  final Vinyl vinyl;
+class AcousticsDetailed extends StatefulWidget {
+  final Acoustics acoustics;
 
-  const VinylDetailed({
+  const AcousticsDetailed({
     Key? key,
-    required this.vinyl,
+    required this.acoustics,
   }) : super(key: key);
 
   @override
-  State<VinylDetailed> createState() => _VinylDetailedState();
+  State<AcousticsDetailed> createState() => _AcousticsDetailedState();
 }
 
-class _VinylDetailedState extends State<VinylDetailed> {
+class _AcousticsDetailedState extends State<AcousticsDetailed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +49,7 @@ class _VinylDetailedState extends State<VinylDetailed> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: NetworkImage(
-                              widget.vinyl.imageUrl,
+                              widget.acoustics.imageUrl,
                             ),
                             fit: BoxFit.cover,
                           ),
@@ -66,7 +66,7 @@ class _VinylDetailedState extends State<VinylDetailed> {
                           children: [
                             const SizedBox(height: 10),
                             Text(
-                              widget.vinyl.title,
+                              widget.acoustics.title,
                               style: Style.montserrat22w400.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
@@ -74,26 +74,21 @@ class _VinylDetailedState extends State<VinylDetailed> {
                             ),
                             const SizedBox(height: 20),
                             Text(
-                              '${widget.vinyl.cost} руб.',
+                              '${widget.acoustics.cost} руб.',
                               style: Style.montserrat18w400,
                             ),
                             const SizedBox(height: 30),
                             const OrderButton(),
                             const SizedBox(height: 40),
                             Text(
-                              widget.vinyl.description,
+                              widget.acoustics.description,
                               style: Style.montserrat16w400,
                             ),
                             const SizedBox(height: 20),
                             const Expanded(child: EmptyWidget()),
                             Text(
-                              'Артикул: ${widget.vinyl.hashCode}',
+                              'Артикул: ${widget.acoustics.hashCode}',
                               style: Style.montserrat12w400.copyWith(color: Colors.grey),
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              'Год релиза: ${widget.vinyl.year}',
-                              style: Style.montserrat14w400,
                             ),
                             const SizedBox(height: 10),
                           ],

@@ -9,6 +9,7 @@ class Acoustics with _$Acoustics {
     required String imageUrl,
     required String title,
     required String subtitle,
+    required String description,
     required String cost,
   }) = _Acoustics;
 }

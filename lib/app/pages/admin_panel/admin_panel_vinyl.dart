@@ -210,7 +210,15 @@ class _AdminPanelVinylState extends State<AdminPanelVinyl> {
             children: [
               MyButton(
                 title: 'Отмена',
-                onTap: () => _showAddPart.value = false,
+                onTap: () {
+                  _imageUrl.clear();
+                  _title.clear();
+                  _cost.clear();
+                  _year.clear();
+                  _id.clear();
+                  _description.clear();
+                  _showAddPart.value = false;
+                },
               ),
               const SizedBox(
                 width: 20,

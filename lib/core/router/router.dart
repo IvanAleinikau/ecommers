@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:ecommers/app/pages/about_us_page.dart';
 import 'package:ecommers/app/pages/accessories/accessories_page.dart';
 import 'package:ecommers/app/pages/acoustics/acoustics_page.dart';
+import 'package:ecommers/app/pages/acoustics/widgets/acoustics_detailed.dart';
 import 'package:ecommers/app/pages/admin_panel/admin_panel_page.dart';
 import 'package:ecommers/app/pages/contacts_page.dart';
 import 'package:ecommers/app/pages/login_page.dart';
@@ -69,6 +70,11 @@ import 'package:ecommers/app/pages/vinyl/widgets/vinyl_detailed.dart';
       path: '/vinyl_details',
       page: VinylDetailed,
       name: 'VinylDetailedRoute',
+    ),
+    AutoRoute(
+      path: '/acoustics_details',
+      page: AcousticsDetailed,
+      name: 'AcousticsDetailedRoute',
     ),
   ],
 )

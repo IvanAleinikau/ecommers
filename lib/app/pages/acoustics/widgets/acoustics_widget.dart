@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/core/model/acoustics_model.dart';
+import 'package:ecommers/core/router/router.gr.dart';
 import 'package:flutter/material.dart';
 
 class AcousticsWidget extends StatefulWidget {
@@ -20,7 +22,7 @@ class _AcousticsWidgetState extends State<AcousticsWidget> {
     return Padding(
       padding: const EdgeInsets.all(15.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () => context.router.navigate(AcousticsDetailedRoute(acoustics: widget.acoustics)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

@@ -25,6 +25,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
   final TextEditingController _title = TextEditingController();
   final TextEditingController _cost = TextEditingController();
   final TextEditingController _subtitle = TextEditingController();
+  final TextEditingController _description = TextEditingController();
   final TextEditingController _id = TextEditingController();
 
   late AcousticsCubit _cubit;
@@ -42,6 +43,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
     _title.dispose();
     _cost.dispose();
     _subtitle.dispose();
+    _description.dispose();
     super.dispose();
   }
 
@@ -56,6 +58,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
           _cost.clear();
           _subtitle.clear();
           _id.clear();
+          _description.clear();
           _showAddPart.value = false;
         }
       },
@@ -141,6 +144,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
                         _title.text = acoustics.title;
                         _subtitle.text = acoustics.subtitle;
                         _cost.text = acoustics.cost;
+                        _description.text = acoustics.description;
                         _showAddPart.value = true;
                       },
                       delete: (Acoustics acoustics) =>
@@ -186,6 +190,13 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
             height: 10,
           ),
           AdminPanelInput(
+            hintText: 'Описание',
+            controller: _description,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          AdminPanelInput(
             hintText: 'Цена',
             controller: _cost,
           ),
@@ -196,7 +207,15 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
             children: [
               MyButton(
                 title: 'Отмена',
-                onTap: () => _showAddPart.value = false,
+                onTap: () {
+                  _imageUrl.clear();
+                  _title.clear();
+                  _cost.clear();
+                  _subtitle.clear();
+                  _id.clear();
+                  _description.clear();
+                  _showAddPart.value = false;
+                },
               ),
               const SizedBox(
                 width: 20,
@@ -211,6 +230,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
                       title: _title.text,
                       subtitle: _subtitle.text,
                       cost: _cost.text,
+                      description: _description.text,
                     ),
                   ),
                 ),
@@ -234,6 +254,7 @@ class _AdminPanelAcousticsState extends State<AdminPanelAcoustics> {
         title: _title.text,
         subtitle: _subtitle.text,
         cost: _cost.text,
+        description: _description.text,
       ),
     );
   }
