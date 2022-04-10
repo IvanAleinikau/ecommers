@@ -36,6 +36,7 @@ class Ecommers extends StatelessWidget {
         ),
       ],
       child: MaterialApp.router(
+        scrollBehavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
         title: 'Vinyl Collection',

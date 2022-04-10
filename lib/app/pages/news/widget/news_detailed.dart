@@ -79,7 +79,9 @@ class _NewsDetailedState extends State<NewsDetailed> {
                               style: Style.montserrat18w400,
                             ),
                             const SizedBox(height: 30),
-                            const OrderButton(),
+                            OrderButton(
+                              onTap: () {},
+                            ),
                             const SizedBox(height: 40),
                             Text(
                               widget.news.description,
