@@ -3,13 +3,17 @@ import 'package:ecommers/core/blocs/consultation_bloc/consultation_bloc.dart';
 import 'package:ecommers/core/blocs/vinyl/vinyl_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import '.env.dart';
 import 'core/blocs/news_bloc/news_cubit.dart';
+import 'core/blocs/order/order_cubit.dart';
 import 'core/di/get_it.dart';
 import 'core/router/router.gr.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SetupGetIt.setup();
+  Stripe.publishableKey = stripePublishableKey;
   runApp(Ecommers());
 }
 
@@ -33,6 +37,9 @@ class Ecommers extends StatelessWidget {
         ),
         BlocProvider<AcousticsCubit>(
           create: (context) => AcousticsCubit(),
+        ),
+        BlocProvider<OrderCubit>(
+          create: (context) => OrderCubit(),
         ),
       ],
       child: MaterialApp.router(

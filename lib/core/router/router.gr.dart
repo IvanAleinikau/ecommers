@@ -11,6 +11,7 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i15;
+import 'package:flutter/cupertino.dart' as _i17;
 import 'package:flutter/material.dart' as _i16;
 
 import '../../app/pages/about_us_page.dart' as _i3;
@@ -27,10 +28,10 @@ import '../../app/pages/news/widget/news_detailed.dart' as _i14;
 import '../../app/pages/register_page.dart' as _i4;
 import '../../app/pages/vinyl/vinyl_page.dart' as _i7;
 import '../../app/pages/vinyl/widgets/vinyl_detailed.dart' as _i11;
-import '../model/accessories_model.dart' as _i19;
-import '../model/acoustics_model.dart' as _i18;
-import '../model/news_model.dart' as _i20;
-import '../model/vinyl_model.dart' as _i17;
+import '../model/accessories_model.dart' as _i20;
+import '../model/acoustics_model.dart' as _i19;
+import '../model/news_model.dart' as _i21;
+import '../model/vinyl_model.dart' as _i18;
 
 class AppRouter extends _i15.RootStackRouter {
   AppRouter([_i16.GlobalKey<_i16.NavigatorState>? navigatorKey])
@@ -212,7 +213,7 @@ class NewsRoute extends _i15.PageRouteInfo<void> {
 /// generated route for
 /// [_i11.VinylDetailed]
 class VinylDetailedRoute extends _i15.PageRouteInfo<VinylDetailedRouteArgs> {
-  VinylDetailedRoute({_i16.Key? key, required _i17.Vinyl vinyl})
+  VinylDetailedRoute({_i17.Key? key, required _i18.Vinyl vinyl})
       : super(VinylDetailedRoute.name,
             path: '/vinyl_details',
             args: VinylDetailedRouteArgs(key: key, vinyl: vinyl));
@@ -223,9 +224,9 @@ class VinylDetailedRoute extends _i15.PageRouteInfo<VinylDetailedRouteArgs> {
 class VinylDetailedRouteArgs {
   const VinylDetailedRouteArgs({this.key, required this.vinyl});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
-  final _i17.Vinyl vinyl;
+  final _i18.Vinyl vinyl;
 
   @override
   String toString() {
@@ -237,7 +238,7 @@ class VinylDetailedRouteArgs {
 /// [_i12.AcousticsDetailed]
 class AcousticsDetailedRoute
     extends _i15.PageRouteInfo<AcousticsDetailedRouteArgs> {
-  AcousticsDetailedRoute({_i16.Key? key, required _i18.Acoustics acoustics})
+  AcousticsDetailedRoute({_i17.Key? key, required _i19.Acoustics acoustics})
       : super(AcousticsDetailedRoute.name,
             path: '/acoustics_details',
             args: AcousticsDetailedRouteArgs(key: key, acoustics: acoustics));
@@ -248,9 +249,9 @@ class AcousticsDetailedRoute
 class AcousticsDetailedRouteArgs {
   const AcousticsDetailedRouteArgs({this.key, required this.acoustics});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
-  final _i18.Acoustics acoustics;
+  final _i19.Acoustics acoustics;
 
   @override
   String toString() {
@@ -263,7 +264,7 @@ class AcousticsDetailedRouteArgs {
 class AccessoriesDetailedRoute
     extends _i15.PageRouteInfo<AccessoriesDetailedRouteArgs> {
   AccessoriesDetailedRoute(
-      {_i16.Key? key, required _i19.Accessories accessories})
+      {_i17.Key? key, required _i20.Accessories accessories})
       : super(AccessoriesDetailedRoute.name,
             path: '/accessories_details',
             args: AccessoriesDetailedRouteArgs(
@@ -275,9 +276,9 @@ class AccessoriesDetailedRoute
 class AccessoriesDetailedRouteArgs {
   const AccessoriesDetailedRouteArgs({this.key, required this.accessories});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
-  final _i19.Accessories accessories;
+  final _i20.Accessories accessories;
 
   @override
   String toString() {
@@ -288,7 +289,7 @@ class AccessoriesDetailedRouteArgs {
 /// generated route for
 /// [_i14.NewsDetailed]
 class NewsDetailedRoute extends _i15.PageRouteInfo<NewsDetailedRouteArgs> {
-  NewsDetailedRoute({_i16.Key? key, required _i20.News news})
+  NewsDetailedRoute({_i17.Key? key, required _i21.News news})
       : super(NewsDetailedRoute.name,
             path: '/news_details',
             args: NewsDetailedRouteArgs(key: key, news: news));
@@ -299,9 +300,9 @@ class NewsDetailedRoute extends _i15.PageRouteInfo<NewsDetailedRouteArgs> {
 class NewsDetailedRouteArgs {
   const NewsDetailedRouteArgs({this.key, required this.news});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
-  final _i20.News news;
+  final _i21.News news;
 
   @override
   String toString() {

@@ -3,6 +3,7 @@ import 'package:ecommers/data/repository/acoustics_repository.dart';
 import 'package:ecommers/data/repository/auth_repository.dart';
 import 'package:ecommers/data/repository/consultation_request_repository.dart';
 import 'package:ecommers/data/repository/news_repository.dart';
+import 'package:ecommers/data/repository/order_repository.dart';
 import 'package:ecommers/data/repository/vinyl_repository.dart';
 import 'package:get_it/get_it.dart';
 
@@ -14,5 +15,6 @@ class SetupGetIt {
     GetIt.instance.registerSingleton(VinylRepository());
     GetIt.instance.registerSingleton(AcousticsRepository());
     GetIt.instance.registerSingleton(AccessoriesRepository());
+    GetIt.instance.registerSingleton(OrderRepository());
   }
 }
