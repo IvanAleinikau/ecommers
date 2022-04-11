@@ -5,9 +5,14 @@ import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/back_button.dart';
 import 'package:ecommers/app/widgets/general_input.dart';
 import 'package:ecommers/app/widgets/order_button.dart';
+import 'package:ecommers/core/blocs/order/order_cubit.dart';
+import 'package:ecommers/core/blocs/order/order_state.dart';
 import 'package:ecommers/core/model/acoustics_model.dart';
+import 'package:ecommers/core/model/order_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 class AcousticsDetailed extends StatefulWidget {
   final Acoustics acoustics;
@@ -22,6 +27,14 @@ class AcousticsDetailed extends StatefulWidget {
 }
 
 class _AcousticsDetailedState extends State<AcousticsDetailed> {
+  late OrderCubit _cubit;
+
+  @override
+  void initState() {
+    _cubit = OrderCubit();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -252,24 +265,82 @@ class _AcousticsDetailedState extends State<AcousticsDetailed> {
                   controller: _address,
                 ),
                 const SizedBox(height: 25),
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    height: 50,
-                    color: Colors.black,
-                    child: Center(
-                      child: Text(
-                        'Заказать',
-                        style: Style.montserrat16w400.copyWith(color: Colors.white),
-                      ),
-                    ),
-                  ),
-                )
+                const Text(
+                  'Оплата',
+                  style: Style.montserrat14w400,
+                ),
+                const SizedBox(height: 5),
+                BlocConsumer<OrderCubit, OrderState>(
+                    bloc: _cubit,
+                    listener: (context, state) {
+                      if (state.orderCreated) {
+                        _name.clear();
+                        _phone.clear();
+                        _email.clear();
+                        _city.clear();
+                        _address.clear();
+                        context.router.pop();
+                        context.router.pop();
+                      }
+                    },
+                    builder: (context, state) {
+                      return Column(
+                        children: [
+                          CardField(
+                            onCardChanged: (card) {},
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.zero,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.black),
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 25),
+                          InkWell(
+                            onTap: () => _getPayment(),
+                            child: Container(
+                              height: 50,
+                              color: Colors.black,
+                              child: Center(
+                                child: state.isLoading
+                                    ? const CircularProgressIndicator(
+                                        color: Colors.white,
+                                      )
+                                    : Text(
+                                        'Заказать',
+                                        style: Style.montserrat16w400.copyWith(color: Colors.white),
+                                      ),
+                              ),
+                            ),
+                          )
+                        ],
+                      );
+                    }),
               ],
             ),
           ),
         );
       },
     );
+  }
+
+  Future<void> _getPayment() async {
+    _cubit.isLoading();
+    _cubit.onCreateOrder(
+      order: Order(
+        customerName: _name.text,
+        customerPhone: _phone.text,
+        customerEmail: _email.text,
+        customerCity: _city.text,
+        customerAddress: _address.text,
+        orderTitle: widget.acoustics.title,
+        vendorCode: widget.acoustics.hashCode.toString(),
+      ),
+    );
+    await Stripe.instance.createPaymentMethod(const PaymentMethodParams.card());
   }
 }
