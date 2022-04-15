@@ -183,6 +183,13 @@ class _AdminPanelNewsState extends State<AdminPanelNews> {
             controller: _subtitle,
           ),
           const SizedBox(
+            height: 10,
+          ),
+          AdminPanelInput(
+            hintText: 'Описание',
+            controller: _description,
+          ),
+          const SizedBox(
             height: 20,
           ),
           Row(
