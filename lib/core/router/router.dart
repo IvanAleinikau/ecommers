@@ -17,73 +17,73 @@ import 'package:ecommers/app/pages/vinyl/widgets/vinyl_detailed.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AutoRoute(
+    CustomRoute(
       path: '/login',
       page: LoginPage,
       name: 'LoginRoute',
       initial: true,
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/contacts',
       page: ContactsPage,
       name: 'ContactsRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/aboutUs',
       page: AboutUsPage,
       name: 'AboutUsRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/register',
       page: RegisterPage,
       name: 'RegisterRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/admin',
       page: AdminPanelPage,
       name: 'AdminPanelRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/home',
       page: MainPage,
       name: 'MainRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/vinyl',
       page: VinylPage,
       name: 'VinylRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/acoustics',
       page: AcousticsPage,
       name: 'AcousticsRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/accessories',
       page: AccessoriesPage,
       name: 'AccessoriesRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/news',
       page: NewsPage,
       name: 'NewsRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/vinyl_details',
       page: VinylDetailed,
       name: 'VinylDetailedRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/acoustics_details',
       page: AcousticsDetailed,
       name: 'AcousticsDetailedRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/accessories_details',
       page: AccessoriesDetailed,
       name: 'AccessoriesDetailedRoute',
     ),
-    AutoRoute(
+    CustomRoute(
       path: '/news_details',
       page: NewsDetailed,
       name: 'NewsDetailedRoute',

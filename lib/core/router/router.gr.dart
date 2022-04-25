@@ -39,70 +39,108 @@ class AppRouter extends _i15.RootStackRouter {
   @override
   final Map<String, _i15.PageFactory> pagesMap = {
     LoginRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.LoginPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i1.LoginPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     ContactsRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.ContactsPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i2.ContactsPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     AboutUsRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.AboutUsPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i3.AboutUsPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     RegisterRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.RegisterPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i4.RegisterPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     AdminPanelRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.AdminPanelPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i5.AdminPanelPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     MainRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i6.MainPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i6.MainPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     VinylRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.VinylPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i7.VinylPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     AcousticsRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.AcousticsPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i8.AcousticsPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     AccessoriesRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i9.AccessoriesPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i9.AccessoriesPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     NewsRoute.name: (routeData) {
-      return _i15.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i10.NewsPage());
+      return _i15.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i10.NewsPage(),
+          opaque: true,
+          barrierDismissible: false);
     },
     VinylDetailedRoute.name: (routeData) {
       final args = routeData.argsAs<VinylDetailedRouteArgs>();
-      return _i15.MaterialPageX<dynamic>(
+      return _i15.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i11.VinylDetailed(key: args.key, vinyl: args.vinyl));
+          child: _i11.VinylDetailed(key: args.key, vinyl: args.vinyl),
+          opaque: true,
+          barrierDismissible: false);
     },
     AcousticsDetailedRoute.name: (routeData) {
       final args = routeData.argsAs<AcousticsDetailedRouteArgs>();
-      return _i15.MaterialPageX<dynamic>(
+      return _i15.CustomPage<dynamic>(
           routeData: routeData,
           child:
-              _i12.AcousticsDetailed(key: args.key, acoustics: args.acoustics));
+              _i12.AcousticsDetailed(key: args.key, acoustics: args.acoustics),
+          opaque: true,
+          barrierDismissible: false);
     },
     AccessoriesDetailedRoute.name: (routeData) {
       final args = routeData.argsAs<AccessoriesDetailedRouteArgs>();
-      return _i15.MaterialPageX<dynamic>(
+      return _i15.CustomPage<dynamic>(
           routeData: routeData,
           child: _i13.AccessoriesDetailed(
-              key: args.key, accessories: args.accessories));
+              key: args.key, accessories: args.accessories),
+          opaque: true,
+          barrierDismissible: false);
     },
     NewsDetailedRoute.name: (routeData) {
       final args = routeData.argsAs<NewsDetailedRouteArgs>();
-      return _i15.MaterialPageX<dynamic>(
+      return _i15.CustomPage<dynamic>(
           routeData: routeData,
-          child: _i14.NewsDetailed(key: args.key, news: args.news));
+          child: _i14.NewsDetailed(key: args.key, news: args.news),
+          opaque: true,
+          barrierDismissible: false);
     }
   };
 

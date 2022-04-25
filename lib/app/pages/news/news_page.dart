@@ -53,17 +53,24 @@ class _NewsPageState extends State<NewsPage> {
                   child: BlocConsumer<NewsCubit, NewsState>(
                     bloc: _cubit,
                     builder: (context, state) {
-                      return GridView.builder(
-                        physics: const NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                        ),
-                        itemCount: state.newsList.length,
-                        itemBuilder: (context, index) {
-                          return NewsWidget(news: state.newsList[index]);
-                        },
-                      );
+                      if (state.isLoading) {
+                        return SizedBox(
+                          height: MediaQuery.of(context).size.width / 3,
+                          child: const Center(child: CircularProgressIndicator()),
+                        );
+                      } else {
+                        return GridView.builder(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 3,
+                          ),
+                          itemCount: state.newsList.length,
+                          itemBuilder: (context, index) {
+                            return NewsWidget(news: state.newsList[index]);
+                          },
+                        );
+                      }
                     },
                     listener: (context, state) {},
                   ),

@@ -21,6 +21,12 @@ class AdminPanelInput extends StatelessWidget {
       child: TextFormField(
         decoration: InputDecoration(
           hintText: hintText,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
         controller: controller,
         validator: validator,

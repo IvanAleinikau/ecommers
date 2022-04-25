@@ -38,8 +38,14 @@ class _AdminPanelDashboardState extends State<AdminPanelDashboard> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                const SizedBox(height: 20),
                 Container(
                   height: 500,
+                  margin: const EdgeInsets.symmetric(horizontal: 40),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
                   child: SfCartesianChart(
                     primaryXAxis: CategoryAxis(),
                     title: ChartTitle(text: 'Количество продаж за последние пол года'),
@@ -62,8 +68,14 @@ class _AdminPanelDashboardState extends State<AdminPanelDashboard> {
                     ],
                   ),
                 ),
+                const SizedBox(height: 20),
                 Container(
                   height: 500,
+                  margin: const EdgeInsets.symmetric(horizontal: 40),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
                   child: Row(
                     children: [
                       SfCircularChart(
@@ -123,7 +135,8 @@ class _AdminPanelDashboardState extends State<AdminPanelDashboard> {
                       )
                     ],
                   ),
-                )
+                ),
+                const SizedBox(height: 50),
               ],
             ),
           ),
