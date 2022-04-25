@@ -2,9 +2,7 @@ import 'package:ecommers/app/common/empty_widget.dart';
 import 'package:ecommers/app/theme/color_palette.dart';
 import 'package:ecommers/app/theme/text_style.dart';
 import 'package:ecommers/app/widgets/back_button.dart';
-import 'package:ecommers/app/widgets/order_button.dart';
 import 'package:ecommers/core/model/news_model.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
